@@ -1,3 +1,22 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="QuadMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.576471, 0.411765, 0.0196078, 1 )
 
 [node name="Main" type="Spatial"]
+
+[node name="Excavator" type="MeshInstance" parent="."]
+transform = Transform( 1.01435, 0, 0, 0, 1.01435, 0, 0, 0, 3.28248, 0, 0.980811, 0 )
+mesh = SubResource( 1 )
+
+[node name="Ground" type="MeshInstance" parent="."]
+transform = Transform( 91.7873, 0, 0, 0, -4.37114e-08, 1, 0, -358.879, -1.56871e-05, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.936219, 0.351417, 0, -0.351417, 0.936219, 0, 2.99911, 5.1352 )

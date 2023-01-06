@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://meshes/bagger.tscn" type="PackedScene" id=1]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -19,4 +21,6 @@ mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.936219, 0.351417, 0, -0.351417, 0.936219, 0, 2.99911, 5.1352 )
+transform = Transform( 1, 0, 0, 0, 0.936219, 0.351417, 0, -0.351417, 0.936219, 0, 16.091, 19.287 )
+
+[node name="bagger" parent="." instance=ExtResource( 1 )]

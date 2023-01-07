@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/trail.gd" type="Script" id=1]
+[ext_resource path="res://materials/trail_mat.tres" type="Material" id=2]
+[ext_resource path="res://meshes/bagger.tscn" type="PackedScene" id=3]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.259951, 0.741188, -0.618923, -0.745186, 0.253646, 0.616735, 0.614104, 0.621534, 0.486387, -0.024, 2.64132, 0.00300002 )
+shadow_enabled = true
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 0.999996, 0.000233364, -0.00284816, -0.00023721, 0.999999, -0.00134342, 0.00284783, 0.00134409, 0.999995, -0.0237551, -0.00508761, 0.00323939 )
+visible = false
+width = 12.794
+height = 0.001
+depth = 11.151
+
+[node name="ImmediateGeometry" type="ImmediateGeometry" parent="."]
+transform = Transform( 0.999996, 0.000233364, -0.00284816, -0.00023721, 0.999999, -0.00134342, 0.00284783, 0.00134409, 0.999995, -0.137735, 0.0372047, 13.0315 )
+material_override = ExtResource( 2 )
+script = ExtResource( 1 )
+width = 5.617
+groundSize = 209
+positions = [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( 4.89046, -0.0944167, -43.4488 ), Vector3( -0.400304, -0.10686, -51.7767 ), Vector3( -3.42017, -0.11934, -60.5335 ), Vector3( 0.348092, -0.129985, -69.1223 ), Vector3( 7.81866, -0.136954, -75.6296 ), Vector3( 15.9092, -0.141735, -80.6168 ), Vector3( 19.4703, -0.152899, -89.5559 ), Vector3( 10.8454, -0.159637, -93.0484 ), Vector3( 2.32612, -0.162871, -93.951 ), Vector3( -6.61835, -0.168244, -96.3711 ), Vector3( -14.4911, -0.177549, -101.907 ), Vector3( -14.2419, -0.190315, -111.454 ), Vector3( -5.92012, -0.192926, -114.867 ), Vector3( 3.91923, -0.191155, -115.286 ), Vector3( 13.7964, -0.188903, -115.354 ), Vector3( 22.3356, -0.190897, -118.346 ), Vector3( 26.59, -0.200531, -126.269 ), Vector3( 19.5927, -0.211645, -133.306 ), Vector3( 10.5718, -0.219576, -137.617 ), Vector3( 2.89426, -0.226659, -141.533 ), Vector3( -5.3224, -0.234239, -145.725 ), Vector3( -10.2801, -0.246469, -153.953 ), Vector3( -2.78397, -0.252704, -159.917 ), Vector3( 7.02909, -0.250401, -159.936 ), Vector3( 16.3525, -0.245758, -158.126 ), Vector3( 26.1341, -0.245827, -159.905 ), Vector3( 28.9296, -0.255059, -167.271 ) ]
+baggerTranformPath = NodePath("../Spatial")
+
+[node name="bagger" parent="." instance=ExtResource( 3 )]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35758, 5.20853 )
+
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.2681, -1.90735e-06, -154.156 )

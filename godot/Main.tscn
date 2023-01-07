@@ -70,7 +70,6 @@ material/0 = SubResource( 16 )
 [node name="RunnerLogic" type="Spatial" parent="."]
 
 [node name="ObstacleContainer" type="Spatial" parent="RunnerLogic"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="GroundCollection" type="Spatial" parent="RunnerLogic"]
 script = ExtResource( 10 )

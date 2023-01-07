@@ -1,0 +1,154 @@
+[gd_resource type="ShaderMaterial" load_steps=15 format=2]
+
+[sub_resource type="VisualShaderNodeVectorScalarMix" id=2]
+
+[sub_resource type="VisualShaderNodeScalarOp" id=11]
+operator = 5
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=12]
+uniform_name = "BlendPower"
+default_value_enabled = true
+default_value = 1.0
+
+[sub_resource type="VisualShaderNodeColorUniform" id=3]
+uniform_name = "Grass_Tint"
+default_value_enabled = true
+default_value = Color( 0.311874, 0.48566, 0.288537, 1 )
+
+[sub_resource type="VisualShaderNodeColorUniform" id=4]
+uniform_name = "TrailTint"
+default_value_enabled = true
+default_value = Color( 0.309319, 0.238294, 0.167527, 1 )
+
+[sub_resource type="VisualShaderNodeTextureUniform" id=5]
+uniform_name = "TrailTex"
+
+[sub_resource type="VisualShaderNodeTextureUniform" id=6]
+uniform_name = "GrassTex"
+
+[sub_resource type="VisualShaderNodeVectorOp" id=7]
+operator = 2
+
+[sub_resource type="VisualShaderNodeVectorOp" id=8]
+operator = 2
+
+[sub_resource type="VisualShaderNodeInput" id=9]
+input_name = "color"
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id=10]
+
+[sub_resource type="VisualShader" id=1]
+code = "shader_type spatial;
+render_mode specular_schlick_ggx, async_visible;
+
+uniform vec4 TrailTint : hint_color = vec4(0.309319, 0.238294, 0.167527, 1.000000);
+uniform sampler2D TrailTex;
+uniform vec4 Grass_Tint : hint_color = vec4(0.311874, 0.485660, 0.288537, 1.000000);
+uniform sampler2D GrassTex;
+uniform float BlendPower = 1;
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// ColorUniform:3
+	vec3 n_out3p0 = TrailTint.rgb;
+	float n_out3p1 = TrailTint.a;
+
+// TextureUniform:4
+	vec3 n_out4p0;
+	float n_out4p1;
+	{
+		vec4 n_tex_read = texture(TrailTex, UV.xy);
+		n_out4p0 = n_tex_read.rgb;
+		n_out4p1 = n_tex_read.a;
+	}
+
+// VectorOp:7
+	vec3 n_out7p0 = n_out3p0 * n_out4p0;
+
+// ColorUniform:2
+	vec3 n_out2p0 = Grass_Tint.rgb;
+	float n_out2p1 = Grass_Tint.a;
+
+// TextureUniform:5
+	vec3 n_out5p0;
+	float n_out5p1;
+	{
+		vec4 n_tex_read = texture(GrassTex, UV.xy);
+		n_out5p0 = n_tex_read.rgb;
+		n_out5p1 = n_tex_read.a;
+	}
+
+// VectorOp:6
+	vec3 n_out6p0 = n_out2p0 * n_out5p0;
+
+// Input:8
+	vec3 n_out8p0 = COLOR.rgb;
+
+// VectorDecompose:9
+	float n_out9p0 = n_out8p0.x;
+	float n_out9p1 = n_out8p0.y;
+	float n_out9p2 = n_out8p0.z;
+
+// ScalarUniform:12
+	float n_out12p0 = BlendPower;
+
+// ScalarOp:11
+	float n_out11p0 = pow(n_out9p1, n_out12p0);
+
+// VectorScalarMix:10
+	vec3 n_out10p0 = mix(n_out7p0, n_out6p0, n_out11p0);
+
+// Output:0
+	ALBEDO = n_out10p0;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( -640.499, 217.784 )
+nodes/fragment/0/position = Vector2( 420, 120 )
+nodes/fragment/2/node = SubResource( 3 )
+nodes/fragment/2/position = Vector2( -620, -200 )
+nodes/fragment/3/node = SubResource( 4 )
+nodes/fragment/3/position = Vector2( -600, -520 )
+nodes/fragment/4/node = SubResource( 5 )
+nodes/fragment/4/position = Vector2( -540, -380 )
+nodes/fragment/5/node = SubResource( 6 )
+nodes/fragment/5/position = Vector2( -540, -40 )
+nodes/fragment/6/node = SubResource( 7 )
+nodes/fragment/6/position = Vector2( -140, -40 )
+nodes/fragment/7/node = SubResource( 8 )
+nodes/fragment/7/position = Vector2( -120, -340 )
+nodes/fragment/8/node = SubResource( 9 )
+nodes/fragment/8/position = Vector2( -560, 240 )
+nodes/fragment/9/node = SubResource( 10 )
+nodes/fragment/9/position = Vector2( -320, 220 )
+nodes/fragment/10/node = SubResource( 2 )
+nodes/fragment/10/position = Vector2( 125.717, 147.81 )
+nodes/fragment/11/node = SubResource( 11 )
+nodes/fragment/11/position = Vector2( -80, 220 )
+nodes/fragment/12/node = SubResource( 12 )
+nodes/fragment/12/position = Vector2( -380, 360 )
+nodes/fragment/connections = PoolIntArray( 5, 0, 6, 1, 2, 0, 6, 0, 4, 0, 7, 1, 3, 0, 7, 0, 8, 0, 9, 0, 6, 0, 10, 1, 7, 0, 10, 0, 10, 0, 0, 0, 9, 1, 11, 0, 11, 0, 10, 2, 12, 0, 11, 1 )
+
+[sub_resource type="OpenSimplexNoise" id=13]
+
+[sub_resource type="NoiseTexture" id=14]
+seamless = true
+noise = SubResource( 13 )
+
+[resource]
+shader = SubResource( 1 )
+shader_param/TrailTint = Color( 0.309319, 0.238294, 0.167527, 1 )
+shader_param/Grass_Tint = Color( 0.311874, 0.48566, 0.288537, 1 )
+shader_param/BlendPower = 5.076
+shader_param/TrailTex = SubResource( 14 )

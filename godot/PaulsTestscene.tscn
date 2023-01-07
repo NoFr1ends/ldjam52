@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/trail.gd" type="Script" id=1]
 [ext_resource path="res://materials/trail_mat.tres" type="Material" id=2]
 [ext_resource path="res://meshes/bagger.tscn" type="PackedScene" id=3]
+[ext_resource path="res://nodes/ctrl_dig_pos.tscn" type="PackedScene" id=4]
 
 [node name="Spatial" type="Spatial"]
 
@@ -18,18 +19,17 @@ height = 0.001
 depth = 11.151
 
 [node name="ImmediateGeometry" type="ImmediateGeometry" parent="."]
-transform = Transform( 0.999996, 0.000233364, -0.00284816, -0.00023721, 0.999999, -0.00134342, 0.00284783, 0.00134409, 0.999995, -0.137735, 0.0372047, 13.0315 )
+transform = Transform( 0.999996, 0.000233364, -0.00284816, -0.00023721, 0.999999, -0.00134342, 0.00284783, 0.00134409, 0.999995, -7.31695, 0.0372047, 242.728 )
 material_override = ExtResource( 2 )
 script = ExtResource( 1 )
 width = 5.617
 groundSize = 209
-positions = [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( 4.89046, -0.0944167, -43.4488 ), Vector3( -0.400304, -0.10686, -51.7767 ), Vector3( -3.42017, -0.11934, -60.5335 ), Vector3( 0.348092, -0.129985, -69.1223 ), Vector3( 7.81866, -0.136954, -75.6296 ), Vector3( 15.9092, -0.141735, -80.6168 ), Vector3( 19.4703, -0.152899, -89.5559 ), Vector3( 10.8454, -0.159637, -93.0484 ), Vector3( 2.32612, -0.162871, -93.951 ), Vector3( -6.61835, -0.168244, -96.3711 ), Vector3( -14.4911, -0.177549, -101.907 ), Vector3( -14.2419, -0.190315, -111.454 ), Vector3( -5.92012, -0.192926, -114.867 ), Vector3( 3.91923, -0.191155, -115.286 ), Vector3( 13.7964, -0.188903, -115.354 ), Vector3( 22.3356, -0.190897, -118.346 ), Vector3( 26.59, -0.200531, -126.269 ), Vector3( 19.5927, -0.211645, -133.306 ), Vector3( 10.5718, -0.219576, -137.617 ), Vector3( 2.89426, -0.226659, -141.533 ), Vector3( -5.3224, -0.234239, -145.725 ), Vector3( -10.2801, -0.246469, -153.953 ), Vector3( -2.78397, -0.252704, -159.917 ), Vector3( 7.02909, -0.250401, -159.936 ), Vector3( 16.3525, -0.245758, -158.126 ), Vector3( 26.1341, -0.245827, -159.905 ), Vector3( 28.9296, -0.255059, -167.271 ) ]
-baggerTranformPath = NodePath("../Spatial")
+positions = [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( -0.697409, -0.0828236, -33.8341 ), Vector3( -8.29657, -0.0980436, -43.8216 ), Vector3( -0.118122, -0.109272, -53.6236 ), Vector3( 5.84069, -0.12068, -63.1673 ), Vector3( 2.46679, -0.134768, -73.0582 ), Vector3( -2.2911, -0.148616, -82.5263 ), Vector3( -1.01166, -0.161675, -92.4734 ), Vector3( 3.07579, -0.173901, -102.295 ), Vector3( 5.52019, -0.186549, -112.142 ), Vector3( -0.187085, -0.201125, -121.984 ), Vector3( 1.47377, -0.213578, -131.547 ), Vector3( 3.9324, -0.226385, -141.514 ), Vector3( -2.08893, -0.240643, -151.064 ), Vector3( 0.458084, -0.253176, -160.843 ), Vector3( -4.72089, -0.267718, -170.753 ), Vector3( 1.21237, -0.279394, -180.492 ), Vector3( 4.85682, -0.291832, -190.394 ), Vector3( 8.17624, -0.304358, -200.304 ), Vector3( 10.3878, -0.316228, -209.53 ), Vector3( 12.6322, -0.328274, -218.893 ), Vector3( 11.3798, -0.34157, -228.58 ), Vector3( 2.19417, -0.357002, -238.435 ), Vector3( 0.232599, -0.370878, -248.417 ), Vector3( 3.07288, -0.383538, -258.342 ), Vector3( -2.04365, -0.391718, -263.527 ) ]
+baggerTranformPath = NodePath("../ctrl_dig_pos")
 
 [node name="bagger" parent="." instance=ExtResource( 3 )]
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35758, 5.20853 )
 
-[node name="Spatial" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.2681, -1.90735e-06, -154.156 )
+[node name="ctrl_dig_pos" parent="." instance=ExtResource( 4 )]

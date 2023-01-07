@@ -15,6 +15,13 @@ var baggerNode : Spatial
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if not Engine.editor_hint:
+		if not baggerTranformPath.is_empty():
+			baggerNode = get_node(baggerTranformPath)
+		baggerNode = get_node("/root/Main/Player/bagger/ctrl_base/ctrl_rotate/ctrl_height/ctrl_dig_pos")
+		if baggerNode != null:
+			print("node found")
+		
 	set_process(true)
 
 func addQuad(a : Vector3,b : Vector3,c : Vector3,d : Vector3,
@@ -47,17 +54,17 @@ func addQuad(a : Vector3,b : Vector3,c : Vector3,d : Vector3,
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if not baggerTranformPath.is_empty():
-		baggerNode = get_node(baggerTranformPath)
-	if baggerNode != null:
-		var newPos = to_local(baggerNode.global_translation)
-		if positions.size() < 2:
-			positions = [Vector3(), Vector3()]
-		var existing : Vector3 = positions[positions.size()-2]
-		if existing.z - newPos.z > minVertexDistance:
-			positions.push_back(newPos)
-		else:
-			positions[positions.size()-1] = newPos
+	if not Engine.editor_hint:
+		if baggerNode != null:
+			var newPos = to_local(baggerNode.global_translation)
+			newPos.y = 0
+			if positions.size() < 2:
+				positions = [Vector3(), Vector3()]
+			var existing : Vector3 = positions[positions.size()-2]
+			if existing.z -  newPos.z > minVertexDistance:
+				positions.push_back(newPos)
+			else:
+				positions[positions.size()-1] = newPos
 	
 	# Clean up before drawing.
 	clear()
@@ -107,4 +114,6 @@ func _process(delta):
 		pos + Vector3( groundSize , 0,-groundSize),
 		colGround, colGround, colGround, colGround)
 	# End drawing.
+	if positions.size() > 32:
+		positions.pop_front()
 	end()

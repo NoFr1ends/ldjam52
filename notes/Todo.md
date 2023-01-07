@@ -1,0 +1,5 @@
+- [ ] Schornstein am Bagger 
+- [ ] Shareholder anrufer 
+- [ ] Tech tree
+- [ ] Bagger Level 2 (Hovercraft)
+- [ ] Bagger Level 3 (Raumschiff)

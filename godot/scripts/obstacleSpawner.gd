@@ -13,6 +13,7 @@ func _ready():
 
 
 func _process(delta):
+	return
 	if randf() < 5 * delta:
 		var idx = rng.randi_range(0, spawnableItems.size()-1)
 		var newElm = spawnableItems[idx].instance()

@@ -82,11 +82,11 @@ script = ExtResource( 10 )
 ground = ExtResource( 8 )
 
 [node name="Ground" parent="RunnerLogic/GroundCollection" instance=ExtResource( 9 )]
-transform = Transform( 0.999996, 0.000233364, -0.00284816, -0.00023721, 0.999999, -0.00134342, 0.00284783, 0.00134409, 0.999995, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11 )
 width = 1.0
 groundSize = 1194
 minVertexDistance = 2.0
-positions = [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ) ]
+positions = [ Vector3( 0, 0, 60 ), Vector3( 0, 0, 0 ) ]
 
 [node name="StaticBody" type="StaticBody" parent="RunnerLogic/GroundCollection"]
 

@@ -3,39 +3,24 @@
 [ext_resource path="res://meshes/bagger.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/excavator.gd" type="Script" id=2]
 [ext_resource path="res://scripts/camera.gd" type="Script" id=3]
+[ext_resource path="res://Windmill.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/obstacleSpawner.gd" type="Script" id=5]
+[ext_resource path="res://Tree.tscn" type="PackedScene" id=6]
+[ext_resource path="res://House.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Ground.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scripts/groundCollection.gd" type="Script" id=10]
+
+[sub_resource type="BoxShape" id=10]
+extents = Vector3( 9.35958, 2.02289, 7.81707 )
 
 [sub_resource type="CylinderShape" id=9]
 height = 7.79681
 radius = 4.63584
 
-[sub_resource type="BoxShape" id=10]
-extents = Vector3( 9.35958, 2.02289, 7.81707 )
+[sub_resource type="CubeMesh" id=15]
 
-[sub_resource type="CylinderShape" id=8]
-
-[sub_resource type="CubeMesh" id=5]
-
-[sub_resource type="PrismMesh" id=6]
-
-[sub_resource type="BoxShape" id=7]
-extents = Vector3( 1.19698, 2.08348, 1.12808 )
-
-[sub_resource type="QuadMesh" id=2]
-
-[sub_resource type="OpenSimplexNoise" id=11]
-seed = 2
-period = 113.5
-persistence = 0.491
-lacunarity = 3.37
-
-[sub_resource type="NoiseTexture" id=12]
-width = 4096
-height = 4096
-noise = SubResource( 11 )
-
-[sub_resource type="SpatialMaterial" id=3]
-albedo_color = Color( 0.909804, 0.372549, 0.0196078, 1 )
-albedo_texture = SubResource( 12 )
+[sub_resource type="SpatialMaterial" id=16]
+albedo_color = Color( 1, 0.235294, 0.235294, 1 )
 
 [node name="Main" type="Spatial"]
 
@@ -51,44 +36,46 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.61675 )
 
 [node name="Camera" type="Camera" parent="Player"]
 transform = Transform( 1, 0, 0, 0, 0.66088, 0.750492, 0, -0.750492, 0.66088, 0, 22.7966, 18.3905 )
+current = true
 script = ExtResource( 3 )
 
-[node name="KinematicBody" type="RigidBody" parent="Player"]
+[node name="DebugCamera" type="Camera" parent="Player"]
+transform = Transform( 0.575034, 0, 0.81813, 0, 1, 0, -0.81813, 0, 0.575034, 21.4933, 4.69412, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Player/KinematicBody"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 4.84724, -10.6822 )
-shape = SubResource( 9 )
+[node name="KinematicBodyCrawlers" type="KinematicBody" parent="Player"]
 
-[node name="CollisionShape2" type="CollisionShape" parent="Player/KinematicBody"]
+[node name="CrawlersCollider" type="CollisionShape" parent="Player/KinematicBodyCrawlers"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.06181, 7.11089 )
 shape = SubResource( 10 )
 
-[node name="Tree" type="KinematicBody" parent="."]
-transform = Transform( 0.861045, 0, 0, 0, 2.10579, 0, 0, 0, 0.861045, 0, 2.25463, -43.0603 )
+[node name="KinematicBodyBucketWheel" type="RigidBody" parent="Player"]
+contact_monitor = true
+can_sleep = false
 
-[node name="CollisionShape" type="CollisionShape" parent="Tree"]
-shape = SubResource( 8 )
+[node name="BucketWheelCollider" type="CollisionShape" parent="Player/KinematicBodyBucketWheel"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 4.84724, -10.6822 )
+shape = SubResource( 9 )
 
-[node name="House" type="KinematicBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02317, -37.2455 )
+[node name="ObstacleSpawner" type="Spatial" parent="Player"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -139.136 )
+script = ExtResource( 5 )
+spawnableItems = [ ExtResource( 4 ), ExtResource( 7 ), ExtResource( 6 ) ]
 
-[node name="House" type="MeshInstance" parent="House"]
-mesh = SubResource( 5 )
-skeleton = NodePath("../..")
-
-[node name="Roof" type="MeshInstance" parent="House"]
-transform = Transform( 1.16949, 0, 0, 0, 1.16949, 0, 0, 0, 1.16949, 0, 2.08069, 0 )
-mesh = SubResource( 6 )
-skeleton = NodePath("../..")
-
-[node name="CollisionShape" type="CollisionShape" parent="House"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15881, 0 )
-shape = SubResource( 7 )
+[node name="MeshInstance" type="MeshInstance" parent="Player/ObstacleSpawner"]
+transform = Transform( -7.42591e-07, -1, 0, 16.9885, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
+visible = false
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
 
 [node name="RunnerLogic" type="Spatial" parent="."]
 
-[node name="Ground" type="MeshInstance" parent="RunnerLogic"]
-transform = Transform( 91.7873, 0, 0, 0, -4.37114e-08, 1, 0, -358.879, -1.56871e-05, 0, 0, 0 )
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 3 )
+[node name="ObstacleContainer" type="Spatial" parent="RunnerLogic"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="GroundCollection" type="Spatial" parent="RunnerLogic"]
+script = ExtResource( 10 )
+ground = ExtResource( 8 )
+
+[node name="Ground" parent="RunnerLogic/GroundCollection" instance=ExtResource( 8 )]
+
+[node name="Bookkeeping" type="Node" parent="."]

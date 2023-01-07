@@ -22,6 +22,9 @@ func _process(delta):
 	var i = 0
 	for wiggleRef in wiggleRefs:
 		i += 1
-		get_node(wiggleRef).rotation_degrees.x = noise.get_noise_2d(t,i)
-		get_node(wiggleRef).rotation_degrees.y = noise.get_noise_2d(t,i+324)
-		get_node(wiggleRef).rotation_degrees.z = noise.get_noise_2d(t,i+123)
+		var wiggleTarget = get_node(wiggleRef)
+		if wiggleTarget == null:
+			continue
+		wiggleTarget.rotation_degrees.x = noise.get_noise_2d(t,i)
+		wiggleTarget.rotation_degrees.y = noise.get_noise_2d(t,i+324)
+		wiggleTarget.rotation_degrees.z = noise.get_noise_2d(t,i+123)

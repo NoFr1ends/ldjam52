@@ -60,7 +60,8 @@ func _process(delta):
 		sound_timeout_ct += 1
 		if sound_timeout_ct % 2 == 0:
 			if sound_on_off_button.pressed: 
-				coal_sound.play()
+				if !coal_sound.playing:
+					coal_sound.play()
 			
 		elapsed = 0
 

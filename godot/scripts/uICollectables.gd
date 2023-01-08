@@ -59,6 +59,7 @@ func instantiate(startPos : Vector3, reward, value : int = 0):
 func _on_UiMoveToCountersTween_tween_completed(object, key):
 	if "Coin" in object.name:
 		if sound_on_off_button.pressed:
-			coin_sound.play()
+			if !coin_sound.playing:
+				coin_sound.play()
 		Bookkeeping.add_coins(object.value)
 	object.queue_free()

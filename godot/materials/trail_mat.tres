@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=15 format=2]
+[gd_resource type="ShaderMaterial" load_steps=22 format=2]
 
 [sub_resource type="VisualShaderNodeVectorScalarMix" id=2]
 
@@ -9,6 +9,27 @@ operator = 5
 uniform_name = "BlendPower"
 default_value_enabled = true
 default_value = 1.0
+
+[sub_resource type="OpenSimplexNoise" id=15]
+
+[sub_resource type="NoiseTexture" id=16]
+seamless = true
+noise = SubResource( 15 )
+
+[sub_resource type="VisualShaderNodeTexture" id=17]
+texture = SubResource( 16 )
+
+[sub_resource type="VisualShaderNodeInput" id=18]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeVectorOp" id=19]
+default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 0.01, 0.01, 0.01 ) ]
+operator = 2
+
+[sub_resource type="VisualShaderNodeScalarClamp" id=20]
+
+[sub_resource type="VisualShaderNodeScalarSmoothStep" id=21]
+default_input_values = [ 0, 0.49, 1, 0.51, 2, 0.0 ]
 
 [sub_resource type="VisualShaderNodeColorUniform" id=3]
 uniform_name = "Grass_Tint"
@@ -114,7 +135,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -640.499, 217.784 )
+graph_offset = Vector2( -1127.69, -248.509 )
 nodes/fragment/0/position = Vector2( 420, 120 )
 nodes/fragment/2/node = SubResource( 3 )
 nodes/fragment/2/position = Vector2( -620, -200 )
@@ -123,7 +144,7 @@ nodes/fragment/3/position = Vector2( -600, -520 )
 nodes/fragment/4/node = SubResource( 5 )
 nodes/fragment/4/position = Vector2( -540, -380 )
 nodes/fragment/5/node = SubResource( 6 )
-nodes/fragment/5/position = Vector2( -540, -40 )
+nodes/fragment/5/position = Vector2( -480, -20 )
 nodes/fragment/6/node = SubResource( 7 )
 nodes/fragment/6/position = Vector2( -140, -40 )
 nodes/fragment/7/node = SubResource( 8 )
@@ -138,7 +159,17 @@ nodes/fragment/11/node = SubResource( 11 )
 nodes/fragment/11/position = Vector2( -80, 220 )
 nodes/fragment/12/node = SubResource( 12 )
 nodes/fragment/12/position = Vector2( -380, 360 )
-nodes/fragment/connections = PoolIntArray( 5, 0, 6, 1, 2, 0, 6, 0, 4, 0, 7, 1, 3, 0, 7, 0, 8, 0, 9, 0, 6, 0, 10, 1, 7, 0, 10, 0, 10, 0, 0, 0, 9, 1, 11, 0, 11, 0, 10, 2, 12, 0, 11, 1 )
+nodes/fragment/13/node = SubResource( 17 )
+nodes/fragment/13/position = Vector2( -1160, 60 )
+nodes/fragment/14/node = SubResource( 18 )
+nodes/fragment/14/position = Vector2( -1580, 160 )
+nodes/fragment/15/node = SubResource( 19 )
+nodes/fragment/15/position = Vector2( -1400, 140 )
+nodes/fragment/17/node = SubResource( 20 )
+nodes/fragment/17/position = Vector2( -660, 100 )
+nodes/fragment/19/node = SubResource( 21 )
+nodes/fragment/19/position = Vector2( -900, 140 )
+nodes/fragment/connections = PoolIntArray( 4, 0, 7, 1, 3, 0, 7, 0, 8, 0, 9, 0, 6, 0, 10, 1, 7, 0, 10, 0, 10, 0, 0, 0, 9, 1, 11, 0, 11, 0, 10, 2, 12, 0, 11, 1, 2, 0, 6, 0, 14, 0, 15, 0, 15, 0, 13, 0, 13, 0, 19, 2, 19, 0, 17, 0, 5, 0, 6, 1 )
 
 [sub_resource type="OpenSimplexNoise" id=13]
 

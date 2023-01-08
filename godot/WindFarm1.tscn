@@ -1,15 +1,35 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Windmill.tscn" type="PackedScene" id=1]
+[ext_resource path="res://meshes/renewables/Windrad.tscn" type="PackedScene" id=1]
 
 [node name="WindFarm1" type="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.97297, 0 )
 
-[node name="Windmill" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.30208, -9.99888, -1.22779 )
+[node name="Windrad" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, -1.08405, 0, 0.60225 )
 
-[node name="Windmill3" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.38272, -9.99888, -6.13854 )
+[node name="Windrad2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, -15.2032, 0, 5.92721 )
 
-[node name="Windmill2" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.955757, 0, 0.294157, 0, 1, 0, -0.294157, 0, 0.955757, -17.4097, -9.99888, 2.94612 )
+[node name="Windrad3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, 8, 0, 7 )
+
+[node name="Windrad4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, -3, 0, 12 )
+
+[node name="Windrad5" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, -10, 0, -16 )
+
+[node name="Windrad6" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, 11.1932, 0, -6.0728 )
+
+[node name="Windrad9" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, 8, 0, -17 )
+
+[node name="Windrad7" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, -2, 0, -9 )
+
+[node name="Windrad10" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, 19.681, 0, -4.48311 )
+
+[node name="Windrad8" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, -13, 0, -4 )

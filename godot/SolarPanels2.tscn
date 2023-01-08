@@ -1,0 +1,80 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://meshes/renewables/SolarPanel.tscn" type="PackedScene" id=1]
+
+[node name="SolarPanels2" type="Spatial"]
+
+[node name="SolarPanel" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 0, 0, 0 )
+
+[node name="SolarPanel2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 4, 0, 0 )
+
+[node name="SolarPanel3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 8, 0, 0 )
+
+[node name="SolarPanel4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -4, 0, 0 )
+
+[node name="SolarPanel5" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -8, 0, 0 )
+
+[node name="SolarPanel6" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 0, 0, -4 )
+
+[node name="SolarPanel7" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 4, 0, -4 )
+
+[node name="SolarPanel8" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 8, 0, -4 )
+
+[node name="SolarPanel9" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -4, 0, -4 )
+
+[node name="SolarPanel10" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -8, 0, -4 )
+
+[node name="SolarPanel11" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 0, 0, -8 )
+
+[node name="SolarPanel12" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 4, 0, -8 )
+
+[node name="SolarPanel13" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 8, 0, -8 )
+
+[node name="SolarPanel14" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -4, 0, -8 )
+
+[node name="SolarPanel15" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -8, 0, -8 )
+
+[node name="SolarPanel16" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 0, 0, 4 )
+
+[node name="SolarPanel17" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 4, 0, 4 )
+
+[node name="SolarPanel18" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 8, 0, 4 )
+
+[node name="SolarPanel19" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -4, 0, 4 )
+
+[node name="SolarPanel20" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -8, 0, 4 )
+
+[node name="SolarPanel21" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 0, 0, 8 )
+
+[node name="SolarPanel22" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 4, 0, 8 )
+
+[node name="SolarPanel23" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 8, 0, 8 )
+
+[node name="SolarPanel24" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -4, 0, 8 )
+
+[node name="SolarPanel25" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -8, 0, 8 )

@@ -5,6 +5,9 @@ var rng = RandomNumberGenerator.new()
 
 export (float) var spawn_rate_min = .1
 export (float) var spawn_rate_max = 1.0
+export (float) var x_variation_range = 10
+export (float) var z_variation_range = 10
+
 
 #export (NodePath) var types
 #onready var runner = get_node("/root/Main/Player/ObstacleSpawner")
@@ -40,8 +43,8 @@ func spawn_element():
 	var newElm = spawnItem.instance()
 	obstacleContainer.add_child(newElm)
 	newElm.global_translation = self.global_translation
-	newElm.rotation = rng.randf_range(-PI, PI)
-	newElm.global_translation += Vector3(rand_range(-10 , 10), 0, rand_range(-10 , 10))
+	newElm.rotation.y = rng.randf_range(-PI, PI)
+	newElm.global_translation += Vector3(rand_range(-x_variation_range , x_variation_range), 0, rand_range(-z_variation_range , z_variation_range))
 	
 	
 

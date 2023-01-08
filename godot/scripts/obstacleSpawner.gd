@@ -3,11 +3,13 @@ extends Spatial
 
 var rng = RandomNumberGenerator.new()
 
+export (float) var spawn_rate_min = .1
+export (float) var spawn_rate_max = 1.0
+
 export (Array, PackedScene) var spawnableItems
 #onready var runner = get_node("/root/Main/Player/ObstacleSpawner")
 onready var obstacleContainer = get_node("/root/Main/RunnerLogic/ObstacleContainer")
-export var spawn_rate_min = 1.0
-export var spawn_rate_max = 3.0
+
 var count_down = 0.0
 
 func _ready():

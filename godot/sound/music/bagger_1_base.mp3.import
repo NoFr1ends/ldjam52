@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bagger_1_base.mp3-5b8211f9f6730ab448a5d30b81f53b40.mp3str"
+
+[deps]
+
+source_file="res://sound/music/bagger_1_base.mp3"
+dest_files=[ "res://.import/bagger_1_base.mp3-5b8211f9f6730ab448a5d30b81f53b40.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -5,6 +5,7 @@ extends Node
 # var a = 2
 # var b = "text"
 
+
 var speed_mult  = 1.0
 var money_mult  = 1.0
 var coal_mult   = 1.0
@@ -150,6 +151,11 @@ func is_entry_unlocked(id : String) -> bool :
 func can_unlock_entry(id : String) -> bool :
 	if !data.has(id):
 		return false
+	# ACHTUNG: falls er hier einen Fehler meldet, habe ich den Verdacht, dass das ein Editor-Bug sein könnte, weil er das nicht immer tut bei mir
+	if data.get(id).has("cost") and Bookkeeping.has_method("can_afford") and !Bookkeeping.can_afford(data[id]["cost"]):
+		print_debug("can't afford %s" % id)
+		print_debug("have: %s, costs: %s" % [Bookkeeping.current_coins, data[id]["cost"]])
+		return false
 	if !data.get(id).has("depends_on"):
 		return true
 	var depends_on = data[id]["depends_on"]
@@ -165,6 +171,8 @@ func unlock_entry(id : String) -> bool :
 		return false
 	var entry = data.get(id)
 	entry["unlocked"] = true
+	if data[id].has("cost"):
+		Bookkeeping.add_coins(-data[id]["cost"])
 	speed_mult = entry.get("speed_mult", speed_mult)
 	money_mult = entry.get("money_mult", money_mult)
 	coal_mult  = entry.get("coal_mult",   coal_mult)
@@ -176,6 +184,9 @@ func _ready():
 	pass # Replace with function body.
 
 
+func refresh_unlockables():
+	$Panel/Body_Lvl1.refresh_all()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	refresh_unlockables()

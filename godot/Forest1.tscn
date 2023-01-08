@@ -1,89 +1,117 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://meshes/trees/Tree_02.tscn" type="PackedScene" id=1]
 [ext_resource path="res://meshes/trees/Tree_03.tscn" type="PackedScene" id=2]
 [ext_resource path="res://meshes/trees/Tree_01.tscn" type="PackedScene" id=3]
 [ext_resource path="res://meshes/trees/Tree_04.tscn" type="PackedScene" id=4]
+[ext_resource path="res://nodes/Explosion.tscn" type="PackedScene" id=5]
 
 [node name="Forest1" type="Spatial"]
 
 [node name="Tree_01" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18557, 0, -2.43465 )
+explosion = ExtResource( 5 )
 
 [node name="Tree_06" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.285203, 0, -0.958467, 0, 1, 0, 0.958467, 0, 0.285203, -4.53616, 0, 2.10598 )
+explosion = ExtResource( 5 )
 
 [node name="Tree_08" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.948755, 0, -0.316013, 0, 1, 0, 0.316013, 0, 0.948755, -1.18425, 0, 4.92567 )
+explosion = ExtResource( 5 )
 
 [node name="Tree_09" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.119097, 0, -0.992883, 0, 1, 0, 0.992883, 0, 0.119097, 4.3533, 0, -0.47061 )
+explosion = ExtResource( 5 )
 
 [node name="Tree_02" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.64387, 0, 0.765135, 0, 1, 0, -0.765135, 0, 0.64387, 2.51563, 0, 2.5703 )
+explosion = ExtResource( 5 )
 
 [node name="Tree_05" parent="." instance=ExtResource( 1 )]
 transform = Transform( -0.751529, 0, 0.6597, 0, 1, 0, -0.6597, 0, -0.751529, -2.42786, 0, -4.17369 )
+explosion = ExtResource( 5 )
 
 [node name="Tree_26" parent="." instance=ExtResource( 1 )]
 transform = Transform( -0.751529, 0, 0.6597, 0, 1, 0, -0.6597, 0, -0.751529, 10.6187, 0, -1.88717 )
+explosion = ExtResource( 5 )
 
 [node name="Tree_03" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.79415, 9.53674e-07, -1.26365 )
+explosion = ExtResource( 5 )
 
 [node name="Tree_10" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.538536, 0, -0.842603, 0, 1, 0, 0.842603, 0, 0.538536, 1.49098, 9.53674e-07, -5.5919 )
+explosion = ExtResource( 5 )
 
 [node name="Tree_11" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.990896, 0, 0.134626, 0, 1, 0, -0.134626, 0, 0.990896, 5.64414, 9.53674e-07, -3.72721 )
+explosion = ExtResource( 5 )
 
 [node name="Tree_04" parent="." instance=ExtResource( 2 )]
 transform = Transform( -0.785835, 0, 0.618436, 0, 1, 0, -0.618436, 0, -0.785835, -1.43626, 9.53674e-07, 2.35332 )
+explosion = ExtResource( 5 )
 
 [node name="Tree_07" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.315119, 0, -0.949052, 0, 1, 0, 0.949052, 0, 0.315119, 0.227021, 1.90735e-06, -0.21969 )
+explosion = ExtResource( 5 )
 
 [node name="Tree_12" parent="." instance=ExtResource( 4 )]
 transform = Transform( -0.709386, 0, 0.70482, 0, 1, 0, -0.70482, 0, -0.709386, -6.55365, 1.90735e-06, -3.89255 )
+explosion = ExtResource( 5 )
 
 [node name="Tree_13" parent="." instance=ExtResource( 3 )]
 transform = Transform( -0.352871, 0, 0.935672, 0, 1, 0, -0.935672, 0, -0.352871, 5.98785, 0, -10.0593 )
+explosion = ExtResource( 5 )
 
 [node name="Tree_14" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.796171, 0, 0.605072, 0, 1, 0, -0.605072, 0, 0.796171, -8.72673, 0, 4.63154 )
+explosion = ExtResource( 5 )
 
 [node name="Tree_15" parent="." instance=ExtResource( 3 )]
 transform = Transform( -0.0391028, 0, 0.999235, 0, 1, 0, -0.999235, 0, -0.0391028, -7.27121, 0, 0.500267 )
+explosion = ExtResource( 5 )
 
 [node name="Tree_27" parent="." instance=ExtResource( 3 )]
 transform = Transform( -0.0391028, 0, 0.999235, 0, 1, 0, -0.999235, 0, -0.0391028, 9.85525, 0, 10.0498 )
+explosion = ExtResource( 5 )
 
 [node name="Tree_16" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.886987, 0, 0.461795, 0, 1, 0, -0.461795, 0, 0.886987, -14.2744, 0, -2.77687 )
+explosion = ExtResource( 5 )
 
 [node name="Tree_17" parent="." instance=ExtResource( 1 )]
 transform = Transform( -0.943118, 0, 0.332457, 0, 1, 0, -0.332457, 0, -0.943118, -10.7806, 0, -2.13047 )
+explosion = ExtResource( 5 )
 
 [node name="Tree_18" parent="." instance=ExtResource( 1 )]
 transform = Transform( -0.35207, 0, -0.935974, 0, 1, 0, 0.935974, 0, -0.35207, 6.48759, 0, 2.9021 )
+explosion = ExtResource( 5 )
 
 [node name="Tree_19" parent="." instance=ExtResource( 2 )]
 transform = Transform( -0.352871, 0, 0.935672, 0, 1, 0, -0.935672, 0, -0.352871, -5.38055, 9.53674e-07, 6.35409 )
+explosion = ExtResource( 5 )
 
 [node name="Tree_20" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.598367, 0, 0.801222, 0, 1, 0, -0.801222, 0, 0.598367, -3.48528, 9.53674e-07, -8.5136 )
+explosion = ExtResource( 5 )
 
 [node name="Tree_21" parent="." instance=ExtResource( 2 )]
 transform = Transform( -0.475624, 0, 0.879649, 0, 1, 0, -0.879649, 0, -0.475624, -10.5588, 9.53674e-07, -10.6366 )
+explosion = ExtResource( 5 )
 
 [node name="Tree_22" parent="." instance=ExtResource( 2 )]
 transform = Transform( -0.301355, 0, -0.953512, 0, 1, 0, 0.953512, 0, -0.301355, -9.58916, 9.53674e-07, 1.64378 )
+explosion = ExtResource( 5 )
 
 [node name="Tree_23" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.776805, 0, 0.629741, 0, 1, 0, -0.629741, 0, 0.776805, -13.4802, 1.90735e-06, 2.0266 )
+explosion = ExtResource( 5 )
 
 [node name="Tree_25" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.482488, 0, -0.875903, 0, 1, 0, 0.875903, 0, 0.482488, 4.45321, 1.90735e-06, 6.73414 )
+explosion = ExtResource( 5 )
 
 [node name="Tree_24" parent="." instance=ExtResource( 4 )]
 transform = Transform( -0.409159, 0, -0.912463, 0, 1, 0, 0.912463, 0, -0.409159, -8.83027, 1.90735e-06, 10.9225 )
+explosion = ExtResource( 5 )

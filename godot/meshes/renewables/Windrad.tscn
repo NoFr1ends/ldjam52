@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://materials/RenewablePlastic.material" type="Material" id=1]
 [ext_resource path="res://scripts/collectable.gd" type="Script" id=2]
@@ -34,9 +34,20 @@ surfaces/0 = {
 "vertex_count": 150
 }
 
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 1, 0, 0, 1 )
+emission_enabled = true
+emission = Color( 1, 0, 0, 1 )
+emission_energy = 6.01
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=5]
+
 [sub_resource type="Animation" id=3]
 resource_name = "RadAction"
 length = 4.16667
+loop = true
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Windrad/Rad")
 tracks/0/interp = 1
@@ -44,6 +55,32 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = PoolRealArray( 0, 1, 0, 9.1, 0.91, 0, 0, 0, 1, 1, 1, 1, 0.2, 1, 0, 9.1, 0.91, 0, 0, -0.150226, 0.988652, 1, 1, 1, 0.4, 1, 0, 9.1, 0.91, 0, 0, -0.297042, 0.954865, 1, 1, 1, 0.6, 1, 0, 9.1, 0.91, 0, 0, -0.437116, 0.899405, 1, 1, 1, 0.8, 1, 0, 9.1, 0.91, 0, 0, -0.567269, 0.823533, 1, 1, 1, 1, 1, 0, 9.1, 0.91, 0, 0, -0.684547, 0.728969, 1, 1, 1, 1.2, 1, 0, 9.1, 0.91, 0, 0, -0.786288, 0.61786, 1, 1, 1, 1.4, 1, 0, 9.1, 0.91, 0, 0, -0.870184, 0.492727, 1, 1, 1, 1.6, 1, 0, 9.1, 0.91, 0, 0, -0.934329, 0.356412, 1, 1, 1, 1.8, 1, 0, 9.1, 0.91, 0, 0, -0.977268, 0.212007, 1, 1, 1, 2, 1, 0, 9.1, 0.91, 0, 0, -0.998027, 0.0627905, 1, 1, 1, 2.06667, 1, 0, 9.1, 0.91, 0, 0, -0.999921, 0.012566, 1, 1, 1, 2.13333, 1, 0, 9.1, 0.91, 0, 0, 0.99929, 0.0376904, 1, 1, 1, 2.33333, 1, 0, 9.1, 0.91, 0, 0, 0.982287, 0.187381, 1, 1, 1, 2.53333, 1, 0, 9.1, 0.91, 0, 0, 0.942991, 0.33282, 1, 1, 1, 2.73333, 1, 0, 9.1, 0.91, 0, 0, 0.882291, 0.470704, 1, 1, 1, 2.93333, 1, 0, 9.1, 0.91, 0, 0, 0.801567, 0.597905, 1, 1, 1, 3.13333, 1, 0, 9.1, 0.91, 0, 0, 0.70265, 0.711536, 1, 1, 1, 3.33333, 1, 0, 9.1, 0.91, 0, 0, 0.587785, 0.809017, 1, 1, 1, 3.53333, 1, 0, 9.1, 0.91, 0, 0, 0.45958, 0.888136, 1, 1, 1, 3.73333, 1, 0, 9.1, 0.91, 0, 0, 0.320944, 0.947098, 1, 1, 1, 3.93333, 1, 0, 9.1, 0.91, 0, 0, 0.175023, 0.984564, 1, 1, 1, 4.16667, 1, 0, 9.1, 0.91, 0, 0, -8.74228e-08, 1, 1, 1, 1 )
+tracks/1/type = "value"
+tracks/1/path = NodePath("Blinkenlichten:material/0")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ SubResource( 4 ), SubResource( 5 ), SubResource( 4 ), SubResource( 5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Blinkenlichten/OmniLight:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false ]
+}
+
+[sub_resource type="CylinderMesh" id=6]
 
 [node name="Windrad" type="Spatial"]
 script = ExtResource( 2 )
@@ -55,8 +92,21 @@ explosion = ExtResource( 3 )
 mesh = SubResource( 1 )
 
 [node name="Rad" type="MeshInstance" parent="Windrad"]
-transform = Transform( 1, 1.74846e-07, 0, -1.74846e-07, 1, 0, 0, 0, 1, 0, 9.1, 0.91 )
+transform = Transform( -0.990065, 0.140608, 0, -0.140608, -0.990065, 0, 0, 0, 1, 0, 9.1, 0.91 )
 mesh = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "RadAction"
 anims/RadAction = SubResource( 3 )
+
+[node name="Blinkenlichten" type="MeshInstance" parent="."]
+transform = Transform( 0.177376, 0, 0, 0, 0.177376, 0, 0, 0, 0.177376, 0, 9.60774, 0 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 5 )
+
+[node name="OmniLight" type="OmniLight" parent="Blinkenlichten"]
+visible = false
+light_color = Color( 1, 0, 0, 1 )
+light_energy = 1.631
+light_indirect_energy = 5.571
+light_specular = 0.548

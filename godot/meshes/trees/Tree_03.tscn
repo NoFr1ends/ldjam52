@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://materials/Laub.material" type="Material" id=1]
 [ext_resource path="res://materials/Baumstamm.material" type="Material" id=2]
 [ext_resource path="res://scripts/collectable.gd" type="Script" id=3]
+[ext_resource path="res://nodes/Explosion.tscn" type="PackedScene" id=4]
 
 [sub_resource type="ArrayMesh" id=3]
 resource_name = "trees_Plane006"
@@ -36,3 +37,4 @@ material/1 = ExtResource( 1 )
 script = ExtResource( 3 )
 radius = 3.0
 value = 2.0
+explosion = ExtResource( 4 )

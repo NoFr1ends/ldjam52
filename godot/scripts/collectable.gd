@@ -16,8 +16,8 @@ func _process(delta):
 
 
 func explode(successful : bool):
-	if explosion != null:
+	if explosion != null and successful:
 		var newExplosion = explosion.instance()
-		get_node("/root").get_child(0).add_child(newExplosion)
-		newExplosion.global_translation = translation
+		get_node("/root/Main").add_child(newExplosion)
+		newExplosion.global_translation = global_translation
 	queue_free()

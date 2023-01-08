@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://materials/Hauswand.material" type="Material" id=1]
 [ext_resource path="res://materials/Hausholz.material" type="Material" id=2]
 [ext_resource path="res://materials/Hausdach.material" type="Material" id=3]
 [ext_resource path="res://materials/Hausstein.material" type="Material" id=4]
 [ext_resource path="res://materials/Fensterscheibe.material" type="Material" id=5]
+[ext_resource path="res://scripts/collectable.gd" type="Script" id=6]
 
 [sub_resource type="ArrayMesh" id=4]
 resource_name = "houses_Cube010"
@@ -72,3 +73,6 @@ surfaces/4 = {
 [node name="Kirche" type="MeshInstance"]
 transform = Transform( 1.02333, 0, 0, 0, 1.33667, 0, 0, 0, 1.72172, 0, 0, 0 )
 mesh = SubResource( 4 )
+script = ExtResource( 6 )
+radius = 3.0
+value = 20.0

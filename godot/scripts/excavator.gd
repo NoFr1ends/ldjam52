@@ -38,20 +38,21 @@ func _process(delta):
 	translate(Vector3.FORWARD * delta* speed * techTree.speed_mult)
 	var shovelPos = ctrl_shovel.global_translation
 	var baggerPos = base_excavator.global_translation
-	for obj in obstacle_containter.get_children():
-		var obstPos = obj.global_translation
-		if obstPos.z > camera.global_translation.z:
-			obj.queue_free()
-			continue
-		if (obstPos - shovelPos).length() < (obj.radius + radius_wheel):
-			obj.explode(true)
-			
-			if obj.value > 0: 
-				ui_collectables.instantiate(obj.global_translation, ui_collectables.coin, obj.value)
-			else:
-				Bookkeeping.add_coins(obj.value)
-		if (obstPos - base_excavator.global_translation).length() < radius_bagger + obj.radius:
-			obj.explode(false)
+	for container in obstacle_containter.get_children():
+		for obj in container.get_children():
+			var obstPos = obj.global_translation
+			if obstPos.z > camera.global_translation.z:
+				obj.queue_free()
+				continue
+			if (obstPos - shovelPos).length() < (obj.radius + radius_wheel):
+				obj.explode(true)
+				
+				if obj.value > 0: 
+					ui_collectables.instantiate(obj.global_translation, ui_collectables.coin, obj.value)
+				else:
+					Bookkeeping.add_coins(obj.value)
+			if (obstPos - base_excavator.global_translation).length() < radius_bagger + obj.radius:
+				obj.explode(false)
 		
 	elapsed += delta
 	if elapsed > .2 - log(coal_mult)*.1:

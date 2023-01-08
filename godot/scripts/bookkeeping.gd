@@ -1,3 +1,4 @@
+tool
 extends Node
 
 onready var techTree = get_node("/root/Main/Control/TechTree")

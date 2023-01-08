@@ -153,8 +153,6 @@ func can_unlock_entry(id : String) -> bool :
 		return false
 	# ACHTUNG: falls er hier einen Fehler meldet, habe ich den Verdacht, dass das ein Editor-Bug sein könnte, weil er das nicht immer tut bei mir
 	if data.get(id).has("cost") and Bookkeeping.has_method("can_afford") and !Bookkeeping.can_afford(data[id]["cost"]):
-		print_debug("can't afford %s" % id)
-		print_debug("have: %s, costs: %s" % [Bookkeeping.current_coins, data[id]["cost"]])
 		return false
 	if !data.get(id).has("depends_on"):
 		return true
@@ -180,7 +178,6 @@ func unlock_entry(id : String) -> bool :
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	pass # Replace with function body.
 
 

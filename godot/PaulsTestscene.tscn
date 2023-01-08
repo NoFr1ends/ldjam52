@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/trail.gd" type="Script" id=1]
 [ext_resource path="res://materials/trail_mat.tres" type="Material" id=2]
 [ext_resource path="res://meshes/bagger.tscn" type="PackedScene" id=3]
 [ext_resource path="res://nodes/ctrl_dig_pos.tscn" type="PackedScene" id=4]
+[ext_resource path="res://nodes/WorldEnvironment.tscn" type="PackedScene" id=5]
+[ext_resource path="res://nodes/Explosion.tscn" type="PackedScene" id=6]
 
 [node name="Spatial" type="Spatial"]
 
@@ -33,3 +35,8 @@ baggerTranformPath = NodePath("../ctrl_dig_pos")
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35758, 5.20853 )
 
 [node name="ctrl_dig_pos" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[node name="WorldEnvironment" parent="." instance=ExtResource( 5 )]
+
+[node name="Explosion" parent="." instance=ExtResource( 6 )]

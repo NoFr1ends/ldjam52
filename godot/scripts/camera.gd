@@ -19,6 +19,7 @@ func reparent():
 	get_parent().remove_child(self)
 	mount.add_child(self)
 	self.translation = local_pos
+	#get_node("/root/Main/CameraManager").cameraList[0] = self
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

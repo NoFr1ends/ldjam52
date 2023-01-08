@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://meshes/bagger.glb" type="PackedScene" id=1]
 [ext_resource path="res://scripts/wiggle.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://materials/brown_02.tres" type="Material" id=8]
 [ext_resource path="res://materials/brown_01.tres" type="Material" id=9]
 [ext_resource path="res://materials/metal_01.tres" type="Material" id=10]
+[ext_resource path="res://scripts/cameraShake.gd" type="Script" id=11]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.956863, 0.713726, 0.137255, 1 )
@@ -45,20 +46,25 @@ visible = false
 [node name="ctrl_rotate" parent="ctrl_base" index="4"]
 transform = Transform( 0.142857, 0, 0, 0, 0.142857, 0, 0, 0, 0.142857, 0.0296534, 0.428571, -0.0119151 )
 
-[node name="att_back_01" parent="ctrl_base/ctrl_rotate" index="0"]
+[node name="CockpitCam" type="Camera" parent="ctrl_base/ctrl_rotate" index="0"]
+transform = Transform( 1, 0, 0, 0, 0.956214, 0.292673, 0, -0.292673, 0.956214, -0.0081244, 3.73124, -1.8639 )
+script = ExtResource( 11 )
+ampFactorDrive = 0.02
+
+[node name="att_back_01" parent="ctrl_base/ctrl_rotate" index="1"]
 material/0 = ExtResource( 9 )
 
 [node name="Gitter005" parent="ctrl_base/ctrl_rotate/att_back_01" index="0"]
 material/0 = ExtResource( 10 )
 
-[node name="att_back_02" parent="ctrl_base/ctrl_rotate" index="1"]
+[node name="att_back_02" parent="ctrl_base/ctrl_rotate" index="2"]
 visible = false
 material/0 = ExtResource( 5 )
 
-[node name="Cockpit" parent="ctrl_base/ctrl_rotate" index="2"]
+[node name="Cockpit" parent="ctrl_base/ctrl_rotate" index="3"]
 material/0 = ExtResource( 6 )
 
-[node name="ctrl_height" parent="ctrl_base/ctrl_rotate" index="3"]
+[node name="ctrl_height" parent="ctrl_base/ctrl_rotate" index="4"]
 transform = Transform( 1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -7.45058e-09, 1, -0.3 )
 
 [node name="att_front_01" parent="ctrl_base/ctrl_rotate/ctrl_height" index="0"]
@@ -137,20 +143,20 @@ material/0 = ExtResource( 7 )
 [node name="Rotator" type="Node" parent="ctrl_base/ctrl_rotate/ctrl_height/ctrl_shovel" index="6"]
 script = ExtResource( 3 )
 target = NodePath("..")
-speed = 90.0
+speed = 180.0
 
 [node name="ctrl_dig_pos" parent="ctrl_base/ctrl_rotate/ctrl_height" index="4" instance=ExtResource( 4 )]
 unique_name_in_owner = true
 transform = Transform( 1, 0, -1.77636e-15, 0, 1, 0, 1.77636e-15, 0, 1, 8.49366e-07, -4.9347, -16.148 )
 
-[node name="Pillar" parent="ctrl_base/ctrl_rotate" index="4"]
+[node name="Pillar" parent="ctrl_base/ctrl_rotate" index="5"]
 transform = Transform( 1, 0, 0, 0, 0.984808, -0.173648, 0, 0.173648, 0.984808, 0, 1, 1 )
 material/0 = ExtResource( 10 )
 
-[node name="Pillar001" parent="ctrl_base/ctrl_rotate" index="5"]
+[node name="Pillar001" parent="ctrl_base/ctrl_rotate" index="6"]
 material/0 = ExtResource( 10 )
 
-[node name="Platform" parent="ctrl_base/ctrl_rotate" index="6"]
+[node name="Platform" parent="ctrl_base/ctrl_rotate" index="7"]
 material/0 = ExtResource( 10 )
 
 [node name="ctrl_camera_mount" type="Spatial" parent="ctrl_base" index="5"]

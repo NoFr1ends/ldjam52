@@ -72,11 +72,11 @@ func _physics_process(delta):
 	base_excavator.rotation.y = clamp(base_excavator.rotation.y, -angle_range_ctrl, angle_range_ctrl)
 
 
-	if Input.is_action_pressed("turn_right"):
-		rotation.y -= delta * rot_speed
-	if Input.is_action_pressed("turn_left"):
-		rotation.y += delta * rot_speed
-	rotation.y = clamp(rotation.y, -angle_range_steer, angle_range_steer)
+	#if Input.is_action_pressed("turn_right"):
+	#	rotation.y -= delta * rot_speed
+	#if Input.is_action_pressed("turn_left"):
+	#	rotation.y += delta * rot_speed
+	#rotation.y = clamp(rotation.y, -angle_range_steer, angle_range_steer)
 
 
 func _input(event):

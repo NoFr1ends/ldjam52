@@ -81,9 +81,8 @@ func _physics_process(delta):
 	#rotation.y = clamp(rotation.y, -angle_range_steer, angle_range_steer)
 
 
-func _input(event):
-	if event is InputEventKey and event.pressed and event.scancode == KEY_TAB:
-		get_node("/root/Main/Control").visible = not get_node("/root/Main/Control").visible
+
+	
 
 func _get_chidren_with_prefix(prefix : String, node : Node, array : Array):
 	if node.name.begins_with(prefix):

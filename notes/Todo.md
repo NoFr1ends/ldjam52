@@ -11,7 +11,7 @@
 - [ ] Landschaften (Berge) (Paul)
 - [ ] Track-Breite (Paul)
 - [ ] andere Collectables (Aktivisten, Kühe, Eichhörnchen) (Paul)
-- [ ] Pausenmodus
+- [x] Pausenmodus, auch wenn Tech Tree showing
 - [ ] Rotation Speed (+ Winkel?) an Upgrades anpassen?
 - [ ] Technologiebaum zentrieren
 - [ ] Kohlekosten beim Baggern

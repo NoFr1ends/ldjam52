@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://meshes/bagger.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/excavator.gd" type="Script" id=2]
@@ -36,6 +36,7 @@
 [ext_resource path="res://Forest3.tscn" type="PackedScene" id=34]
 [ext_resource path="res://WindFarm2.tscn" type="PackedScene" id=35]
 [ext_resource path="res://scripts/main.gd" type="Script" id=36]
+[ext_resource path="res://ui/font/Jaapokki-Regular_Font.otf" type="DynamicFontData" id=37]
 [ext_resource path="res://nodes/WorldEnvironment.tres" type="Environment" id=39]
 
 [sub_resource type="SphereMesh" id=20]
@@ -55,6 +56,13 @@ albedo_color = Color( 0, 1, 0.905882, 1 )
 
 [sub_resource type="BoxShape" id=19]
 extents = Vector3( 1000, 1, 10000 )
+
+[sub_resource type="StyleBoxFlat" id=24]
+bg_color = Color( 0.145098, 0.145098, 0.145098, 0.607843 )
+
+[sub_resource type="DynamicFont" id=25]
+size = 96
+font_data = ExtResource( 37 )
 
 [node name="Main" type="Spatial"]
 script = ExtResource( 36 )
@@ -188,6 +196,7 @@ align = 2
 visible = false
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 volume_db = -11.044
 script = ExtResource( 19 )
 musicList = [ ExtResource( 23 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 24 ) ]
@@ -223,6 +232,21 @@ likelihood = 0.5
 script = ExtResource( 30 )
 scenes = [ ExtResource( 33 ), ExtResource( 35 ) ]
 likelihood = 0.3
+
+[node name="PausedOverlay" type="Panel" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 24 )
+
+[node name="PausedLabel" type="Label" parent="PausedOverlay"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 25 )
+text = "Emergency Halt!
+Squirrel Detected!"
+align = 1
+valign = 1
 
 [connection signal="tween_completed" from="Player/Camera/UICollectables/UiMoveToCountersTween" to="Player/Camera/UICollectables" method="_on_UiMoveToCountersTween_tween_completed"]
 [connection signal="finished" from="BackgroundMusic" to="BackgroundMusic" method="_on_BackgroundMusic_finished"]

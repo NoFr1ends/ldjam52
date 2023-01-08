@@ -9,6 +9,7 @@ extends Node
 var speed_mult  = 1.0
 var money_mult  = 1.0
 var coal_mult   = 1.0
+var mesh_parts  = {}
 
 var data = {
 	"wheels_lvl1" : {
@@ -19,6 +20,9 @@ var data = {
 		"cost"        : 0,
 		"speed_mult"  : 1.0,
 		"unlocked"    : true,
+		"mesh_parts"  : {
+			"att_base" : "_01",
+		},
 	},
 	"wheels_lvl2" : {
 		"name"        : "Wheels Level 2",
@@ -28,6 +32,9 @@ var data = {
 		"cost"        : 100,
 		"speed_mult"  : 1.5,
 		"unlocked"    : false,
+		"mesh_parts"  : {
+			"att_base"  : "_02",
+		},
 	},
 	"wheels_lvl3" : {
 		"name"        : "Wheels Level 3",
@@ -37,6 +44,9 @@ var data = {
 		"cost"        : 500,
 		"speed_mult"  : 2.0,
 		"unlocked"    : false,
+		"mesh_parts"  : {
+			"att_base"  : "_03",
+		},
 	},
 	"body_lvl1" : {
 		"name"        : "Body Level 1",
@@ -46,6 +56,10 @@ var data = {
 		"cost"        : 0,
 		"money_mult"  : 1.0,
 		"unlocked"    : true,
+		"mesh_parts"  : {
+			"att_back"  : "_01",
+			"att_front" : "_01",
+		},
 	},
 	"body_lvl2" : {
 		"name"        : "Body Level 2",
@@ -55,6 +69,10 @@ var data = {
 		"cost"        : 300,
 		"money_mult"  : 1.5,
 		"unlocked"    : false,
+		"mesh_parts"  : {
+			"att_back"  : "_01",
+			"att_front" : "_02",
+		},
 	},
 	"body_lvl3" : {
 		"name"        : "Body Level 3",
@@ -64,6 +82,10 @@ var data = {
 		"cost"        : 800,
 		"money_mult"  : 2.0,
 		"unlocked"    : false,
+		"mesh_parts"  : {
+			"att_back"  : "_02",
+			"att_front" : "_03",
+		},
 	},
 	"shovel_lvl1" : {
 		"name"        : "Shovel Level 1",
@@ -73,6 +95,9 @@ var data = {
 		"cost"        : 0,
 		"coal_mult"   : 1.0,
 		"unlocked"    : true,
+		"mesh_parts"  : {
+			"att_shovel" : "_02",
+		},
 	},
 	"shovel_lvl2" : {
 		"name"        : "Shovel Level 2",
@@ -82,6 +107,9 @@ var data = {
 		"cost"        : 100,
 		"coal_mult"   : 1.2,
 		"unlocked"    : false,
+		"mesh_parts"  : {
+			"att_shovel" : "_02",
+		},
 	},
 	"shovel_lvl3" : {
 		"name"        : "Shovel Level 3",
@@ -91,6 +119,9 @@ var data = {
 		"cost"        : 300,
 		"coal_mult"   : 1.5,
 		"unlocked"    : false,
+		"mesh_parts"  : {
+			"att_shovel" : "_03",
+		},
 	},
 	"shovel_lvl4" : {
 		"name"        : "Shovel Level 4",
@@ -100,6 +131,9 @@ var data = {
 		"cost"        : 600,
 		"coal_mult"   : 3.0,
 		"unlocked"    : false,
+		"mesh_parts"  : {
+			"att_shovel" : "_04",
+		},
 	},
 	"shovel_lvl5" : {
 		"name"        : "Shovel Level 5",
@@ -109,6 +143,9 @@ var data = {
 		"cost"        : 1000,
 		"coal_mult"   : 4.0,
 		"unlocked"    : false,
+		"mesh_parts"  : {
+			"att_shovel" : "_05",
+		},
 	},
 	"shovel_lvl6" : {
 		"name"        : "Shovel Level 6",
@@ -118,6 +155,9 @@ var data = {
 		"cost"        : 1500,
 		"coal_mult"   : 5.0,
 		"unlocked"    : false,
+		"mesh_parts"  : {
+			"att_shovel" : "_06",
+		},
 	},
 }
 
@@ -174,15 +214,25 @@ func unlock_entry(id : String) -> bool :
 	speed_mult = entry.get("speed_mult", speed_mult)
 	money_mult = entry.get("money_mult", money_mult)
 	coal_mult  = entry.get("coal_mult",   coal_mult)
+	if entry.has("mesh_parts"):
+		var new_mesh_parts = entry["mesh_parts"]
+		var keys = new_mesh_parts.keys()
+		for key in keys:
+			mesh_parts[key] = new_mesh_parts[key]
+		refresh_bagger_parts()
 	return true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
-
 func refresh_unlockables():
 	$Panel/Body_Lvl1.refresh_all()
+
+func refresh_bagger_parts():
+	var excavator = get_node("/root/Main/Player")
+	if excavator != null:
+		excavator.update_body()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

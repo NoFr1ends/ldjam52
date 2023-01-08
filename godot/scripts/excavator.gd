@@ -82,4 +82,22 @@ func _physics_process(delta):
 func _input(event):
 	if event is InputEventKey and event.pressed and event.scancode == KEY_TAB:
 		get_node("/root/Main/Control").visible = not get_node("/root/Main/Control").visible
-		
+
+func _get_chidren_with_prefix(prefix : String, node : Node, array : Array):
+	if node.name.begins_with(prefix):
+		array.push_back(node)
+	for child in node.get_children():
+		_get_chidren_with_prefix(prefix, child, array)
+
+func update_body():
+	var mesh_parts = techTree.mesh_parts
+	var keys = mesh_parts.keys()
+	for key in keys:
+		var parts = []
+		_get_chidren_with_prefix(key, self, parts)
+		var partname = key + mesh_parts[key]
+		for part in parts:
+			if part.name == partname:
+				part.show()
+			else:
+				part.hide()

@@ -11,6 +11,7 @@ var money_mult  = 1.0
 var coal_mult   = 1.0
 var size_mult   = 1.0
 var mesh_parts  = {}
+var open_button : Node
 
 var data = {
 	"wheels_lvl1" : {
@@ -80,7 +81,7 @@ var data = {
 		"name_short"  : "LVL 3",
 		"description" : "Intimidating Design 200% revenue.\nAllows you to mount a bigger shovel!",
 		"depends_on"  : ["body_lvl2", "wheels_lvl3"],
-		"cost"        : 800,
+		"cost"        : 1000,
 		"money_mult"  : 2.0,
 		"unlocked"    : false,
 		"mesh_parts"  : {
@@ -106,7 +107,7 @@ var data = {
 		"name_short"  : "LVL 2",
 		"description" : "Coal mining efficiency: 120%",
 		"depends_on"  : ["shovel_lvl1"],
-		"cost"        : 100,
+		"cost"        : 200,
 		"coal_mult"   : 1.2,
 		"size_mult"   : 1.0,
 		"unlocked"    : false,
@@ -119,7 +120,7 @@ var data = {
 		"name_short"  : "LVL 3",
 		"description" : "Coal mining efficiency: 150%",
 		"depends_on"  : ["shovel_lvl2"],
-		"cost"        : 300,
+		"cost"        : 500,
 		"coal_mult"   : 1.5,
 		"size_mult"   : 1.0,
 		"unlocked"    : false,
@@ -132,7 +133,7 @@ var data = {
 		"name_short"  : "LVL 4",
 		"description" : "Coal mining efficiency: 300%",
 		"depends_on"  : ["shovel_lvl3", "body_lvl3"],
-		"cost"        : 600,
+		"cost"        : 2000,
 		"coal_mult"   : 3.0,
 		"size_mult"   : 2.0,
 		"unlocked"    : false,
@@ -145,7 +146,7 @@ var data = {
 		"name_short"  : "LVL 5",
 		"description" : "Coal mining efficiency: 400%",
 		"depends_on"  : ["shovel_lvl4"],
-		"cost"        : 1000,
+		"cost"        : 4000,
 		"coal_mult"   : 4.0,
 		"size_mult"   : 3.0,
 		"unlocked"    : false,
@@ -158,13 +159,22 @@ var data = {
 		"name_short"  : "LVL 6",
 		"description" : "Coal mining efficiency: 500%",
 		"depends_on"  : ["shovel_lvl5"],
-		"cost"        : 1500,
+		"cost"        : 5000,
 		"coal_mult"   : 5.0,
 		"size_mult"   : 4.0,
 		"unlocked"    : false,
 		"mesh_parts"  : {
 			"att_shovel" : "_06",
 		},
+	},
+	"win" : {
+		"name"        : "Win",
+		"name_short"  : "WIN",
+		"description" : "You win",
+		"depends_on"  : ["shovel_lvl6"],
+		"cost"        : 10000,
+		"unlocked"    : false,
+		"win"         : true,
 	},
 }
 
@@ -228,11 +238,10 @@ func unlock_entry(id : String) -> bool :
 		for key in keys:
 			mesh_parts[key] = new_mesh_parts[key]
 		refresh_bagger_parts()
+	if entry.has("win"):
+		var main = get_node("/root/Main")
+		main.win()
 	return true
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
 func refresh_unlockables():
 	$Panel/Body_Lvl1.refresh_all()

@@ -317,6 +317,19 @@ script = ExtResource( 40 )
 scenery = ExtResource( 41 )
 length = 600.0
 
+[node name="OpenTechTree" type="Button" parent="."]
+pause_mode = 2
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -150.0
+margin_top = -150.0
+margin_right = -30.0
+margin_bottom = -30.0
+theme = ExtResource( 42 )
+text = "Tech"
+
 [connection signal="tween_completed" from="Player/Camera/UICollectables/UiMoveToCountersTween" to="Player/Camera/UICollectables" method="_on_UiMoveToCountersTween_tween_completed"]
 [connection signal="finished" from="BackgroundMusic" to="BackgroundMusic" method="_on_BackgroundMusic_finished"]
 [connection signal="toggled" from="SoundOnOffButton" to="SoundOnOffButton" method="_on_SoundOnOffButton_toggled"]

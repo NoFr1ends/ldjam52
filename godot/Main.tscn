@@ -284,20 +284,32 @@ margin_bottom = 65.8
 theme = ExtResource( 42 )
 text = "Try again"
 
-[node name="PausedOverlay3" type="Panel" parent="."]
+[node name="WinningOverlay" type="Panel" parent="."]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_styles/panel = SubResource( 24 )
 
-[node name="PausedLabel" type="Label" parent="PausedOverlay3"]
+[node name="PausedLabel" type="Label" parent="WinningOverlay"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 25 )
-text = "Emergency Halt!
-Squirrel Detected!"
+text = "YOU WON! Another great day for big coal!"
 align = 1
 valign = 1
+autowrap = true
+
+[node name="RestartGameButton" type="Button" parent="WinningOverlay"]
+anchor_left = 0.526
+anchor_top = 0.837
+anchor_right = 0.526
+anchor_bottom = 0.837
+margin_left = -160.624
+margin_top = -31.2
+margin_right = 162.376
+margin_bottom = 65.8
+theme = ExtResource( 42 )
+text = "Restart for more profits"
 
 [node name="MountainManager" type="Spatial" parent="."]
 script = ExtResource( 40 )
@@ -308,3 +320,4 @@ length = 600.0
 [connection signal="finished" from="BackgroundMusic" to="BackgroundMusic" method="_on_BackgroundMusic_finished"]
 [connection signal="toggled" from="SoundOnOffButton" to="SoundOnOffButton" method="_on_SoundOnOffButton_toggled"]
 [connection signal="pressed" from="LostOverlay/RestartGameButton" to="." method="_on_RestartGameButton_pressed"]
+[connection signal="pressed" from="WinningOverlay/RestartGameButton" to="." method="_on_RestartGameButton_pressed"]

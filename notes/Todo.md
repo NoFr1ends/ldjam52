@@ -16,8 +16,10 @@
 - [x] Pausenmodus, auch wenn Tech Tree showing
 - [ ] Rotation Speed (+ Winkel?) an Upgrades anpassen?
 - [x] Technologiebaum zentrieren
-- [ ] Kohlekosten beim Baggern
-- [ ] dafür: Kohlehügel bauen
+- [ ] Kohlekosten beim Baggern (auch beim Aufsammeln oder nur für Fahren?)
+- [x] dafür: Kohlehügel bauen
+- [ ] End-Screen/Siegbedingung
+- [ ] 
 - [ ] Usability
 	- [x] M für sound muten
 	- [x] F -> Fullscreen

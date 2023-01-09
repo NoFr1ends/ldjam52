@@ -15,6 +15,10 @@ func _ready():
 #	pass
 
 
+func win():
+	$WinningOverlay.visible = true
+	$Player.set_process(false)
+	
 
 
 func _on_RestartGameButton_pressed():

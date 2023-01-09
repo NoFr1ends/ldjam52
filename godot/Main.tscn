@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://meshes/bagger.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/excavator.gd" type="Script" id=2]
@@ -39,6 +39,8 @@
 [ext_resource path="res://ui/font/Jaapokki-Regular_Font.otf" type="DynamicFontData" id=37]
 [ext_resource path="res://CoalRocks.tscn" type="PackedScene" id=38]
 [ext_resource path="res://nodes/WorldEnvironment.tres" type="Environment" id=39]
+[ext_resource path="res://scripts/scenerySpawner.gd" type="Script" id=40]
+[ext_resource path="res://MountainRange.tscn" type="PackedScene" id=41]
 
 [sub_resource type="SphereMesh" id=20]
 
@@ -253,6 +255,11 @@ text = "Emergency Halt!
 Squirrel Detected!"
 align = 1
 valign = 1
+
+[node name="MountainManager" type="Spatial" parent="."]
+script = ExtResource( 40 )
+scenery = ExtResource( 41 )
+length = 600.0
 
 [connection signal="tween_completed" from="Player/Camera/UICollectables/UiMoveToCountersTween" to="Player/Camera/UICollectables" method="_on_UiMoveToCountersTween_tween_completed"]
 [connection signal="finished" from="BackgroundMusic" to="BackgroundMusic" method="_on_BackgroundMusic_finished"]

@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=22 format=2]
+[gd_resource type="ShaderMaterial" load_steps=16 format=2]
 
 [sub_resource type="VisualShaderNodeVectorScalarMix" id=2]
 
@@ -10,31 +10,13 @@ uniform_name = "BlendPower"
 default_value_enabled = true
 default_value = 1.0
 
-[sub_resource type="OpenSimplexNoise" id=15]
-
-[sub_resource type="NoiseTexture" id=16]
-seamless = true
-noise = SubResource( 15 )
-
-[sub_resource type="VisualShaderNodeTexture" id=17]
-texture = SubResource( 16 )
-
-[sub_resource type="VisualShaderNodeInput" id=18]
-input_name = "uv"
-
-[sub_resource type="VisualShaderNodeVectorOp" id=19]
-default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 0.01, 0.01, 0.01 ) ]
-operator = 2
-
-[sub_resource type="VisualShaderNodeScalarClamp" id=20]
-
-[sub_resource type="VisualShaderNodeScalarSmoothStep" id=21]
-default_input_values = [ 0, 0.49, 1, 0.51, 2, 0.0 ]
-
 [sub_resource type="VisualShaderNodeColorUniform" id=3]
 uniform_name = "Grass_Tint"
 default_value_enabled = true
 default_value = Color( 0.311874, 0.48566, 0.288537, 1 )
+
+[sub_resource type="VisualShaderNodeScalarFunc" id=15]
+function = 18
 
 [sub_resource type="VisualShaderNodeColorUniform" id=4]
 uniform_name = "TrailTint"
@@ -65,7 +47,6 @@ render_mode specular_schlick_ggx, async_visible;
 uniform vec4 TrailTint : hint_color = vec4(0.309319, 0.238294, 0.167527, 1.000000);
 uniform sampler2D TrailTex;
 uniform vec4 Grass_Tint : hint_color = vec4(0.311874, 0.485660, 0.288537, 1.000000);
-uniform sampler2D GrassTex;
 uniform float BlendPower = 1;
 
 
@@ -96,18 +77,6 @@ void fragment() {
 	vec3 n_out2p0 = Grass_Tint.rgb;
 	float n_out2p1 = Grass_Tint.a;
 
-// TextureUniform:5
-	vec3 n_out5p0;
-	float n_out5p1;
-	{
-		vec4 n_tex_read = texture(GrassTex, UV.xy);
-		n_out5p0 = n_tex_read.rgb;
-		n_out5p1 = n_tex_read.a;
-	}
-
-// VectorOp:6
-	vec3 n_out6p0 = n_out2p0 * n_out5p0;
-
 // Input:8
 	vec3 n_out8p0 = COLOR.rgb;
 
@@ -122,8 +91,11 @@ void fragment() {
 // ScalarOp:11
 	float n_out11p0 = pow(n_out9p1, n_out12p0);
 
+// ScalarFunc:20
+	float n_out20p0 = min(max(n_out11p0, 0.0), 1.0);
+
 // VectorScalarMix:10
-	vec3 n_out10p0 = mix(n_out7p0, n_out6p0, n_out11p0);
+	vec3 n_out10p0 = mix(n_out7p0, n_out2p0, n_out20p0);
 
 // Output:0
 	ALBEDO = n_out10p0;
@@ -135,7 +107,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -1127.69, -248.509 )
+graph_offset = Vector2( -387.744, -113.821 )
 nodes/fragment/0/position = Vector2( 420, 120 )
 nodes/fragment/2/node = SubResource( 3 )
 nodes/fragment/2/position = Vector2( -620, -200 )
@@ -144,32 +116,24 @@ nodes/fragment/3/position = Vector2( -600, -520 )
 nodes/fragment/4/node = SubResource( 5 )
 nodes/fragment/4/position = Vector2( -540, -380 )
 nodes/fragment/5/node = SubResource( 6 )
-nodes/fragment/5/position = Vector2( -480, -20 )
+nodes/fragment/5/position = Vector2( -540, -20 )
 nodes/fragment/6/node = SubResource( 7 )
 nodes/fragment/6/position = Vector2( -140, -40 )
 nodes/fragment/7/node = SubResource( 8 )
 nodes/fragment/7/position = Vector2( -120, -340 )
 nodes/fragment/8/node = SubResource( 9 )
-nodes/fragment/8/position = Vector2( -560, 240 )
+nodes/fragment/8/position = Vector2( -700, 300 )
 nodes/fragment/9/node = SubResource( 10 )
-nodes/fragment/9/position = Vector2( -320, 220 )
+nodes/fragment/9/position = Vector2( -460, 280 )
 nodes/fragment/10/node = SubResource( 2 )
-nodes/fragment/10/position = Vector2( 125.717, 147.81 )
+nodes/fragment/10/position = Vector2( 100, 160 )
 nodes/fragment/11/node = SubResource( 11 )
-nodes/fragment/11/position = Vector2( -80, 220 )
+nodes/fragment/11/position = Vector2( -220, 280 )
 nodes/fragment/12/node = SubResource( 12 )
-nodes/fragment/12/position = Vector2( -380, 360 )
-nodes/fragment/13/node = SubResource( 17 )
-nodes/fragment/13/position = Vector2( -1160, 60 )
-nodes/fragment/14/node = SubResource( 18 )
-nodes/fragment/14/position = Vector2( -1580, 160 )
-nodes/fragment/15/node = SubResource( 19 )
-nodes/fragment/15/position = Vector2( -1400, 140 )
-nodes/fragment/17/node = SubResource( 20 )
-nodes/fragment/17/position = Vector2( -660, 100 )
-nodes/fragment/19/node = SubResource( 21 )
-nodes/fragment/19/position = Vector2( -900, 140 )
-nodes/fragment/connections = PoolIntArray( 4, 0, 7, 1, 3, 0, 7, 0, 8, 0, 9, 0, 6, 0, 10, 1, 7, 0, 10, 0, 10, 0, 0, 0, 9, 1, 11, 0, 11, 0, 10, 2, 12, 0, 11, 1, 2, 0, 6, 0, 14, 0, 15, 0, 15, 0, 13, 0, 13, 0, 19, 2, 19, 0, 17, 0, 5, 0, 6, 1 )
+nodes/fragment/12/position = Vector2( -520, 420 )
+nodes/fragment/20/node = SubResource( 15 )
+nodes/fragment/20/position = Vector2( -40, 280 )
+nodes/fragment/connections = PoolIntArray( 4, 0, 7, 1, 3, 0, 7, 0, 8, 0, 9, 0, 9, 1, 11, 0, 12, 0, 11, 1, 2, 0, 6, 0, 5, 0, 6, 1, 11, 0, 20, 0, 20, 0, 10, 2, 7, 0, 10, 0, 2, 0, 10, 1, 10, 0, 0, 0 )
 
 [sub_resource type="OpenSimplexNoise" id=13]
 
@@ -180,6 +144,6 @@ noise = SubResource( 13 )
 [resource]
 shader = SubResource( 1 )
 shader_param/TrailTint = Color( 0.309319, 0.238294, 0.167527, 1 )
-shader_param/Grass_Tint = Color( 0.311874, 0.48566, 0.288537, 1 )
+shader_param/Grass_Tint = Color( 0.341176, 0.505882, 0.317647, 1 )
 shader_param/BlendPower = 5.076
 shader_param/TrailTex = SubResource( 14 )

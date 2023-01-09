@@ -1,4 +1,3 @@
-tool
 extends Node
 
 onready var techTree = get_node("/root/Main/Control/TechTree")
@@ -14,7 +13,12 @@ func _process(delta):
 	#text = String(techtree.speed_mult)
 	#text = String(techtree.money_mult)
 	#text = String(techtree.coal_mult)
-	pass
+	coal_counter.text = "coal supply: %s" % int(current_coal)
+	money_counter.text = str(current_coins) + " $"
+	if current_coal < 100:
+		coal_counter.set("custom_colors/font_color", Color(1,0,0))
+	else:
+		coal_counter.set("custom_colors/font_color", Color(0,0,0))
 
 
 func _ready():

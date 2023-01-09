@@ -346,6 +346,21 @@ margin_bottom = -5.0
 theme = ExtResource( 42 )
 text = "Tech"
 
+[node name="ShowHelpButton" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -192.0
+margin_top = -72.0
+margin_right = -126.0
+margin_bottom = -6.0
+texture_normal = ExtResource( 49 )
+texture_pressed = ExtResource( 49 )
+texture_hover = ExtResource( 49 )
+texture_disabled = ExtResource( 49 )
+texture_focused = ExtResource( 49 )
+
 [node name="HelpPanel" type="Panel" parent="."]
 visible = false
 anchor_right = 1.0
@@ -475,25 +490,10 @@ margin_bottom = 577.0
 theme = ExtResource( 42 )
 text = "Close"
 
-[node name="ShowHelpButton" type="TextureButton" parent="."]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -192.0
-margin_top = -72.0
-margin_right = -126.0
-margin_bottom = -6.0
-texture_normal = ExtResource( 49 )
-texture_pressed = ExtResource( 49 )
-texture_hover = ExtResource( 49 )
-texture_disabled = ExtResource( 49 )
-texture_focused = ExtResource( 49 )
-
 [connection signal="tween_completed" from="Player/Camera/UICollectables/UiMoveToCountersTween" to="Player/Camera/UICollectables" method="_on_UiMoveToCountersTween_tween_completed"]
 [connection signal="finished" from="BackgroundMusic" to="BackgroundMusic" method="_on_BackgroundMusic_finished"]
 [connection signal="toggled" from="SoundOnOffButton" to="SoundOnOffButton" method="_on_SoundOnOffButton_toggled"]
 [connection signal="pressed" from="LostOverlay/RestartGameButton" to="." method="_on_RestartGameButton_pressed"]
 [connection signal="pressed" from="WinningOverlay/RestartGameButton" to="." method="_on_RestartGameButton_pressed"]
-[connection signal="pressed" from="HelpPanel/CloseHelpButton" to="." method="_on_CloseHelpButton_pressed"]
 [connection signal="pressed" from="ShowHelpButton" to="." method="_on_ShowHelpButton_pressed"]
+[connection signal="pressed" from="HelpPanel/CloseHelpButton" to="." method="_on_CloseHelpButton_pressed"]

@@ -101,7 +101,8 @@ script = ExtResource( 2 )
 speed = 20.0
 rot_speed = 1.0
 angle_range_ctrl = 1.2
-coal_consumption = 1.0
+coal_consumption = 1.7
+coal_start_stock = 3000
 
 [node name="bagger" parent="Player" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.61675 )
@@ -366,7 +367,6 @@ texture_disabled = ExtResource( 49 )
 texture_focused = ExtResource( 49 )
 
 [node name="HelpPanel" type="Panel" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_styles/panel = ExtResource( 43 )
@@ -510,10 +510,13 @@ custom_fonts/font = ExtResource( 27 )
 text = "Full screen on/off"
 
 [node name="CloseHelpButton" type="Button" parent="HelpPanel"]
-margin_left = 872.0
-margin_top = 480.0
-margin_right = 990.0
-margin_bottom = 577.0
+anchor_left = 0.852
+anchor_top = 0.8
+anchor_right = 0.967
+anchor_bottom = 0.962
+margin_left = -0.448059
+margin_right = -0.208069
+margin_bottom = -0.200073
 theme = ExtResource( 42 )
 text = "Close"
 

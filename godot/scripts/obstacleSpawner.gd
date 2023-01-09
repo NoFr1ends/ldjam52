@@ -15,6 +15,7 @@ export (float) var coal_count_down_start = 3.0
 #onready var runner = get_node("/root/Main/Player/ObstacleSpawner")
 onready var obstacleContainer = get_node("/root/Main/RunnerLogic/ObstacleContainer")
 onready var obstacleList = get_node("/root/Main/ObstacleList")
+onready var player = get_node("/root/Main/Player")
 
 var count_down = 0.0
 var typeList
@@ -54,7 +55,7 @@ func spawn_element(fixed_type = -1):
 	
 
 func _process(delta):
-	count_down -= delta
+	count_down -= delta * player.get_speed() / player.speed
 	coal_count_down -= delta
 	if coal_count_down < 0.0:
 		count_down += 1.7

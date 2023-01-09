@@ -37,11 +37,14 @@ var elapsed := .0
 
 var super_speed = false
 
+func get_speed():
+	return speed * techTree.speed_mult * (2 if super_speed else 1)
+
 func _process(delta):
 	var money_mult = techTree.money_mult * (2 if super_speed else 1)
 	var coal_mult = techTree.coal_mult * (2 if super_speed else 1)
 	
-	translate(Vector3.FORWARD * delta* speed * techTree.speed_mult * (2 if super_speed else 1))
+	translate(Vector3.FORWARD * delta* get_speed())
 	var shovelPos = ctrl_shovel.global_translation
 	var baggerPos = base_excavator.global_translation
 	for container in obstacle_containter.get_children():

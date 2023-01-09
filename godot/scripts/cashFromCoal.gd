@@ -17,14 +17,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Bookkeeping.current_coins > coal_cost:
+	if Bookkeeping.current_coins > coal_cost && Bookkeeping.current_coal > -coal_amount:
 		disabled = false
 	else:
 		disabled = true
 
 
 func _on_CashFromCoal_pressed():
-	if Bookkeeping.current_coins > coal_cost:
+	if Bookkeeping.current_coins > coal_cost && Bookkeeping.current_coal > -coal_amount:
 		Bookkeeping.current_coal += coal_amount
 		Bookkeeping.current_coins -= coal_cost
 	
@@ -32,4 +32,7 @@ func _on_CashFromCoal_pressed():
 
 func _on_CashFromCoal_mouse_entered():
 	var techtree = get_node("%TechTree")
-	techtree.get_node("Panel/Description").text = "Buy %s coal for cash to refuel the machine" % coal_amount
+	if coal_amount > 0:
+		techtree.get_node("Panel/Description").text = "Buy %s coal for %s$ to refuel the machine" % [coal_amount, coal_cost]
+	else:
+		techtree.get_node("Panel/Description").text = "Sell %s coal for %s$ to please the stakeholders" % [-coal_amount, -coal_cost]

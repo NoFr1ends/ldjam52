@@ -12,7 +12,7 @@ export var minVertexDistance = 10.0
 export (Array, Vector3) var positions
 export var baggerTranformPath : NodePath
 var baggerNode : Spatial
-
+onready var techtree = get_node("/root/Main/Control/TechTree")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if not Engine.editor_hint:
@@ -21,7 +21,6 @@ func _ready():
 		baggerNode = get_node("/root/Main/Player/bagger/ctrl_base/ctrl_rotate/ctrl_height/ctrl_dig_pos")
 		if baggerNode != null:
 			print("node found")
-		
 	set_process(true)
 
 func addQuad(a : Vector3,b : Vector3,c : Vector3,d : Vector3,
@@ -66,6 +65,9 @@ func _process(delta):
 			else:
 				positions[positions.size()-1] = newPos
 	
+	var w = width
+	if techtree != null:
+		w = width * techtree.size_mult
 	# Clean up before drawing.
 	clear()
 
@@ -78,33 +80,33 @@ func _process(delta):
 		var pos2 = positions[i+1]
 		addQuad(
 			pos1 + Vector3( groundSize , 0,0),
-			pos1 + Vector3( width      , 0,0),
-			pos2 + Vector3( width      , 0,0),
+			pos1 + Vector3( w         , 0,0),
+			pos2 + Vector3( w          , 0,0),
 			pos2 + Vector3( groundSize , 0,0),
 			colGround, colGround, colGround, colGround)
 		addQuad(
-			pos1 + Vector3( width      , 0,0),
-			pos1 + Vector3( width * 0.8, -depth,0),
-			pos2 + Vector3( width * 0.8, -depth,0),
-			pos2 + Vector3( width      , 0,0),
+			pos1 + Vector3( w          , 0,0),
+			pos1 + Vector3( w     * 0.8, -depth,0),
+			pos2 + Vector3( w     * 0.8, -depth,0),
+			pos2 + Vector3( w          , 0,0),
 			colGround, colTrail, colTrail, colGround)
 		addQuad(
-			pos1 + Vector3(-width       , 0,0),
+			pos1 + Vector3(-w           , 0,0),
 			pos1 + Vector3(- groundSize , 0,0),
 			pos2 + Vector3(- groundSize , 0,0),
-			pos2 + Vector3(-width       , 0,0),
+			pos2 + Vector3(-w           , 0,0),
 			colGround, colGround, colGround, colGround)
 		addQuad(
-			pos1 + Vector3( -width * 0.8, -depth,0),
-			pos1 + Vector3( -width      , 0,0),
-			pos2 + Vector3( -width      , 0,0),
-			pos2 + Vector3( -width * 0.8, -depth,0),
+			pos1 + Vector3( -w     * 0.8, -depth,0),
+			pos1 + Vector3( -w          , 0,0),
+			pos2 + Vector3( -w          , 0,0),
+			pos2 + Vector3( -w     * 0.8, -depth,0),
 			colTrail, colGround, colGround, colTrail)
 		addQuad(
-			pos1 + Vector3( width * 0.8, -depth,0),
-			pos1 + Vector3(-width * 0.8, -depth,0),
-			pos2 + Vector3(-width * 0.8, -depth,0),
-			pos2 + Vector3( width * 0.8, -depth,0),
+			pos1 + Vector3( w     * 0.8, -depth,0),
+			pos1 + Vector3(-w     * 0.8, -depth,0),
+			pos2 + Vector3(-w     * 0.8, -depth,0),
+			pos2 + Vector3( w     * 0.8, -depth,0),
 			colTrail, colTrail, colTrail, colTrail)
 	var pos = positions[positions.size()-1]
 	addQuad(

@@ -9,6 +9,7 @@ extends Node
 var speed_mult  = 1.0
 var money_mult  = 1.0
 var coal_mult   = 1.0
+var size_mult   = 1.0
 var mesh_parts  = {}
 
 var data = {
@@ -94,6 +95,7 @@ var data = {
 		"depends_on"  : [],
 		"cost"        : 0,
 		"coal_mult"   : 1.0,
+		"size_mult"   : 1.0,
 		"unlocked"    : true,
 		"mesh_parts"  : {
 			"att_shovel" : "_02",
@@ -106,6 +108,7 @@ var data = {
 		"depends_on"  : ["shovel_lvl1"],
 		"cost"        : 100,
 		"coal_mult"   : 1.2,
+		"size_mult"   : 1.0,
 		"unlocked"    : false,
 		"mesh_parts"  : {
 			"att_shovel" : "_02",
@@ -118,6 +121,7 @@ var data = {
 		"depends_on"  : ["shovel_lvl2"],
 		"cost"        : 300,
 		"coal_mult"   : 1.5,
+		"size_mult"   : 1.0,
 		"unlocked"    : false,
 		"mesh_parts"  : {
 			"att_shovel" : "_03",
@@ -130,6 +134,7 @@ var data = {
 		"depends_on"  : ["shovel_lvl3", "body_lvl3"],
 		"cost"        : 600,
 		"coal_mult"   : 3.0,
+		"size_mult"   : 2.0,
 		"unlocked"    : false,
 		"mesh_parts"  : {
 			"att_shovel" : "_04",
@@ -142,6 +147,7 @@ var data = {
 		"depends_on"  : ["shovel_lvl4"],
 		"cost"        : 1000,
 		"coal_mult"   : 4.0,
+		"size_mult"   : 3.0,
 		"unlocked"    : false,
 		"mesh_parts"  : {
 			"att_shovel" : "_05",
@@ -154,6 +160,7 @@ var data = {
 		"depends_on"  : ["shovel_lvl5"],
 		"cost"        : 1500,
 		"coal_mult"   : 5.0,
+		"size_mult"   : 4.0,
 		"unlocked"    : false,
 		"mesh_parts"  : {
 			"att_shovel" : "_06",
@@ -214,6 +221,7 @@ func unlock_entry(id : String) -> bool :
 	speed_mult = entry.get("speed_mult", speed_mult)
 	money_mult = entry.get("money_mult", money_mult)
 	coal_mult  = entry.get("coal_mult",   coal_mult)
+	size_mult  = entry.get("size_mult",   size_mult)
 	if entry.has("mesh_parts"):
 		var new_mesh_parts = entry["mesh_parts"]
 		var keys = new_mesh_parts.keys()

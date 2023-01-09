@@ -119,6 +119,7 @@ material/0 = ExtResource( 6 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.741564, 2.4666, 0.423063 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ctrl_base/ctrl_rotate/Cockpit/Licht" index="0"]
+autoplay = "RadAction"
 anims/RadAction = SubResource( 6 )
 
 [node name="Blinkenlichten" type="MeshInstance" parent="ctrl_base/ctrl_rotate/Cockpit/Licht" index="1"]
@@ -136,6 +137,7 @@ light_specular = 0.548
 [node name="Windrad" type="Spatial" parent="ctrl_base/ctrl_rotate/Cockpit/Licht" index="2"]
 
 [node name="Rad" type="Spatial" parent="ctrl_base/ctrl_rotate/Cockpit/Licht/Windrad" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.1, 0.91 )
 
 [node name="ctrl_height" parent="ctrl_base/ctrl_rotate" index="4"]
 transform = Transform( 1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -7.45058e-09, 1, -0.3 )

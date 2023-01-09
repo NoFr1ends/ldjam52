@@ -10,40 +10,40 @@
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0294287, -0.0410395, 0.0244298 )
 script = ExtResource( 2 )
 radius = 3.0
-coal_value = 75.0
+coal_value = 35.0
 explosion = ExtResource( 3 )
 
 [node name="coal_rock1glb2" parent="." instance=ExtResource( 1 )]
 transform = Transform( -1.2372, 0, 0.79821, 0, 1.47235, 0, -0.79821, 0, -1.2372, 2.77051, -0.0410395, -4.23757 )
 script = ExtResource( 2 )
 radius = 3.0
-coal_value = 75.0
+coal_value = 50.0
 explosion = ExtResource( 3 )
 
 [node name="coal_rock1glb3" parent="." instance=ExtResource( 1 )]
 transform = Transform( -1.61857, 0, -1.26757, 0, 2.05585, 0, 1.26757, 0, -1.61857, 6.70988, -0.0410395, 1.33563 )
 script = ExtResource( 2 )
 radius = 3.0
-coal_value = 75.0
+coal_value = 90.0
 explosion = ExtResource( 3 )
 
 [node name="coal_rock1glb4" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0294287, -0.0410395, 0.0244298 )
+transform = Transform( 0.754783, 0, -1.13815, 0, 1.36568, 0, 1.13815, 0, 0.754783, 3.92839, -0.0410395, 6.29025 )
 script = ExtResource( 2 )
 radius = 3.0
-coal_value = 75.0
+coal_value = 65.0
 explosion = ExtResource( 3 )
 
 [node name="coal_rock1glb5" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1.03065, 0, -1.18722, 0, 1.57217, 0, 1.18722, 0, 1.03065, -3.68967, -0.0410395, -4.3376 )
 script = ExtResource( 2 )
 radius = 3.0
-coal_value = 75.0
+coal_value = 80.0
 explosion = ExtResource( 3 )
 
 [node name="coal_rock1glb6" parent="." instance=ExtResource( 1 )]
 transform = Transform( -0.086711, 0, 1.45565, 0, 1, 0, -1.45565, 0, -0.086711, -3.44797, -0.0410395, 3.23647 )
 script = ExtResource( 2 )
 radius = 3.0
-coal_value = 75.0
+coal_value = 60.0
 explosion = ExtResource( 3 )

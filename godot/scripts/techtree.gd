@@ -11,6 +11,7 @@ var money_mult  = 1.0
 var coal_mult   = 1.0
 var size_mult   = 1.0
 var mesh_parts  = {}
+var open_button : Node
 
 var data = {
 	"wheels_lvl1" : {
@@ -241,10 +242,6 @@ func unlock_entry(id : String) -> bool :
 		var main = get_node("/root/Main")
 		main.win()
 	return true
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
 func refresh_unlockables():
 	$Panel/Body_Lvl1.refresh_all()

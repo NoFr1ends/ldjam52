@@ -7,7 +7,7 @@ onready var coal_counter = get_node("/root/Main/Coal")
 onready var money_counter = get_node("/root/Main/Money")
 
 var current_coins = 0
-var current_coal = 0
+var current_coal = 0.0
 
 
 func _process(delta):
@@ -28,9 +28,9 @@ func add_coins(sum : int):
 	money_counter.text = str(current_coins) + " $"
 
 
-func add_coal(amount : int):
-	current_coal += int(amount * (techTree.coal_mult if amount > 0 else 1.0))
-	coal_counter.text = "coal supply: %s" % current_coal
+func add_coal(amount : float):
+	current_coal += float(amount * (techTree.coal_mult if amount > 0 else 1.0))
+	coal_counter.text = "coal supply: %s" % int(current_coal)
 	if current_coal < 100:
 		coal_counter.set("custom_colors/font_color", Color(1,0,0))
 	else:

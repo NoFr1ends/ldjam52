@@ -69,7 +69,7 @@ func _process(delta):
 				obj.explode(false)
 		
 	elapsed += delta
-	Bookkeeping.add_coal(-coal_consumption * (3 if super_speed else 1))
+	Bookkeeping.add_coal(-coal_consumption * (3 if super_speed else 1) * delta * 30)
 	
 	if Bookkeeping.current_coal <= 0:
 		# lost

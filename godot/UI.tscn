@@ -36,9 +36,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Panel" type="Panel" parent="TechTree/Panel"]
-anchor_left = 0.149414
+anchor_left = 0.108398
 anchor_top = 0.69
-anchor_right = 0.506836
+anchor_right = 0.46582
 anchor_bottom = 0.703333
 rect_pivot_offset = Vector2( 192, 8 )
 custom_styles/panel = SubResource( 7 )
@@ -47,9 +47,9 @@ __meta__ = {
 }
 
 [node name="Panel4" type="Panel" parent="TechTree/Panel"]
-anchor_left = 0.571289
+anchor_left = 0.530273
 anchor_top = 0.69
-anchor_right = 0.814453
+anchor_right = 0.901367
 anchor_bottom = 0.703333
 rect_pivot_offset = Vector2( 192, 8 )
 custom_styles/panel = SubResource( 7 )
@@ -58,9 +58,9 @@ __meta__ = {
 }
 
 [node name="Panel6" type="Panel" parent="TechTree/Panel"]
-anchor_left = 0.157227
+anchor_left = 0.116211
 anchor_top = 0.17
-anchor_right = 0.540039
+anchor_right = 0.499023
 anchor_bottom = 0.183333
 rect_pivot_offset = Vector2( 192, 8 )
 custom_styles/panel = SubResource( 7 )
@@ -69,9 +69,9 @@ __meta__ = {
 }
 
 [node name="Panel2" type="Panel" parent="TechTree/Panel"]
-anchor_left = 0.149414
+anchor_left = 0.108398
 anchor_top = 0.423333
-anchor_right = 0.515625
+anchor_right = 0.474609
 anchor_bottom = 0.436667
 margin_top = -1.52588e-05
 rect_pivot_offset = Vector2( 38, 4 )
@@ -81,9 +81,9 @@ __meta__ = {
 }
 
 [node name="Panel3" type="Panel" parent="TechTree/Panel"]
-anchor_left = 0.155273
+anchor_left = 0.114257
 anchor_top = 0.223333
-anchor_right = 0.163086
+anchor_right = 0.12207
 anchor_bottom = 0.681667
 rect_pivot_offset = Vector2( 38, 4 )
 custom_styles/panel = SubResource( 7 )
@@ -92,9 +92,9 @@ __meta__ = {
 }
 
 [node name="Panel5" type="Panel" parent="TechTree/Panel"]
-anchor_left = 0.577148
+anchor_left = 0.536132
 anchor_top = 0.223333
-anchor_right = 0.584961
+anchor_right = 0.543945
 anchor_bottom = 0.681667
 rect_pivot_offset = Vector2( 38, 4 )
 custom_styles/panel = SubResource( 7 )
@@ -103,9 +103,9 @@ __meta__ = {
 }
 
 [node name="Shovel_Lvl1" parent="TechTree/Panel" instance=ExtResource( 1 )]
-anchor_left = 0.0625
+anchor_left = 0.0214844
 anchor_top = 0.653333
-anchor_right = 0.179688
+anchor_right = 0.138672
 anchor_bottom = 0.853333
 margin_top = 3.05176e-05
 margin_right = 0.0
@@ -122,9 +122,9 @@ myTexture = ExtResource( 2 )
 id = "shovel_lvl1"
 
 [node name="Shovel_Lvl2" parent="TechTree/Panel" instance=ExtResource( 1 )]
-anchor_left = 0.199219
+anchor_left = 0.158203
 anchor_top = 0.653333
-anchor_right = 0.316406
+anchor_right = 0.275391
 anchor_bottom = 0.853333
 margin_top = 3.05176e-05
 margin_right = 0.0
@@ -139,9 +139,9 @@ myTexture = ExtResource( 2 )
 id = "shovel_lvl2"
 
 [node name="Shovel_Lvl3" parent="TechTree/Panel" instance=ExtResource( 1 )]
-anchor_left = 0.335938
+anchor_left = 0.294922
 anchor_top = 0.653333
-anchor_right = 0.453125
+anchor_right = 0.41211
 anchor_bottom = 0.853333
 margin_top = 3.05176e-05
 margin_right = 0.0
@@ -156,9 +156,9 @@ myTexture = ExtResource( 2 )
 id = "shovel_lvl3"
 
 [node name="Shovel_Lvl4" parent="TechTree/Panel" instance=ExtResource( 1 )]
-anchor_left = 0.484375
+anchor_left = 0.443359
 anchor_top = 0.653333
-anchor_right = 0.601562
+anchor_right = 0.560547
 anchor_bottom = 0.853333
 margin_top = 3.05176e-05
 margin_right = 0.0
@@ -175,9 +175,9 @@ myTexture = ExtResource( 2 )
 id = "shovel_lvl4"
 
 [node name="Shovel_Lvl5" parent="TechTree/Panel" instance=ExtResource( 1 )]
-anchor_left = 0.621094
+anchor_left = 0.580078
 anchor_top = 0.653333
-anchor_right = 0.738281
+anchor_right = 0.697266
 anchor_bottom = 0.853333
 margin_top = 3.05176e-05
 margin_right = 0.0
@@ -192,9 +192,9 @@ myTexture = ExtResource( 2 )
 id = "shovel_lvl5"
 
 [node name="Shovel_Lvl6" parent="TechTree/Panel" instance=ExtResource( 1 )]
-anchor_left = 0.757812
+anchor_left = 0.716796
 anchor_top = 0.653333
-anchor_right = 0.875
+anchor_right = 0.833984
 anchor_bottom = 0.853333
 margin_top = 3.05176e-05
 margin_right = 0.0
@@ -208,10 +208,27 @@ techtree_id = "shovel_lvl6"
 myTexture = ExtResource( 2 )
 id = "shovel_lvl6"
 
+[node name="Shovel_Lvl7" parent="TechTree/Panel" instance=ExtResource( 1 )]
+anchor_left = 0.862305
+anchor_top = 0.653333
+anchor_right = 0.979493
+anchor_bottom = 0.853333
+margin_top = 3.05176e-05
+margin_right = 0.0
+margin_bottom = 0.0
+rect_pivot_offset = Vector2( 74, 27 )
+disabled = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+techtree_id = "win"
+myTexture = ExtResource( 2 )
+id = "win"
+
 [node name="Body_Lvl1" parent="TechTree/Panel" instance=ExtResource( 1 )]
-anchor_left = 0.0625
+anchor_left = 0.0214844
 anchor_top = 0.386667
-anchor_right = 0.179688
+anchor_right = 0.138672
 anchor_bottom = 0.586667
 margin_right = 0.0
 margin_bottom = 0.0
@@ -227,9 +244,9 @@ myTexture = ExtResource( 4 )
 id = "body_lvl1"
 
 [node name="Body_Lvl2" parent="TechTree/Panel" instance=ExtResource( 1 )]
-anchor_left = 0.199219
+anchor_left = 0.158203
 anchor_top = 0.386667
-anchor_right = 0.316406
+anchor_right = 0.275391
 anchor_bottom = 0.586667
 margin_right = 0.0
 margin_bottom = 0.0
@@ -243,9 +260,9 @@ myTexture = ExtResource( 4 )
 id = "body_lvl2"
 
 [node name="Body_Lvl3" parent="TechTree/Panel" instance=ExtResource( 1 )]
-anchor_left = 0.484375
+anchor_left = 0.443359
 anchor_top = 0.386667
-anchor_right = 0.601562
+anchor_right = 0.560547
 anchor_bottom = 0.586667
 margin_right = 0.0
 margin_bottom = 0.0
@@ -259,9 +276,9 @@ myTexture = ExtResource( 4 )
 id = "body_lvl3"
 
 [node name="Wheels_Lvl1" parent="TechTree/Panel" instance=ExtResource( 1 )]
-anchor_left = 0.0625
+anchor_left = 0.0214844
 anchor_top = 0.12
-anchor_right = 0.179688
+anchor_right = 0.138672
 anchor_bottom = 0.32
 margin_right = 0.0
 margin_bottom = 0.0
@@ -277,9 +294,9 @@ myTexture = ExtResource( 3 )
 id = "wheels_lvl1"
 
 [node name="Wheels_Lvl2" parent="TechTree/Panel" instance=ExtResource( 1 )]
-anchor_left = 0.199219
+anchor_left = 0.158203
 anchor_top = 0.12
-anchor_right = 0.316406
+anchor_right = 0.275391
 anchor_bottom = 0.32
 margin_right = 0.0
 margin_bottom = 0.0
@@ -293,9 +310,9 @@ myTexture = ExtResource( 3 )
 id = "wheels_lvl2"
 
 [node name="Wheels_Lvl3" parent="TechTree/Panel" instance=ExtResource( 1 )]
-anchor_left = 0.484375
+anchor_left = 0.443359
 anchor_top = 0.12
-anchor_right = 0.601562
+anchor_right = 0.560547
 anchor_bottom = 0.32
 margin_right = 0.0
 margin_bottom = 0.0

@@ -28,3 +28,12 @@ func _on_RestartGameButton_pressed():
 	
 	get_tree().reload_current_scene()
 	emit_signal("restart")
+
+
+func _on_CloseHelpButton_pressed():
+	$HelpPanel.visible = false
+
+
+func _on_ShowHelpButton_pressed():
+	$HelpPanel.visible = true
+	

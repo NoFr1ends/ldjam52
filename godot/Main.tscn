@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://meshes/bagger.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/excavator.gd" type="Script" id=2]
@@ -42,6 +42,7 @@
 [ext_resource path="res://scripts/scenerySpawner.gd" type="Script" id=40]
 [ext_resource path="res://MountainRange.tscn" type="PackedScene" id=41]
 [ext_resource path="res://ui/theme.tres" type="Theme" id=42]
+[ext_resource path="res://Sun.gd" type="Script" id=43]
 
 [sub_resource type="SphereMesh" id=20]
 
@@ -166,8 +167,18 @@ positions = [ Vector3( 0, 0, 60 ), Vector3( 0, 0, 0 ) ]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 shape = SubResource( 19 )
 
-[node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 0.696176, 0.285388, -0.658705, 0, 0.917581, 0.397548, 0.717871, -0.276764, 0.638798, -13.292, 8.96145, -9.27802 )
+[node name="SunMoon" type="Spatial" parent="."]
+transform = Transform( 0.24397, 0, -0.969783, 0, 1, 0, 0.969783, 0, 0.24397, -13.292, 8.96145, -9.27802 )
+script = ExtResource( 43 )
+
+[node name="Moon" type="DirectionalLight" parent="SunMoon"]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0 )
+light_color = Color( 0.188235, 0.341176, 0.427451, 1 )
+light_energy = 0.4
+shadow_enabled = true
+
+[node name="Sun" type="DirectionalLight" parent="SunMoon"]
+transform = Transform( 1, 1.49012e-08, -2.98023e-08, 0, 1, 0, 0, -1.49012e-08, 1, 0, 0, 0 )
 shadow_enabled = true
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="."]

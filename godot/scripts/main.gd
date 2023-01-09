@@ -6,15 +6,17 @@ extends Spatial
 # var b = "text"
 
 signal restart
-
+var time = 0.25
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	connect("restart", Bookkeeping, "restart")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	time += delta * 0.02
+	if time > 1:
+		time -= 1
 
 
 func win():

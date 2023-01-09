@@ -29,6 +29,9 @@
 offene Bugs / Feature Requests:
 - [ ] nach Neustart geht Tech Tree nur noch per TAB-Taste auf (??)
 - [ ] Mausbedienung Bagger -> würde auch mobile ermöglichen
+- [ ] Kamerawechsel hat anfangs einen unnötigen Tastendruck
+- [ ] im Build macht Leertaste per UI-Fokus auch 2. Aktion (Tech Tree öffnen)
+- [ ] Beenden-Button?
 
 
 wilde Ideen:

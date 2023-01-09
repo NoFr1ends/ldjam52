@@ -50,7 +50,7 @@ func _process(delta):
 			if obstPos.z > camera.global_translation.z:
 				obj.queue_free()
 				continue
-			if (obstPos - shovelPos).length() < (obj.radius + radius_wheel):
+			if (obstPos - shovelPos).length() < (obj.radius + radius_wheel * techTree.size_mult):
 				obj.explode(true)
 				emit_signal("explosion")
 				if obj.value > 0: 

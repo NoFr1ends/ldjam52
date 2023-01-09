@@ -22,6 +22,13 @@ func _ready():
 	#print_debug(techTree.get_entry_name("test"))
 
 
+func restart():
+	print_debug("restart called in bookkeeping")
+	techTree = get_node("/root/Main/Control/TechTree")
+	coal_counter = get_node("/root/Main/Coal")
+	money_counter = get_node("/root/Main/Money")
+	current_coal = get_node("/root/Main/Player").coal_start_stock
+	current_coins = 0
 
 func add_coins(sum : int):
 	current_coins += int(sum * (techTree.money_mult if sum > 0 else 1.0))

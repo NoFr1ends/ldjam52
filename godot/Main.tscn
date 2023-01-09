@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://meshes/bagger.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/excavator.gd" type="Script" id=2]
@@ -37,6 +37,7 @@
 [ext_resource path="res://WindFarm2.tscn" type="PackedScene" id=35]
 [ext_resource path="res://scripts/main.gd" type="Script" id=36]
 [ext_resource path="res://ui/font/Jaapokki-Regular_Font.otf" type="DynamicFontData" id=37]
+[ext_resource path="res://CoalRocks.tscn" type="PackedScene" id=38]
 [ext_resource path="res://nodes/WorldEnvironment.tres" type="Environment" id=39]
 
 [sub_resource type="SphereMesh" id=20]
@@ -86,7 +87,7 @@ script = ExtResource( 2 )
 speed = 20.0
 rot_speed = 1.0
 angle_range_ctrl = 1.2
-coal_income = 2.0
+coal_consumption = 1.0
 
 [node name="bagger" parent="Player" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.61675 )
@@ -114,7 +115,7 @@ duration = 1.4
 
 [node name="UiMoveToCountersTween" type="Tween" parent="Player/Camera/UICollectables"]
 
-[node name="DebugCamera" type="Camera" parent="Player"]
+[node name="SideViewCamera" type="Camera" parent="Player"]
 transform = Transform( 0.575034, 0, 0.81813, 0, 1, 0, -0.81813, 0, 0.575034, 21.4933, 4.69412, 0 )
 script = ExtResource( 29 )
 
@@ -174,11 +175,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, -49 )
 [node name="Coal" type="Label" parent="."]
 margin_left = 9.0
 margin_top = 15.0
-margin_right = 115.0
+margin_right = 250.0
 margin_bottom = 52.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 27 )
-text = "0"
+text = "coal supply: 0"
 
 [node name="Money" type="Label" parent="."]
 anchor_left = 1.0
@@ -221,16 +222,21 @@ script = ExtResource( 28 )
 [node name="Villages" type="Node" parent="ObstacleList"]
 script = ExtResource( 30 )
 scenes = [ ExtResource( 31 ), ExtResource( 4 ), ExtResource( 6 ) ]
-likelihood = 0.2
+likelihood = 0.1
 
 [node name="Forests" type="Node" parent="ObstacleList"]
 script = ExtResource( 30 )
 scenes = [ ExtResource( 32 ), ExtResource( 7 ), ExtResource( 34 ) ]
-likelihood = 0.5
+likelihood = 0.4
 
 [node name="WindFarms" type="Node" parent="ObstacleList"]
 script = ExtResource( 30 )
 scenes = [ ExtResource( 33 ), ExtResource( 35 ) ]
+likelihood = 0.2
+
+[node name="CoalRock" type="Node" parent="ObstacleList"]
+script = ExtResource( 30 )
+scenes = [ ExtResource( 38 ) ]
 likelihood = 0.3
 
 [node name="PausedOverlay" type="Panel" parent="."]

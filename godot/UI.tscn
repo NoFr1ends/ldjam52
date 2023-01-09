@@ -30,195 +30,284 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Panel" type="Panel" parent="TechTree/Panel"]
-margin_left = 153.0
-margin_top = 414.0
-margin_right = 519.0
-margin_bottom = 422.0
+anchor_left = 0.149414
+anchor_top = 0.69
+anchor_right = 0.506836
+anchor_bottom = 0.703333
 rect_pivot_offset = Vector2( 192, 8 )
 custom_styles/panel = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="Panel4" type="Panel" parent="TechTree/Panel"]
-margin_left = 585.0
-margin_top = 414.0
-margin_right = 834.0
-margin_bottom = 422.0
+anchor_left = 0.571289
+anchor_top = 0.69
+anchor_right = 0.814453
+anchor_bottom = 0.703333
 rect_pivot_offset = Vector2( 192, 8 )
 custom_styles/panel = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="Panel6" type="Panel" parent="TechTree/Panel"]
-margin_left = 161.0
-margin_top = 102.0
-margin_right = 553.0
-margin_bottom = 110.0
+anchor_left = 0.157227
+anchor_top = 0.17
+anchor_right = 0.540039
+anchor_bottom = 0.183333
 rect_pivot_offset = Vector2( 192, 8 )
 custom_styles/panel = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="Panel2" type="Panel" parent="TechTree/Panel"]
-margin_left = 153.0
-margin_top = 254.0
-margin_right = 528.0
-margin_bottom = 262.0
+anchor_left = 0.149414
+anchor_top = 0.423333
+anchor_right = 0.515625
+anchor_bottom = 0.436667
+margin_top = -1.52588e-05
 rect_pivot_offset = Vector2( 38, 4 )
 custom_styles/panel = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="Panel3" type="Panel" parent="TechTree/Panel"]
-margin_left = 159.0
-margin_top = 134.0
-margin_right = 167.0
-margin_bottom = 409.0
+anchor_left = 0.155273
+anchor_top = 0.223333
+anchor_right = 0.163086
+anchor_bottom = 0.681667
 rect_pivot_offset = Vector2( 38, 4 )
 custom_styles/panel = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="Panel5" type="Panel" parent="TechTree/Panel"]
-margin_left = 591.0
-margin_top = 134.0
-margin_right = 599.0
-margin_bottom = 409.0
+anchor_left = 0.577148
+anchor_top = 0.223333
+anchor_right = 0.584961
+anchor_bottom = 0.681667
 rect_pivot_offset = Vector2( 38, 4 )
 custom_styles/panel = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="Shovel_Lvl1" parent="TechTree/Panel" instance=ExtResource( 1 )]
-margin_left = 64.0
-margin_top = 392.0
-margin_right = 184.0
-margin_bottom = 512.0
+anchor_left = 0.0625
+anchor_top = 0.653333
+anchor_right = 0.179688
+anchor_bottom = 0.853333
+margin_top = 3.05176e-05
+margin_right = 0.0
+margin_bottom = 0.0
 rect_pivot_offset = Vector2( 74, 27 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
 disabled = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
 techtree_id = "shovel_lvl1"
 myTexture = ExtResource( 2 )
 id = "shovel_lvl1"
 
 [node name="Shovel_Lvl2" parent="TechTree/Panel" instance=ExtResource( 1 )]
-margin_left = 204.0
-margin_top = 392.0
-margin_right = 324.0
-margin_bottom = 512.0
+anchor_left = 0.199219
+anchor_top = 0.653333
+anchor_right = 0.316406
+anchor_bottom = 0.853333
+margin_top = 3.05176e-05
+margin_right = 0.0
+margin_bottom = 0.0
 rect_pivot_offset = Vector2( 75, 114 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 techtree_id = "shovel_lvl2"
 myTexture = ExtResource( 2 )
 id = "shovel_lvl2"
 
 [node name="Shovel_Lvl3" parent="TechTree/Panel" instance=ExtResource( 1 )]
-margin_left = 344.0
-margin_top = 392.0
-margin_right = 464.0
-margin_bottom = 512.0
+anchor_left = 0.335938
+anchor_top = 0.653333
+anchor_right = 0.453125
+anchor_bottom = 0.853333
+margin_top = 3.05176e-05
+margin_right = 0.0
+margin_bottom = 0.0
 rect_pivot_offset = Vector2( 74, 27 )
 disabled = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
 techtree_id = "shovel_lvl3"
 myTexture = ExtResource( 2 )
 id = "shovel_lvl3"
 
 [node name="Shovel_Lvl4" parent="TechTree/Panel" instance=ExtResource( 1 )]
-margin_left = 496.0
-margin_top = 392.0
-margin_right = 616.0
-margin_bottom = 512.0
+anchor_left = 0.484375
+anchor_top = 0.653333
+anchor_right = 0.601562
+anchor_bottom = 0.853333
+margin_top = 3.05176e-05
+margin_right = 0.0
+margin_bottom = 0.0
 rect_pivot_offset = Vector2( 74, 27 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
 disabled = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
 techtree_id = "shovel_lvl4"
 myTexture = ExtResource( 2 )
 id = "shovel_lvl4"
 
 [node name="Shovel_Lvl5" parent="TechTree/Panel" instance=ExtResource( 1 )]
-margin_left = 636.0
-margin_top = 392.0
-margin_right = 756.0
-margin_bottom = 512.0
+anchor_left = 0.621094
+anchor_top = 0.653333
+anchor_right = 0.738281
+anchor_bottom = 0.853333
+margin_top = 3.05176e-05
+margin_right = 0.0
+margin_bottom = 0.0
 rect_pivot_offset = Vector2( 75, 114 )
 disabled = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
 techtree_id = "shovel_lvl5"
 myTexture = ExtResource( 2 )
 id = "shovel_lvl5"
 
 [node name="Shovel_Lvl6" parent="TechTree/Panel" instance=ExtResource( 1 )]
-margin_left = 776.0
-margin_top = 392.0
-margin_right = 896.0
-margin_bottom = 512.0
+anchor_left = 0.757812
+anchor_top = 0.653333
+anchor_right = 0.875
+anchor_bottom = 0.853333
+margin_top = 3.05176e-05
+margin_right = 0.0
+margin_bottom = 0.0
 rect_pivot_offset = Vector2( 74, 27 )
 disabled = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
 techtree_id = "shovel_lvl6"
 myTexture = ExtResource( 2 )
 id = "shovel_lvl6"
 
 [node name="Body_Lvl1" parent="TechTree/Panel" instance=ExtResource( 1 )]
-margin_left = 64.0
-margin_top = 232.0
-margin_right = 184.0
-margin_bottom = 352.0
+anchor_left = 0.0625
+anchor_top = 0.386667
+anchor_right = 0.179688
+anchor_bottom = 0.586667
+margin_right = 0.0
+margin_bottom = 0.0
 rect_pivot_offset = Vector2( 74, 27 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
 disabled = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
 techtree_id = "body_lvl1"
 myTexture = ExtResource( 4 )
 id = "body_lvl1"
 
 [node name="Body_Lvl2" parent="TechTree/Panel" instance=ExtResource( 1 )]
-margin_left = 204.0
-margin_top = 232.0
-margin_right = 324.0
-margin_bottom = 352.0
+anchor_left = 0.199219
+anchor_top = 0.386667
+anchor_right = 0.316406
+anchor_bottom = 0.586667
+margin_right = 0.0
+margin_bottom = 0.0
 rect_pivot_offset = Vector2( 75, 114 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 techtree_id = "body_lvl2"
 myTexture = ExtResource( 4 )
 id = "body_lvl2"
 
 [node name="Body_Lvl3" parent="TechTree/Panel" instance=ExtResource( 1 )]
-margin_left = 496.0
-margin_top = 232.0
-margin_right = 616.0
-margin_bottom = 352.0
+anchor_left = 0.484375
+anchor_top = 0.386667
+anchor_right = 0.601562
+anchor_bottom = 0.586667
+margin_right = 0.0
+margin_bottom = 0.0
 rect_pivot_offset = Vector2( 75, 114 )
 disabled = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
 techtree_id = "body_lvl3"
 myTexture = ExtResource( 4 )
 id = "body_lvl3"
 
 [node name="Wheels_Lvl1" parent="TechTree/Panel" instance=ExtResource( 1 )]
-margin_left = 64.0
-margin_top = 72.0
-margin_right = 184.0
-margin_bottom = 192.0
+anchor_left = 0.0625
+anchor_top = 0.12
+anchor_right = 0.179688
+anchor_bottom = 0.32
+margin_right = 0.0
+margin_bottom = 0.0
 rect_pivot_offset = Vector2( 74, 27 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
 disabled = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
 techtree_id = "wheels_lvl1"
 myTexture = ExtResource( 3 )
 id = "wheels_lvl1"
 
 [node name="Wheels_Lvl2" parent="TechTree/Panel" instance=ExtResource( 1 )]
-margin_left = 204.0
-margin_top = 72.0
-margin_right = 324.0
-margin_bottom = 192.0
+anchor_left = 0.199219
+anchor_top = 0.12
+anchor_right = 0.316406
+anchor_bottom = 0.32
+margin_right = 0.0
+margin_bottom = 0.0
 rect_pivot_offset = Vector2( 75, 114 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 techtree_id = "wheels_lvl2"
 myTexture = ExtResource( 3 )
 id = "wheels_lvl2"
 
 [node name="Wheels_Lvl3" parent="TechTree/Panel" instance=ExtResource( 1 )]
-margin_left = 496.0
-margin_top = 72.0
-margin_right = 616.0
-margin_bottom = 192.0
+anchor_left = 0.484375
+anchor_top = 0.12
+anchor_right = 0.601562
+anchor_bottom = 0.32
+margin_right = 0.0
+margin_bottom = 0.0
 rect_pivot_offset = Vector2( 75, 114 )
 disabled = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
 techtree_id = "wheels_lvl3"
 myTexture = ExtResource( 3 )
 id = "wheels_lvl3"
 
 [node name="Label" type="Label" parent="TechTree/Panel"]
-margin_left = 747.0
-margin_top = 77.0
-margin_right = 876.0
-margin_bottom = 127.0
+visible = false
+anchor_left = 0.729492
+anchor_top = 0.128333
+anchor_right = 0.855469
+anchor_bottom = 0.211667
 theme = ExtResource( 7 )
 text = "Test"
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": true
+}

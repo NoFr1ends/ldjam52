@@ -1,5 +1,7 @@
 extends Spatial
 
+signal explosion
+
 export(float) var speed = 2.0
 export(float) var rot_speed = 5.0
 
@@ -8,7 +10,9 @@ export(float) var angle_range_steer = 10 * PI / 180.0
 
 export(float) var radius_wheel = 4.5
 export(float) var radius_bagger = 6.8
-export(float) var coal_income  = 10
+export(float) var coal_consumption  = 10
+
+export (int) var coal_start_stock = 1000
 
 onready var base_excavator = $bagger/ctrl_base/ctrl_rotate
 onready var obstacle_containter = get_node("/root/Main/RunnerLogic/ObstacleContainer")
@@ -26,16 +30,18 @@ onready var sound_on_off_button = get_node("/root/Main/SoundOnOffButton")
 
 onready var techTree = get_node("/root/Main/Control/TechTree")
 
-
+var rng = RandomNumberGenerator.new()
 
 var sound_timeout_ct = 0
 var elapsed := .0
 
+var super_speed = false
+
 func _process(delta):
-	var money_mult = techTree.money_mult
-	var coal_mult = techTree.coal_mult
+	var money_mult = techTree.money_mult * (2 if super_speed else 1)
+	var coal_mult = techTree.coal_mult * (2 if super_speed else 1)
 	
-	translate(Vector3.FORWARD * delta* speed * techTree.speed_mult)
+	translate(Vector3.FORWARD * delta* speed * techTree.speed_mult * (2 if super_speed else 1))
 	var shovelPos = ctrl_shovel.global_translation
 	var baggerPos = base_excavator.global_translation
 	for container in obstacle_containter.get_children():
@@ -46,25 +52,36 @@ func _process(delta):
 				continue
 			if (obstPos - shovelPos).length() < (obj.radius + radius_wheel):
 				obj.explode(true)
-				
+				emit_signal("explosion")
 				if obj.value > 0: 
 					ui_collectables.instantiate(obj.global_translation, ui_collectables.coin, obj.value)
 				else:
 					Bookkeeping.add_coins(obj.value)
+				if obj.coal_value > 0:
+					Bookkeeping.add_coal(obj.coal_value)
+					ui_collectables.instantiate(shovelPos, ui_collectables.coal)
+					if sound_on_off_button.pressed: 
+						if !coal_sound.playing:
+							coal_sound.pitch_scale = rng.randf_range(.8,1.2)
+							coal_sound.play()
+					
 			if (obstPos - base_excavator.global_translation).length() < radius_bagger + obj.radius:
 				obj.explode(false)
 		
 	elapsed += delta
-	if elapsed > .2 - log(coal_mult)*.1:
-		Bookkeeping.add_coal(coal_income)
-		ui_collectables.instantiate(shovelPos, ui_collectables.coal)
-		sound_timeout_ct += 1
-		if sound_timeout_ct % 2 == 0:
-			if sound_on_off_button.pressed: 
-				if !coal_sound.playing:
-					coal_sound.play()
-			
-		elapsed = 0
+	Bookkeeping.add_coal(-coal_consumption * (3 if super_speed else 1))
+	
+#	if elapsed > .2 - log(coal_mult)*.1:
+#		Bookkeeping.add_coal(coal_income)
+#		ui_collectables.instantiate(shovelPos, ui_collectables.coal)
+#		sound_timeout_ct += 1
+#		if sound_timeout_ct % 2 == 0:
+#			if sound_on_off_button.pressed: 
+#				if !coal_sound.playing:
+#					coal_sound.pitch_scale = rng.randf_range(.8,1.2)
+#					coal_sound.play()
+#
+#		elapsed = 0
 
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_right"):
@@ -73,6 +90,10 @@ func _physics_process(delta):
 		base_excavator.rotation.y += delta * rot_speed
 	base_excavator.rotation.y = clamp(base_excavator.rotation.y, -angle_range_ctrl, angle_range_ctrl)
 
+	if Input.is_action_just_pressed("speed"):
+		super_speed = true
+	elif Input.is_action_just_released("speed"):
+		super_speed = false
 
 	#if Input.is_action_pressed("turn_right"):
 	#	rotation.y -= delta * rot_speed
@@ -102,3 +123,8 @@ func update_body():
 				part.show()
 			else:
 				part.hide()
+
+
+func _ready():
+	rng.randomize()
+	Bookkeeping.current_coal = coal_start_stock

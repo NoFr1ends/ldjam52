@@ -47,9 +47,10 @@ visible = false
 transform = Transform( 0.142857, 0, 0, 0, 0.142857, 0, 0, 0, 0.142857, 0.0296534, 0.428571, -0.0119151 )
 
 [node name="CockpitCam" type="Camera" parent="ctrl_base/ctrl_rotate" index="0"]
-transform = Transform( 1, 0, 0, 0, 0.956214, 0.292673, 0, -0.292673, 0.956214, -0.0081244, 3.73124, -1.8639 )
+transform = Transform( 1, 0, 0, 0, 0.956214, 0.292673, 0, -0.292673, 0.956214, -0.00812441, 5.71027, -3.54194 )
 script = ExtResource( 11 )
 ampFactorDrive = 0.02
+ampFactorShake = 0.1
 
 [node name="att_back_01" parent="ctrl_base/ctrl_rotate" index="1"]
 material/0 = ExtResource( 9 )

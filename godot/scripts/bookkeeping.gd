@@ -30,7 +30,7 @@ func add_coins(sum : int):
 
 func add_coal(amount : int):
 	current_coal += int(amount * (techTree.coal_mult if amount > 0 else 1.0))
-	coal_counter.text = str(current_coal)
+	coal_counter.text = "coal supply: %s" % current_coal
 
 
 func can_afford(coin_cost : int) -> bool:

@@ -5,6 +5,7 @@ signal collected
 
 export (float) var radius
 export(float) var value
+export (float) var coal_value = 0
 export (PackedScene) var explosion
 
 func _ready():

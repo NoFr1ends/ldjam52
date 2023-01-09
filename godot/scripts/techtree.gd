@@ -27,7 +27,7 @@ var data = {
 	"wheels_lvl2" : {
 		"name"        : "Wheels Level 2",
 		"name_short"  : "LVL 2",
-		"description" : "Bagger goes faster",
+		"description" : "Bagger goes even faster",
 		"depends_on"  : ["wheels_lvl1"],
 		"cost"        : 100,
 		"speed_mult"  : 1.5,

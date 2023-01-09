@@ -20,6 +20,14 @@ func _ready():
 	connect("pressed", self, "_pressed")
 	_findByClass(get_tree().root, allButtons)
 
+
+func _input(event):
+	#if event is InputEventMouse and get_rect() event as InputEventMouse).position:
+	#	print_debug("mouse hovering over %s" % id)
+	#	var techtree = get_node("%TechTree")
+	#	techtree.get_node("Panel/Description").text = techtree.data[id]["description"]
+	pass
+
 func set_id(value):
 	id = value
 	_refresh()
@@ -73,3 +81,8 @@ func _findByClass(node: Node, result : Array) -> void:
 	for child in node.get_children():
 		_findByClass(child, result)
 
+
+
+func _on_Button_mouse_entered():
+	var techtree = get_node("%TechTree")
+	techtree.get_node("Panel/Description").text = techtree.data[id]["description"]

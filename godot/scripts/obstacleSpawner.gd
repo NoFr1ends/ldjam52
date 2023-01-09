@@ -57,7 +57,7 @@ func _process(delta):
 	count_down -= delta
 	coal_count_down -= delta
 	if coal_count_down < 0.0:
-		count_down += .7
+		count_down += 1.7
 		spawn_element(3)
 		coal_count_down = coal_count_down_start
 		

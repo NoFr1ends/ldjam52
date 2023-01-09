@@ -37,67 +37,79 @@ anchor_bottom = 1.0
 
 [node name="Panel" type="Panel" parent="TechTree/Panel"]
 anchor_left = 0.108398
-anchor_top = 0.69
-anchor_right = 0.46582
-anchor_bottom = 0.703333
-margin_top = -49.0
-margin_bottom = -49.0
+anchor_top = 0.608
+anchor_right = 0.466
+anchor_bottom = 0.622
+margin_top = 0.199982
+margin_right = -0.184326
+margin_bottom = -0.200195
 rect_pivot_offset = Vector2( 192, 8 )
 custom_styles/panel = SubResource( 7 )
 
 [node name="Panel4" type="Panel" parent="TechTree/Panel"]
-anchor_left = 0.530273
-anchor_top = 0.69
-anchor_right = 0.901367
-anchor_bottom = 0.703333
-margin_left = 0.000427246
-margin_top = -49.0
-margin_right = -101.0
-margin_bottom = -48.9998
+anchor_left = 0.53
+anchor_top = 0.608
+anchor_right = 0.803
+anchor_bottom = 0.615
+margin_left = 0.279968
+margin_top = 0.199982
+margin_right = -0.272034
+margin_bottom = 4.0
 rect_pivot_offset = Vector2( 211, 8 )
 custom_styles/panel = SubResource( 7 )
 
 [node name="Panel6" type="Panel" parent="TechTree/Panel"]
 anchor_left = 0.116211
-anchor_top = 0.17
-anchor_right = 0.499023
-anchor_bottom = 0.183333
-margin_top = -49.0
-margin_bottom = -49.0
+anchor_top = 0.088
+anchor_right = 0.499
+anchor_bottom = 0.102
+margin_top = 0.199997
+margin_right = 0.0235291
+margin_bottom = -0.200211
 rect_pivot_offset = Vector2( 192, 8 )
 custom_styles/panel = SubResource( 7 )
 
 [node name="Panel2" type="Panel" parent="TechTree/Panel"]
-anchor_left = 0.108398
-anchor_top = 0.423333
-anchor_right = 0.474609
-anchor_bottom = 0.436667
-margin_top = -49.0
-margin_bottom = -49.0
+anchor_left = 0.108
+anchor_top = 0.342
+anchor_right = 0.475
+anchor_bottom = 0.355
+margin_left = 0.407547
+margin_top = -0.200256
+margin_right = -0.400421
+margin_bottom = 0.000152588
 rect_pivot_offset = Vector2( 38, 4 )
 custom_styles/panel = SubResource( 7 )
 
 [node name="Panel3" type="Panel" parent="TechTree/Panel"]
-anchor_left = 0.114257
-anchor_top = 0.223333
-anchor_right = 0.12207
-anchor_bottom = 0.681667
-margin_top = -49.0
-margin_bottom = -49.0
+anchor_left = 0.118
+anchor_top = 0.142
+anchor_right = 0.118
+anchor_bottom = 0.6
+margin_left = -3.83284
+margin_top = -0.200203
+margin_right = 4.16767
+margin_bottom = 0.000183105
 rect_pivot_offset = Vector2( 38, 4 )
 custom_styles/panel = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="Panel7" type="Panel" parent="TechTree/Panel"]
-anchor_left = 0.114257
-anchor_top = 0.223333
-anchor_right = 0.12207
-anchor_bottom = 0.681667
-margin_left = 530.001
-margin_top = -679.0
-margin_right = 530.0
-margin_bottom = -836.0
+anchor_left = 0.816
+anchor_top = 0.32
+anchor_right = 0.826
+anchor_bottom = 0.738
+margin_left = 0.415955
+margin_top = -1.52588e-05
+margin_right = 0.175964
+margin_bottom = 0.199982
 rect_pivot_offset = Vector2( 38, 4 )
 custom_styles/panel = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="Panel5" type="Panel" parent="TechTree/Panel"]
 anchor_left = 0.536132
@@ -108,15 +120,18 @@ margin_top = -49.0
 margin_bottom = -49.0
 rect_pivot_offset = Vector2( 38, 4 )
 custom_styles/panel = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="Shovel_Lvl1" parent="TechTree/Panel" instance=ExtResource( 1 )]
 anchor_left = 0.0214844
-anchor_top = 0.653333
-anchor_right = 0.138672
-anchor_bottom = 0.853333
-margin_top = -49.0
-margin_right = 0.0
-margin_bottom = -48.9999
+anchor_top = 0.572
+anchor_right = 0.139
+anchor_bottom = 0.772
+margin_top = -0.200165
+margin_right = -0.335892
+margin_bottom = -0.200165
 rect_pivot_offset = Vector2( 74, 27 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -127,12 +142,12 @@ id = "shovel_lvl1"
 
 [node name="Shovel_Lvl2" parent="TechTree/Panel" instance=ExtResource( 1 )]
 anchor_left = 0.158203
-anchor_top = 0.653333
-anchor_right = 0.275391
-anchor_bottom = 0.853333
-margin_top = -49.0
-margin_right = 0.0
-margin_bottom = -48.9999
+anchor_top = 0.572
+anchor_right = 0.275
+anchor_bottom = 0.772
+margin_top = -0.200165
+margin_right = 0.400391
+margin_bottom = -0.200165
 rect_pivot_offset = Vector2( 75, 114 )
 disabled = true
 techtree_id = "shovel_lvl2"
@@ -141,12 +156,12 @@ id = "shovel_lvl2"
 
 [node name="Shovel_Lvl3" parent="TechTree/Panel" instance=ExtResource( 1 )]
 anchor_left = 0.294922
-anchor_top = 0.653333
-anchor_right = 0.41211
-anchor_bottom = 0.853333
-margin_top = -49.0
-margin_right = 0.0
-margin_bottom = -48.9999
+anchor_top = 0.572
+anchor_right = 0.412
+anchor_bottom = 0.772
+margin_top = -0.200165
+margin_right = 0.11261
+margin_bottom = -0.200165
 rect_pivot_offset = Vector2( 74, 27 )
 disabled = true
 techtree_id = "shovel_lvl3"
@@ -155,12 +170,12 @@ id = "shovel_lvl3"
 
 [node name="Shovel_Lvl4" parent="TechTree/Panel" instance=ExtResource( 1 )]
 anchor_left = 0.443359
-anchor_top = 0.653333
-anchor_right = 0.560547
-anchor_bottom = 0.853333
-margin_top = -49.0
-margin_right = 0.0
-margin_bottom = -48.9999
+anchor_top = 0.572
+anchor_right = 0.561
+anchor_bottom = 0.772
+margin_top = -0.200165
+margin_right = -0.463928
+margin_bottom = -0.200165
 rect_pivot_offset = Vector2( 74, 27 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -170,13 +185,14 @@ myTexture = ExtResource( 2 )
 id = "shovel_lvl4"
 
 [node name="Shovel_Lvl5" parent="TechTree/Panel" instance=ExtResource( 1 )]
-anchor_left = 0.580078
-anchor_top = 0.653333
-anchor_right = 0.697266
-anchor_bottom = 0.853333
-margin_top = -49.0
-margin_right = 0.0
-margin_bottom = -48.9999
+anchor_left = 0.58
+anchor_top = 0.572
+anchor_right = 0.697
+anchor_bottom = 0.772
+margin_left = 0.079834
+margin_top = -0.200165
+margin_right = 0.272339
+margin_bottom = -0.200165
 rect_pivot_offset = Vector2( 75, 114 )
 disabled = true
 techtree_id = "shovel_lvl5"
@@ -184,13 +200,14 @@ myTexture = ExtResource( 2 )
 id = "shovel_lvl5"
 
 [node name="Shovel_Lvl6" parent="TechTree/Panel" instance=ExtResource( 1 )]
-anchor_left = 0.716796
-anchor_top = 0.653333
-anchor_right = 0.833984
-anchor_bottom = 0.853333
-margin_top = -49.0
-margin_right = 0.0
-margin_bottom = -48.9999
+anchor_left = 0.717
+anchor_top = 0.572
+anchor_right = 0.834
+anchor_bottom = 0.772
+margin_left = -0.208923
+margin_top = -0.200165
+margin_right = -0.0164185
+margin_bottom = -0.200165
 rect_pivot_offset = Vector2( 74, 27 )
 disabled = true
 techtree_id = "shovel_lvl6"
@@ -198,14 +215,14 @@ myTexture = ExtResource( 2 )
 id = "shovel_lvl6"
 
 [node name="Shovel_Lvl7" parent="TechTree/Panel" instance=ExtResource( 1 )]
-anchor_left = 0.862305
-anchor_top = 0.653333
-anchor_right = 0.979493
-anchor_bottom = 0.853333
-margin_left = -149.0
-margin_top = -211.0
-margin_right = -149.0
-margin_bottom = -211.0
+anchor_left = 0.717
+anchor_top = 0.302
+anchor_right = 0.834
+anchor_bottom = 0.5
+margin_left = -0.208069
+margin_top = -0.199982
+margin_right = -0.015564
+margin_bottom = 1.00003
 rect_pivot_offset = Vector2( 74, 27 )
 disabled = true
 __meta__ = {
@@ -246,13 +263,14 @@ myTexture = ExtResource( 4 )
 id = "body_lvl2"
 
 [node name="Body_Lvl3" parent="TechTree/Panel" instance=ExtResource( 1 )]
-anchor_left = 0.443359
-anchor_top = 0.386667
-anchor_right = 0.560547
-anchor_bottom = 0.586667
-margin_top = -49.0
-margin_right = 0.0
-margin_bottom = -49.0
+anchor_left = 0.443
+anchor_top = 0.305
+anchor_right = 0.561
+anchor_bottom = 0.505
+margin_left = 0.367584
+margin_top = 0.000213623
+margin_right = -0.463928
+margin_bottom = 0.000213623
 rect_pivot_offset = Vector2( 75, 114 )
 disabled = true
 techtree_id = "body_lvl3"
@@ -260,13 +278,14 @@ myTexture = ExtResource( 4 )
 id = "body_lvl3"
 
 [node name="Wheels_Lvl1" parent="TechTree/Panel" instance=ExtResource( 1 )]
-anchor_left = 0.0214844
-anchor_top = 0.12
-anchor_right = 0.138672
-anchor_bottom = 0.32
-margin_top = -49.0
-margin_right = 0.0
-margin_bottom = -49.0
+anchor_left = 0.021
+anchor_top = 0.038
+anchor_right = 0.139
+anchor_bottom = 0.238
+margin_left = 0.496023
+margin_top = 0.199999
+margin_right = -0.335892
+margin_bottom = 0.199997
 rect_pivot_offset = Vector2( 74, 27 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -276,13 +295,14 @@ myTexture = ExtResource( 3 )
 id = "wheels_lvl1"
 
 [node name="Wheels_Lvl2" parent="TechTree/Panel" instance=ExtResource( 1 )]
-anchor_left = 0.158203
-anchor_top = 0.12
-anchor_right = 0.275391
-anchor_bottom = 0.32
-margin_top = -49.0
-margin_right = 0.0
-margin_bottom = -49.0
+anchor_left = 0.158
+anchor_top = 0.038
+anchor_right = 0.275
+anchor_bottom = 0.238
+margin_left = 0.20787
+margin_top = 0.199999
+margin_right = 0.400391
+margin_bottom = 0.199997
 rect_pivot_offset = Vector2( 75, 114 )
 disabled = true
 techtree_id = "wheels_lvl2"
@@ -290,13 +310,14 @@ myTexture = ExtResource( 3 )
 id = "wheels_lvl2"
 
 [node name="Wheels_Lvl3" parent="TechTree/Panel" instance=ExtResource( 1 )]
-anchor_left = 0.443359
-anchor_top = 0.12
-anchor_right = 0.560547
-anchor_bottom = 0.32
-margin_top = -49.0
-margin_right = 0.0
-margin_bottom = -49.0
+anchor_left = 0.443
+anchor_top = 0.038
+anchor_right = 0.561
+anchor_bottom = 0.238
+margin_left = 0.367584
+margin_top = 0.199999
+margin_right = -0.463928
+margin_bottom = 0.199997
 rect_pivot_offset = Vector2( 75, 114 )
 disabled = true
 techtree_id = "wheels_lvl3"
@@ -317,10 +338,12 @@ autowrap = true
 script = ExtResource( 6 )
 
 [node name="CashFromCoal" type="Button" parent="TechTree/Panel"]
-margin_left = 878.0
-margin_top = 183.0
-margin_right = 998.0
-margin_bottom = 303.0
+anchor_left = 0.857
+anchor_top = 0.305
+anchor_right = 0.975
+anchor_bottom = 0.505
+margin_left = 0.431946
+margin_right = -0.400024
 rect_min_size = Vector2( 120, 120 )
 rect_pivot_offset = Vector2( 133, 146 )
 theme = ExtResource( 7 )
@@ -329,12 +352,13 @@ regularTheme = ExtResource( 7 )
 unlockedTheme = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="TechTree/Panel/CashFromCoal"]
-anchor_top = 1.0
-anchor_right = 1.0
+anchor_left = 0.083
+anchor_top = 0.667
+anchor_right = 0.917
 anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = -40.0
-margin_right = -10.0
+margin_left = 0.039999
+margin_top = -0.0400085
+margin_right = -0.0400085
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "REFUEL"
 align = 1
@@ -342,11 +366,10 @@ valign = 1
 clip_text = true
 
 [node name="Label2" type="Label" parent="TechTree/Panel/CashFromCoal"]
-anchor_top = 1.0
+anchor_top = 0.025
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 9.0
-margin_top = -117.0
 margin_right = -11.0
 margin_bottom = -7.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -365,12 +388,12 @@ expand = true
 stretch_mode = 7
 
 [node name="Cost" type="Label" parent="TechTree/Panel/CashFromCoal"]
+anchor_left = 0.167
 anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 20.0
-margin_right = -20.0
-margin_bottom = 42.0
+anchor_right = 0.833
+anchor_bottom = 1.35
+margin_left = -0.0400009
+margin_right = 0.0399933
 custom_colors/font_color = Color( 0.945098, 0.74902, 0.0588235, 1 )
 text = "100$"
 align = 1
@@ -378,10 +401,14 @@ valign = 1
 clip_text = true
 
 [node name="Sell" type="Button" parent="TechTree/Panel"]
-margin_left = 878.0
-margin_top = 346.0
-margin_right = 998.0
-margin_bottom = 466.0
+anchor_left = 0.857
+anchor_top = 0.577
+anchor_right = 0.975
+anchor_bottom = 0.777
+margin_left = 0.431946
+margin_top = -0.200012
+margin_right = -0.400024
+margin_bottom = -0.200012
 rect_min_size = Vector2( 120, 120 )
 rect_pivot_offset = Vector2( 133, 146 )
 theme = ExtResource( 7 )
@@ -392,12 +419,13 @@ regularTheme = ExtResource( 7 )
 unlockedTheme = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="TechTree/Panel/Sell"]
-anchor_top = 1.0
-anchor_right = 1.0
+anchor_left = 0.083
+anchor_top = 0.667
+anchor_right = 0.917
 anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = -40.0
-margin_right = -10.0
+margin_left = 0.039999
+margin_top = -0.0400085
+margin_right = -0.0400085
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "SELL"
 align = 1
@@ -405,13 +433,12 @@ valign = 1
 clip_text = true
 
 [node name="Label2" type="Label" parent="TechTree/Panel/Sell"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 9.0
-margin_top = -117.0
-margin_right = -11.0
-margin_bottom = -7.0
+anchor_left = 0.075
+anchor_top = 0.025
+anchor_right = 0.908
+anchor_bottom = 0.942
+margin_right = 0.0399933
+margin_bottom = -0.0400009
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 8 )
 text = "$"
@@ -428,12 +455,12 @@ expand = true
 stretch_mode = 7
 
 [node name="Cost" type="Label" parent="TechTree/Panel/Sell"]
+anchor_left = 0.167
 anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 20.0
-margin_right = -20.0
-margin_bottom = 42.0
+anchor_right = 0.833
+anchor_bottom = 1.35
+margin_left = -0.0400009
+margin_right = 0.0399933
 custom_colors/font_color = Color( 0.945098, 0.74902, 0.0588235, 1 )
 text = "-50$"
 align = 1

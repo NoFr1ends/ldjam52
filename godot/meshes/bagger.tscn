@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://meshes/bagger.glb" type="PackedScene" id=1]
 [ext_resource path="res://scripts/wiggle.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://materials/brown_01.tres" type="Material" id=9]
 [ext_resource path="res://materials/metal_01.tres" type="Material" id=10]
 [ext_resource path="res://scripts/cameraShake.gd" type="Script" id=11]
+[ext_resource path="res://meshes/Light.gd" type="Script" id=12]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.956863, 0.713726, 0.137255, 1 )
@@ -160,7 +161,23 @@ material/0 = ExtResource( 10 )
 [node name="Platform" parent="ctrl_base/ctrl_rotate" index="7"]
 material/0 = ExtResource( 10 )
 
+[node name="Shovellight" type="SpotLight" parent="ctrl_base/ctrl_rotate" index="8"]
+transform = Transform( 1, 0, 0, 0, 0.97774, 0.209824, 0, -0.209824, 0.97774, 3.39771, 4.75729, -13.8916 )
+light_color = Color( 0.862745, 0.984314, 1, 1 )
+light_energy = 3.085
+spot_range = 252.249
+spot_angle = 21.13
+script = ExtResource( 12 )
+
 [node name="ctrl_camera_mount" type="Spatial" parent="ctrl_base" index="5"]
+
+[node name="Headlight" type="SpotLight" parent="ctrl_base" index="6"]
+transform = Transform( 0.142857, 0, 0, 0, 0.133432, 0.0510301, 0, -0.0510301, 0.133432, -0.00571074, 1.86203, -0.987065 )
+light_color = Color( 0.878431, 1, 0.980392, 1 )
+light_energy = 3.085
+spot_range = 190.273
+spot_angle = 25.71
+script = ExtResource( 12 )
 
 [node name="WiggleComponents" type="Node" parent="." index="1"]
 script = ExtResource( 2 )

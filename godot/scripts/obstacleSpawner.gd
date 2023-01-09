@@ -8,6 +8,8 @@ export (float) var spawn_rate_max = 1.0
 export (float) var x_variation_range = 10
 export (float) var z_variation_range = 10
 
+export (float) var coal_count_down_start = 3.0
+
 
 #export (NodePath) var types
 #onready var runner = get_node("/root/Main/Player/ObstacleSpawner")
@@ -17,7 +19,7 @@ onready var obstacleList = get_node("/root/Main/ObstacleList")
 var count_down = 0.0
 var typeList
 var likelihoods = []
-
+var coal_count_down = coal_count_down_start
 
 func _ready():
 	rng.randomize()
@@ -28,14 +30,17 @@ func _ready():
 	for lh in likelihoods:
 		lh *= 1.0/sum
 
-func spawn_element():
-	var type = rng.randf()
+func spawn_element(fixed_type = -1):
 	var idx = 0
-	var lhSum = 0.0
-	while (lhSum < type):
-		lhSum += likelihoods[idx]
-		idx += 1
-	idx -= 1
+	if fixed_type == -1:
+		var type = rng.randf()
+		var lhSum = 0.0
+		while (lhSum < type):
+			lhSum += likelihoods[idx]
+			idx += 1
+		idx -= 1
+	else:
+		idx = fixed_type
 	
 	var typeHolder = obstacleList.get_child(idx)
 	var subIdx = rng.randi_range(0, typeHolder.scenes.size() - 1)
@@ -50,6 +55,12 @@ func spawn_element():
 
 func _process(delta):
 	count_down -= delta
+	coal_count_down -= delta
+	if coal_count_down < 0.0:
+		count_down += .7
+		spawn_element(3)
+		coal_count_down = coal_count_down_start
+		
 	if count_down < 0.0:
 		spawn_element()
 		

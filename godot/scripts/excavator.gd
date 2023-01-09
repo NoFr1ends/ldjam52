@@ -71,6 +71,10 @@ func _process(delta):
 	elapsed += delta
 	Bookkeeping.add_coal(-coal_consumption * (3 if super_speed else 1))
 	
+	if Bookkeeping.current_coal <= 0:
+		# lost
+		set_process(false)
+		$"../LostOverlay".visible = true
 #	if elapsed > .2 - log(coal_mult)*.1:
 #		Bookkeeping.add_coal(coal_income)
 #		ui_collectables.instantiate(shovelPos, ui_collectables.coal)
@@ -82,6 +86,7 @@ func _process(delta):
 #					coal_sound.play()
 #
 #		elapsed = 0
+
 
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_right"):

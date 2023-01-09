@@ -15,3 +15,8 @@ func _ready():
 #	pass
 
 
+
+
+func _on_RestartGameButton_pressed():
+	get_tree().call_deferred("reload_current_scene")
+

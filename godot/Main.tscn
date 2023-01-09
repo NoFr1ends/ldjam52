@@ -367,6 +367,7 @@ texture_disabled = ExtResource( 49 )
 texture_focused = ExtResource( 49 )
 
 [node name="HelpPanel" type="Panel" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_styles/panel = ExtResource( 43 )

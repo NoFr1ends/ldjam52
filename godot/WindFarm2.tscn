@@ -3,35 +3,35 @@
 [ext_resource path="res://meshes/renewables/Windrad.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/windFarm.gd" type="Script" id=2]
 
-[node name="WindFarm1" type="Spatial"]
+[node name="WindFarm1" type="Node3D"]
 script = ExtResource( 2 )
 
 [node name="Windrad" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, 4.45666, 0, 2.22833 )
+transform = Transform3D( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, 4.45666, 0, 2.22833 )
 
 [node name="Windrad2" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, -8.63865, 0, 5.62608 )
+transform = Transform3D( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, -8.63865, 0, 5.62608 )
 
 [node name="Windrad3" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, 8.30112, 0, 15.3111 )
+transform = Transform3D( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, 8.30112, 0, 15.3111 )
 
 [node name="Windrad4" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, -8.60094, 0, 18.6248 )
+transform = Transform3D( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, -8.60094, 0, 18.6248 )
 
 [node name="Windrad5" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, -14.6373, 0, -22.2634 )
+transform = Transform3D( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, -14.6373, 0, -22.2634 )
 
 [node name="Windrad6" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, 17.6976, 0, -1.13434 )
+transform = Transform3D( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, 17.6976, 0, -1.13434 )
 
 [node name="Windrad9" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, 13.5407, 0, -20.8544 )
+transform = Transform3D( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, 13.5407, 0, -20.8544 )
 
 [node name="Windrad7" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, -8.08274, 0, -7.73527 )
+transform = Transform3D( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, -8.08274, 0, -7.73527 )
 
 [node name="Windrad10" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, 1.97486, 0, -15.3236 )
+transform = Transform3D( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, 1.97486, 0, -15.3236 )
 
 [node name="Windrad8" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, -20.3475, 0, -2.3137 )
+transform = Transform3D( 0.617036, 0, -0.786935, 0, 1, 0, 0.786935, 0, 0.617036, -20.3475, 0, -2.3137 )

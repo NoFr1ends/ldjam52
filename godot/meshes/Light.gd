@@ -1,11 +1,11 @@
-extends SpotLight
+extends SpotLight3D
 
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
 
-onready var main = get_node("/root/Main")
+@onready var main = get_node("/root/Main")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

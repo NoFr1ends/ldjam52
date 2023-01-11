@@ -1,12 +1,12 @@
-extends Spatial
+extends Node3D
 
 signal collected
 
 
-export (float) var radius
-export(float) var value
-export (float) var coal_value = 0
-export (PackedScene) var explosion
+@export var radius: float
+@export var value: float
+@export var coal_value: float = 0
+@export var explosion: PackedScene
 
 func _ready():
 	pass # Replace with function body.
@@ -18,7 +18,7 @@ func _process(delta):
 
 func explode(successful : bool):
 	if explosion != null and successful:
-		var newExplosion = explosion.instance()
+		var newExplosion = explosion.instantiate()
 		get_node("/root/Main").add_child(newExplosion)
-		newExplosion.global_translation = global_translation
+		newExplosion.global_position = global_position
 	queue_free()

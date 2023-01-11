@@ -1,21 +1,21 @@
-extends Spatial
+extends Node3D
 
 
 var rng = RandomNumberGenerator.new()
 
-export (float) var spawn_rate_min = .1
-export (float) var spawn_rate_max = 1.0
-export (float) var x_variation_range = 10
-export (float) var z_variation_range = 10
+@export var spawn_rate_min = .1
+@export var spawn_rate_max = 1.0
+@export var x_variation_range: float = 10
+@export var z_variation_range: float = 10
 
-export (float) var coal_count_down_start = 3.0
+@export var coal_count_down_start = 3.0
 
 
 #export (NodePath) var types
 #onready var runner = get_node("/root/Main/Player/ObstacleSpawner")
-onready var obstacleContainer = get_node("/root/Main/RunnerLogic/ObstacleContainer")
-onready var obstacleList = get_node("/root/Main/ObstacleList")
-onready var player = get_node("/root/Main/Player")
+@onready var obstacleContainer = get_node("/root/Main/RunnerLogic/ObstacleContainer")
+@onready var obstacleList = get_node("/root/Main/ObstacleList")
+@onready var player = get_node("/root/Main/Player")
 
 var count_down = 0.0
 var typeList
@@ -46,16 +46,16 @@ func spawn_element(fixed_type = -1):
 	var typeHolder = obstacleList.get_child(idx)
 	var subIdx = rng.randi_range(0, typeHolder.scenes.size() - 1)
 	var spawnItem = typeHolder.scenes[subIdx]
-	var newElm = spawnItem.instance()
+	var newElm = spawnItem.instantiate()
 	obstacleContainer.add_child(newElm)
-	newElm.global_translation = self.global_translation
+	newElm.global_position = self.global_position
 	newElm.rotation.y = rng.randf_range(-PI, PI)
-	newElm.global_translation += Vector3(rand_range(-x_variation_range , x_variation_range), 0, rand_range(-z_variation_range , z_variation_range))
+	newElm.global_position += Vector3(randf_range(-x_variation_range , x_variation_range), 0, randf_range(-z_variation_range , z_variation_range))
 	
 	
 
 func _process(delta):
-	count_down -= delta * player.get_speed() / player.speed
+	count_down -= delta * player.get_velocity() / player.speed
 	coal_count_down -= delta
 	if coal_count_down < 0.0:
 		count_down += 1.7

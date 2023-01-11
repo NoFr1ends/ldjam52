@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/coal.wav-1dcc08587a0fcdf0b8b2f9c6c65daf2c.sample"
+type="AudioStreamWAV"
+uid="uid://v2fve3bwd5ju"
+path="res://.godot/imported/coal.wav-1dcc08587a0fcdf0b8b2f9c6c65daf2c.sample"
 
 [deps]
 
 source_file="res://sound/coal.wav"
-dest_files=[ "res://.import/coal.wav-1dcc08587a0fcdf0b8b2f9c6c65daf2c.sample" ]
+dest_files=["res://.godot/imported/coal.wav-1dcc08587a0fcdf0b8b2f9c6c65daf2c.sample"]
 
 [params]
 

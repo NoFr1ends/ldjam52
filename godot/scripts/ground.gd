@@ -1,10 +1,10 @@
-extends MeshInstance
+extends MeshInstance3D
 
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-onready var player  = get_node("/root/Main/Player/bagger")
+@onready var player  = get_node("/root/Main/Player/bagger")
 
 var hasSpawned := false
 
@@ -16,8 +16,8 @@ func _ready():
 
 func _process(delta):
 	if hasSpawned: return	
-	var pPos = player.global_translation
-	var myPos = self.global_translation
+	var pPos = player.global_position
+	var myPos = self.global_position
 	var myScale = self.scale
 	
 	# achtung: Plane-scale-y ist 3D-z
@@ -26,9 +26,9 @@ func _process(delta):
 		var shift = Vector3(-myScale.x,0,-myScale.y)
 		
 		for i in range(3):
-			var newGround = get_parent().ground.instance()
+			var newGround = get_parent().ground.instantiate()
 			get_parent().add_child(newGround)
-			newGround.global_translation = global_translation + shift
+			newGround.global_position = global_position + shift
 			shift += Vector3(myScale.x,0,0)
 			
 		print_debug("spawned new ground elements")

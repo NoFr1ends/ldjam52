@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/grind_short2.wav-5eed56ff85b18630268c766522083933.sample"
+type="AudioStreamWAV"
+uid="uid://dpn3rqxkowpwq"
+path="res://.godot/imported/grind_short2.wav-5eed56ff85b18630268c766522083933.sample"
 
 [deps]
 
 source_file="res://sound/grind_short2.wav"
-dest_files=[ "res://.import/grind_short2.wav-5eed56ff85b18630268c766522083933.sample" ]
+dest_files=["res://.godot/imported/grind_short2.wav-5eed56ff85b18630268c766522083933.sample"]
 
 [params]
 

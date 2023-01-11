@@ -1,4 +1,4 @@
-extends Spatial
+extends Node3D
 
 var cameraList = []
 
@@ -6,12 +6,12 @@ var camIdx = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	findByClass(get_tree().root, "Camera", cameraList)
+	findByClass(get_tree().root, "Camera3D", cameraList)
 	#for entry in cameraList:
 	#	print_debug("camera: %s" % entry.name)
 
 func _input(event):
-	if event is InputEventKey and event.pressed and event.scancode == KEY_SPACE:
+	if event is InputEventKey and event.pressed and event.keycode == KEY_SPACE:
 		camIdx += 1
 		if camIdx >= cameraList.size(): camIdx = 0
 		print_debug("camIdx: %s "% camIdx)

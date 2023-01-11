@@ -1,7 +1,7 @@
-extends Spatial
+extends Node3D
 
 
-export (PackedScene) var ground
+@export var ground: PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

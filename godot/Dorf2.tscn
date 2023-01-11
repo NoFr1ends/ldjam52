@@ -9,64 +9,64 @@
 [ext_resource path="res://meshes/trees/Tree_01.tscn" type="PackedScene" id=7]
 [ext_resource path="res://meshes/trees/Tree_04.tscn" type="PackedScene" id=8]
 
-[node name="Dorf2" type="Spatial"]
+[node name="Dorf2" type="Node3D"]
 
 [node name="House_01" parent="." instance=ExtResource( 1 )]
-transform = Transform( -0.238814, 0, -0.950103, 0, 1, 0, 0.727382, 0, -0.311937, 6.75218, 0, -11.7906 )
+transform = Transform3D( -0.238814, 0, -0.950103, 0, 1, 0, 0.727382, 0, -0.311937, 6.75218, 0, -11.7906 )
 
 [node name="House_09" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.763237, 0, 0.0782155, 0, 1, 0, -0.0598804, 0, 0.996937, 0.35775, -1.90735e-06, 9.37698 )
+transform = Transform3D( 0.763237, 0, 0.0782155, 0, 1, 0, -0.0598804, 0, 0.996937, 0.35775, -1.90735e-06, 9.37698 )
 
 [node name="House_10" parent="." instance=ExtResource( 1 )]
-transform = Transform( -0.00191068, 0, 0.999996, 0, 1, 0, -0.76558, 0, -0.0024957, -6.89598, -1.90735e-06, 8.84686 )
+transform = Transform3D( -0.00191068, 0, 0.999996, 0, 1, 0, -0.76558, 0, -0.0024957, -6.89598, -1.90735e-06, 8.84686 )
 
 [node name="House_02" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.614846, 0, -0.595833, 0, 1, 0, 0.456159, 0, 0.803109, -10.8443, 0, -9.16047 )
+transform = Transform3D( 0.614846, 0, -0.595833, 0, 1, 0, 0.456159, 0, 0.803109, -10.8443, 0, -9.16047 )
 
 [node name="House_03" parent="." instance=ExtResource( 3 )]
-transform = Transform( -0.223187, 0, 0.911964, 0, 0.682647, 0, -0.593842, 0, -0.342748, -4.72735, -0.0080964, -12.5734 )
+transform = Transform3D( -0.223187, 0, 0.911964, 0, 0.682647, 0, -0.593842, 0, -0.342748, -4.72735, -0.0080964, -12.5734 )
 
 [node name="Kirche" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.264857, 0, -1.66305, 0, 1.33667, 0, 0.988461, 0, 0.445614, -14.261, 1.90735e-06, -2.01458 )
+transform = Transform3D( 0.264857, 0, -1.66305, 0, 1.33667, 0, 0.988461, 0, 0.445614, -14.261, 1.90735e-06, -2.01458 )
 
 [node name="House_04" parent="." instance=ExtResource( 1 )]
-transform = Transform( -0.0297629, 0, 0.999244, 0, 1, 0, -0.765003, 0, -0.0388762, -12.2895, 0, 2.96567 )
+transform = Transform3D( -0.0297629, 0, 0.999244, 0, 1, 0, -0.765003, 0, -0.0388762, -12.2895, 0, 2.96567 )
 
 [node name="House_05" parent="." instance=ExtResource( 4 )]
-transform = Transform( -0.655308, 0, -0.517042, 0, 1, 0, 0.395838, 0, -0.855961, -11.6668, 0, 7.83483 )
+transform = Transform3D( -0.655308, 0, -0.517042, 0, 1, 0, 0.395838, 0, -0.855961, -11.6668, 0, 7.83483 )
 
 [node name="House_07" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.400653, 0, -0.852129, 0, 1, 0, 0.652375, 0, 0.523332, 5.84473, 1.90735e-06, 8.32667 )
+transform = Transform3D( 0.400653, 0, -0.852129, 0, 1, 0, 0.652375, 0, 0.523332, 5.84473, 1.90735e-06, 8.32667 )
 
 [node name="House_11" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.0104626, 0, 0.999907, 0, 1, 0, -0.765511, 0, 0.0136653, -0.843415, 1.90735e-06, -1.16621 )
+transform = Transform3D( 0.0104626, 0, 0.999907, 0, 1, 0, -0.765511, 0, 0.0136653, -0.843415, 1.90735e-06, -1.16621 )
 
 [node name="House_08" parent="." instance=ExtResource( 4 )]
-transform = Transform( -0.549162, 0.000650213, 0.696751, 0.000111754, 1, -0.000782921, -0.53342, -0.000459889, -0.717314, 2.82698, -5.72205e-06, -12.3841 )
+transform = Transform3D( -0.549162, 0.000650213, 0.696751, 0.000111754, 1, -0.000782921, -0.53342, -0.000459889, -0.717314, 2.82698, -5.72205e-06, -12.3841 )
 
 [node name="House_06" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.541918, 0, 0.506516, 0, 0.682647, 0, -0.329828, 0, 0.832223, 14.017, -0.00809449, -8 )
+transform = Transform3D( 0.541918, 0, 0.506516, 0, 0.682647, 0, -0.329828, 0, 0.832223, 14.017, -0.00809449, -8 )
 
 [node name="Tree_01" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.566723, 0, -0.823909, 0, 1, 0, 0.823909, 0, 0.566723, 0.278104, 0, -15.224 )
+transform = Transform3D( 0.566723, 0, -0.823909, 0, 1, 0, 0.823909, 0, 0.566723, 0.278104, 0, -15.224 )
 
 [node name="Tree_02" parent="." instance=ExtResource( 5 )]
-transform = Transform( 0.928395, 0, 0.371595, 0, 1, 0, -0.371595, 0, 0.928395, -16.3225, -9.53674e-07, 4.23529 )
+transform = Transform3D( 0.928395, 0, 0.371595, 0, 1, 0, -0.371595, 0, 0.928395, -16.3225, -9.53674e-07, 4.23529 )
 
 [node name="Tree_03" parent="." instance=ExtResource( 6 )]
-transform = Transform( 0.763029, 0, 0.646364, 0, 1, 0, -0.646364, 0, 0.763029, 15.1141, 9.53674e-07, -3.10715 )
+transform = Transform3D( 0.763029, 0, 0.646364, 0, 1, 0, -0.646364, 0, 0.763029, 15.1141, 9.53674e-07, -3.10715 )
 
 [node name="Tree_07" parent="." instance=ExtResource( 6 )]
-transform = Transform( 0.763029, 0, 0.646364, 0, 1, 0, -0.646364, 0, 0.763029, -3.34353, 9.53674e-07, 0.658922 )
+transform = Transform3D( 0.763029, 0, 0.646364, 0, 1, 0, -0.646364, 0, 0.763029, -3.34353, 9.53674e-07, 0.658922 )
 
 [node name="Tree_05" parent="." instance=ExtResource( 6 )]
-transform = Transform( -0.575191, 0, 0.818019, 0, 1, 0, -0.818019, 0, -0.575191, 5.41552, 9.53674e-07, -16.0614 )
+transform = Transform3D( -0.575191, 0, 0.818019, 0, 1, 0, -0.818019, 0, -0.575191, 5.41552, 9.53674e-07, -16.0614 )
 
 [node name="Tree_06" parent="." instance=ExtResource( 6 )]
-transform = Transform( 0.615524, 0, 0.788118, 0, 1, 0, -0.788118, 0, 0.615524, -8.60957, 9.53674e-07, 11.425 )
+transform = Transform3D( 0.615524, 0, 0.788118, 0, 1, 0, -0.788118, 0, 0.615524, -8.60957, 9.53674e-07, 11.425 )
 
 [node name="Tree_04" parent="." instance=ExtResource( 8 )]
-transform = Transform( 0.819162, 0, 0.573562, 0, 1, 0, -0.573562, 0, 0.819162, 6.60569, -9.53674e-07, 10.6388 )
+transform = Transform3D( 0.819162, 0, 0.573562, 0, 1, 0, -0.573562, 0, 0.819162, 6.60569, -9.53674e-07, 10.6388 )
 
 [node name="House_12" parent="." instance=ExtResource( 3 )]
-transform = Transform( -0.00596771, 0, 0.974202, 0, 0.682647, 0, -0.63437, 0, -0.00916454, 3.68484, -0.00809449, -1.794 )
+transform = Transform3D( -0.00596771, 0, 0.974202, 0, 0.682647, 0, -0.63437, 0, -0.00916454, 3.68484, -0.00809449, -1.794 )

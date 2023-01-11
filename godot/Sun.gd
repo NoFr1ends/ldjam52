@@ -1,14 +1,14 @@
-extends Spatial
+extends Node3D
 
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-onready var main = get_node("/root/Main")
+@onready var main = get_node("/root/Main")
 
-onready var sun = $Sun
-onready var moon = $Moon
-onready var world = get_node("/root/Main/WorldEnvironment")
+@onready var sun = $Sun
+@onready var moon = $Moon
+@onready var world: WorldEnvironment = get_node("/root/Main/WorldEnvironment")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,4 +22,4 @@ func _process(delta):
 	moon.rotation_degrees = Vector3(t * 360,0,0)
 	sun.visible = t < 0.5
 	moon.visible = t > 0.5
-	world.environment.background_energy = max(0,sin(t * 3.1415 * 2))
+	#world.environment.background_intensity = max(0,sin(t * 3.1415 * 2))

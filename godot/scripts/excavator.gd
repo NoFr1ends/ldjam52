@@ -1,34 +1,34 @@
-extends Spatial
+extends Node3D
 
 signal explosion
 
-export(float) var speed = 2.0
-export(float) var rot_speed = 5.0
+@export var speed: float = 2.0
+@export var rot_speed: float = 5.0
 
-export(float) var angle_range_ctrl = 15 * PI / 180.0
-export(float) var angle_range_steer = 10 * PI / 180.0
+@export var angle_range_ctrl: float = 15 * PI / 180.0
+@export var angle_range_steer: float = 10 * PI / 180.0
 
-export(float) var radius_wheel = 4.5
-export(float) var radius_bagger = 6.8
-export(float) var coal_consumption  = 10
+@export var radius_wheel: float = 4.5
+@export var radius_bagger: float = 6.8
+@export var coal_consumption: float  = 10
 
-export (int) var coal_start_stock = 1000
+@export var coal_start_stock: int = 1000
 
-onready var base_excavator = $bagger/ctrl_base/ctrl_rotate
-onready var obstacle_containter = get_node("/root/Main/RunnerLogic/ObstacleContainer")
-onready var camera = $Camera
-onready var ctrl_shovel = $bagger/ctrl_base/ctrl_rotate/ctrl_height/ctrl_shovel
+@onready var base_excavator = $bagger/ctrl_base/ctrl_rotate
+@onready var obstacle_containter = get_node("/root/Main/RunnerLogic/ObstacleContainer")
+@onready var camera = $Camera3D
+@onready var ctrl_shovel = $bagger/ctrl_base/ctrl_rotate/ctrl_height/ctrl_shovel
 
-onready var coal_counter = get_node("/root/Main/Coal")
-onready var money_counter = get_node("/root/Main/Money")
-onready var ui_collectables = get_node("/root/Main/Player/Camera/UICollectables")
+@onready var coal_counter = get_node("/root/Main/Coal")
+@onready var money_counter = get_node("/root/Main/Money")
+@onready var ui_collectables = get_node("/root/Main/Player/Camera3D/UICollectables")
 
-onready var coal_sound = get_node("/root/Main/CoalSound")
+@onready var coal_sound = get_node("/root/Main/CoalSound")
 
-onready var sound_on_off_button = get_node("/root/Main/SoundOnOffButton")
+@onready var sound_on_off_button = get_node("/root/Main/SoundOnOffButton")
 
 
-onready var techTree = get_node("/root/Main/Control/TechTree")
+@onready var techTree = get_node("/root/Main/Control/TechTree")
 
 var rng = RandomNumberGenerator.new()
 
@@ -37,27 +37,27 @@ var elapsed := .0
 
 var super_speed = false
 
-func get_speed():
+func get_velocity():
 	return speed * techTree.speed_mult * (2 if super_speed else 1)
 
 func _process(delta):
 	var money_mult = techTree.money_mult * (2 if super_speed else 1)
 	var coal_mult = techTree.coal_mult * (2 if super_speed else 1)
 	
-	translate(Vector3.FORWARD * delta* get_speed())
-	var shovelPos = ctrl_shovel.global_translation
-	var baggerPos = base_excavator.global_translation
+	translate(Vector3.FORWARD * delta* get_velocity())
+	var shovelPos = ctrl_shovel.global_position
+	var baggerPos = base_excavator.global_position
 	for container in obstacle_containter.get_children():
 		for obj in container.get_children():
-			var obstPos = obj.global_translation
-			if obstPos.z > camera.global_translation.z:
+			var obstPos = obj.global_position
+			if obstPos.z > camera.global_position.z:
 				obj.queue_free()
 				continue
 			if (obstPos - shovelPos).length() < (obj.radius + radius_wheel * techTree.size_mult):
 				obj.explode(true)
 				emit_signal("explosion")
 				if obj.value > 0: 
-					ui_collectables.instantiate(obj.global_translation, ui_collectables.coin, obj.value)
+					ui_collectables.instantiate(obj.global_position, ui_collectables.coin, obj.value)
 				else:
 					Bookkeeping.add_coins(obj.value)
 				if obj.coal_value > 0:
@@ -68,7 +68,7 @@ func _process(delta):
 							coal_sound.pitch_scale = rng.randf_range(.8,1.2)
 							coal_sound.play()
 					
-			if (obstPos - base_excavator.global_translation).length() < radius_bagger + obj.radius:
+			if (obstPos - base_excavator.global_position).length() < radius_bagger + obj.radius:
 				obj.explode(false)
 		
 	elapsed += delta

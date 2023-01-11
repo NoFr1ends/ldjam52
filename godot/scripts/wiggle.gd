@@ -4,16 +4,13 @@ extends Node
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-export (Array, NodePath) var wiggleRefs
+@export var wiggleRefs: Array[NodePath]
 var t = 0.0
 
-var noise = OpenSimplexNoise.new()
+@export var noise = FastNoiseLite.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	noise.seed = randi()
-	noise.octaves = 4
-	noise.period = 1.0
-	noise.persistence = 0.8
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

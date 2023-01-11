@@ -1,178 +1,116 @@
-[gd_resource type="ShaderMaterial" load_steps=20 format=2]
+[gd_resource type="ShaderMaterial" load_steps=20 format=3 uid="uid://brmnnhrbb3jsc"]
 
-[sub_resource type="VisualShaderNodeInput" id=10]
+[sub_resource type="VisualShaderNodeInput" id="10"]
 input_name = "color"
 
-[sub_resource type="VisualShaderNodeScalarFunc" id=11]
+[sub_resource type="VisualShaderNodeFloatFunc" id="11"]
 function = 18
 
-[sub_resource type="VisualShaderNodeInput" id=12]
+[sub_resource type="VisualShaderNodeInput" id="12"]
 input_name = "vertex"
 
-[sub_resource type="VisualShaderNodeTransformVecMult" id=13]
+[sub_resource type="VisualShaderNodeTransformVecMult" id="13"]
 
-[sub_resource type="VisualShaderNodeInput" id=14]
+[sub_resource type="VisualShaderNodeInput" id="14"]
 input_name = "world"
 
-[sub_resource type="VisualShaderNodeTextureUniform" id=15]
-uniform_name = "Gradient"
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="15"]
+parameter_name = "Gradient"
 
-[sub_resource type="VisualShaderNodeColorConstant" id=16]
-constant = Color( 0, 0, 0, 1 )
+[sub_resource type="VisualShaderNodeColorConstant" id="16"]
+constant = Color(0, 0, 0, 1)
 
-[sub_resource type="VisualShaderNodeScalarOp" id=17]
-default_input_values = [ 0, 0.0, 1, 1.0 ]
+[sub_resource type="VisualShaderNodeFloatOp" id="17"]
+default_input_values = [0, 0.0, 1, 1.0]
 operator = 2
 
-[sub_resource type="VisualShaderNodeInput" id=18]
+[sub_resource type="VisualShaderNodeInput" id="18"]
 input_name = "normal"
 
-[sub_resource type="VisualShaderNodeDotProduct" id=19]
-default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 0, 1, 0 ) ]
+[sub_resource type="VisualShaderNodeDotProduct" id="19"]
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(0, 1, 0)]
 
-[sub_resource type="VisualShaderNodeVectorDecompose" id=20]
+[sub_resource type="VisualShaderNodeVectorDecompose" id="20"]
 
-[sub_resource type="VisualShaderNodeScalarOp" id=21]
+[sub_resource type="VisualShaderNodeFloatOp" id="21"]
 operator = 3
 
-[sub_resource type="VisualShaderNodeScalarUniform" id=22]
-uniform_name = "HeightEnd2"
+[sub_resource type="VisualShaderNodeFloatParameter" id="22"]
+parameter_name = "HeightEnd2"
 
-[sub_resource type="VisualShaderNodeScalarOp" id=23]
+[sub_resource type="VisualShaderNodeFloatOp" id="23"]
 operator = 1
 
-[sub_resource type="VisualShaderNodeScalarUniform" id=24]
-uniform_name = "HeightStart2"
+[sub_resource type="VisualShaderNodeFloatParameter" id="24"]
+parameter_name = "HeightStart2"
 
-[sub_resource type="VisualShaderNodeScalarOp" id=25]
+[sub_resource type="VisualShaderNodeFloatOp" id="25"]
 operator = 1
 
-[sub_resource type="VisualShader" id=9]
+[sub_resource type="VisualShader" id="9"]
 code = "shader_type spatial;
-render_mode specular_schlick_ggx, async_visible;
-
-uniform float HeightStart2;
-uniform float HeightEnd2;
 uniform sampler2D Gradient;
 
 
 
 void vertex() {
-// Input:13
-	mat4 n_out13p0 = WORLD_MATRIX;
-
-// Input:11
-	vec3 n_out11p0 = VERTEX;
-
-// TransformVectorMult:12
-	vec3 n_out12p0 = (n_out13p0 * vec4(n_out11p0, 1.0)).xyz;
-
-// VectorDecompose:4
-	float n_out4p0 = n_out12p0.x;
-	float n_out4p1 = n_out12p0.y;
-	float n_out4p2 = n_out12p0.z;
-
-// ScalarUniform:8
-	float n_out8p0 = HeightStart2;
-
-// ScalarOp:7
-	float n_out7p0 = n_out4p1 - n_out8p0;
-
-// ScalarUniform:6
-	float n_out6p0 = HeightEnd2;
-
-// ScalarOp:9
-	float n_out9p0 = n_out6p0 - n_out8p0;
-
-// ScalarOp:5
-	float n_out5p0 = n_out7p0 / n_out9p0;
-
-// Input:2
-	vec3 n_out2p0 = NORMAL;
-
-// DotProduct:3
-	vec3 n_in3p1 = vec3(0.00000, 1.00000, 0.00000);
-	float n_out3p0 = dot(n_out2p0, n_in3p1);
-
-// ScalarOp:17
-	float n_out17p0 = n_out5p0 * n_out3p0;
-
-// ScalarFunc:10
-	float n_out10p0 = min(max(n_out17p0, 0.0), 1.0);
-
-// TextureUniform:14
-	vec3 n_out14p0;
-	float n_out14p1;
-	{
-		vec4 n_tex_read = texture(Gradient, vec3(n_out10p0).xy);
-		n_out14p0 = n_tex_read.rgb;
-		n_out14p1 = n_tex_read.a;
-	}
-
-// Output:0
-	COLOR.rgb = n_out14p0;
-
 }
 
 void fragment() {
 // Input:2
-	vec3 n_out2p0 = COLOR.rgb;
+	vec4 n_out2p0 = COLOR;
+
 
 // Output:0
-	ALBEDO = n_out2p0;
+	ALBEDO = vec3(n_out2p0.xyz);
 
-}
-
-void light() {
-// Output:0
 
 }
 "
-nodes/vertex/2/node = SubResource( 18 )
-nodes/vertex/2/position = Vector2( -900, 400 )
-nodes/vertex/3/node = SubResource( 19 )
-nodes/vertex/3/position = Vector2( -660, 480 )
-nodes/vertex/4/node = SubResource( 20 )
-nodes/vertex/4/position = Vector2( -1142.43, 194.791 )
-nodes/vertex/5/node = SubResource( 21 )
-nodes/vertex/5/position = Vector2( -722.428, 214.791 )
-nodes/vertex/6/node = SubResource( 22 )
-nodes/vertex/6/position = Vector2( -1362.43, 414.791 )
-nodes/vertex/7/node = SubResource( 23 )
-nodes/vertex/7/position = Vector2( -922.428, 214.791 )
-nodes/vertex/8/node = SubResource( 24 )
-nodes/vertex/8/position = Vector2( -1362.43, 294.791 )
-nodes/vertex/9/node = SubResource( 25 )
-nodes/vertex/9/position = Vector2( -922.428, 334.791 )
-nodes/vertex/10/node = SubResource( 11 )
-nodes/vertex/10/position = Vector2( -222.428, 314.791 )
-nodes/vertex/11/node = SubResource( 12 )
-nodes/vertex/11/position = Vector2( -1662.43, 234.791 )
-nodes/vertex/12/node = SubResource( 13 )
-nodes/vertex/12/position = Vector2( -1382.43, 174.791 )
-nodes/vertex/13/node = SubResource( 14 )
-nodes/vertex/13/position = Vector2( -1602.43, 154.791 )
-nodes/vertex/14/node = SubResource( 15 )
-nodes/vertex/14/position = Vector2( 20, 280 )
-nodes/vertex/16/node = SubResource( 16 )
-nodes/vertex/16/position = Vector2( 37.5717, 174.791 )
-nodes/vertex/17/node = SubResource( 17 )
-nodes/vertex/17/position = Vector2( -442.428, 314.791 )
-nodes/vertex/connections = PoolIntArray( 2, 0, 3, 0, 4, 1, 7, 0, 7, 0, 5, 0, 8, 0, 7, 1, 8, 0, 9, 1, 6, 0, 9, 0, 9, 0, 5, 1, 12, 0, 4, 0, 10, 0, 14, 0, 5, 0, 17, 0, 17, 0, 10, 0, 3, 0, 17, 1, 14, 0, 0, 6, 11, 0, 12, 1, 13, 0, 12, 0 )
-nodes/fragment/0/position = Vector2( 320, 160 )
-nodes/fragment/2/node = SubResource( 10 )
-nodes/fragment/2/position = Vector2( 0, 160 )
-nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0 )
+nodes/vertex/2/node = SubResource("18")
+nodes/vertex/2/position = Vector2(-900, 400)
+nodes/vertex/3/node = SubResource("19")
+nodes/vertex/3/position = Vector2(-660, 480)
+nodes/vertex/4/node = SubResource("20")
+nodes/vertex/4/position = Vector2(-1142.43, 194.791)
+nodes/vertex/5/node = SubResource("21")
+nodes/vertex/5/position = Vector2(-722.428, 214.791)
+nodes/vertex/6/node = SubResource("22")
+nodes/vertex/6/position = Vector2(-1362.43, 414.791)
+nodes/vertex/7/node = SubResource("23")
+nodes/vertex/7/position = Vector2(-922.428, 214.791)
+nodes/vertex/8/node = SubResource("24")
+nodes/vertex/8/position = Vector2(-1362.43, 294.791)
+nodes/vertex/9/node = SubResource("25")
+nodes/vertex/9/position = Vector2(-922.428, 334.791)
+nodes/vertex/10/node = SubResource("11")
+nodes/vertex/10/position = Vector2(-222.428, 314.791)
+nodes/vertex/11/node = SubResource("12")
+nodes/vertex/11/position = Vector2(-1662.43, 234.791)
+nodes/vertex/12/node = SubResource("13")
+nodes/vertex/12/position = Vector2(-1382.43, 174.791)
+nodes/vertex/13/node = SubResource("14")
+nodes/vertex/13/position = Vector2(-1602.43, 154.791)
+nodes/vertex/14/node = SubResource("15")
+nodes/vertex/14/position = Vector2(20, 280)
+nodes/vertex/16/node = SubResource("16")
+nodes/vertex/16/position = Vector2(37.5717, 174.791)
+nodes/vertex/17/node = SubResource("17")
+nodes/vertex/17/position = Vector2(-442.428, 314.791)
+nodes/vertex/connections = PackedInt32Array(2, 0, 3, 0, 4, 1, 7, 0, 7, 0, 5, 0, 8, 0, 7, 1, 8, 0, 9, 1, 6, 0, 9, 0, 9, 0, 5, 1, 12, 0, 4, 0, 5, 0, 17, 0, 17, 0, 10, 0, 3, 0, 17, 1, 14, 0, 0, 6, 11, 0, 12, 1, 13, 0, 12, 0)
+nodes/fragment/0/position = Vector2(320, 160)
+nodes/fragment/2/node = SubResource("10")
+nodes/fragment/2/position = Vector2(0, 160)
+nodes/fragment/connections = PackedInt32Array(2, 0, 0, 0)
 
-[sub_resource type="Gradient" id=26]
-offsets = PoolRealArray( 0.336842, 0.421053, 0.752632, 0.815789 )
-colors = PoolColorArray( 0.16408, 0.289063, 0.107269, 1, 0.210526, 0.210526, 0.210526, 1, 0.268421, 0.268421, 0.268421, 1, 1, 1, 1, 1 )
+[sub_resource type="Gradient" id="26"]
+offsets = PackedFloat32Array(0.336842, 0.421053, 0.752632, 0.815789)
+colors = PackedColorArray(0.16408, 0.289063, 0.107269, 1, 0.210526, 0.210526, 0.210526, 1, 0.268421, 0.268421, 0.268421, 1, 1, 1, 1, 1)
 
-[sub_resource type="GradientTexture" id=27]
-gradient = SubResource( 26 )
+[sub_resource type="GradientTexture2D" id="27"]
+gradient = SubResource("26")
 
 [resource]
-shader = SubResource( 9 )
-shader_param/HeightStart2 = null
-shader_param/HeightEnd2 = 40.0
-shader_param/Gradient = SubResource( 27 )
+render_priority = 0
+shader = SubResource("9")
+shader_parameter/Gradient = SubResource("27")

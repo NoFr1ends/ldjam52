@@ -1,4 +1,4 @@
-tool
+@tool
 extends Button
 
 
@@ -6,18 +6,18 @@ extends Button
 # var a = 2
 # var b = "text"
 
-export var techtree_id = "" setget set_id, get_id
-export var myTexture : Texture setget set_texture, get_texture
-export var regularTheme : Theme
-export var unlockedTheme : Theme
+@export var techtree_id = "" : get = get_id, set = set_id
+@export var myTexture : Texture2D : get = get_texture, set = set_texture
+@export var regularTheme : Theme
+@export var unlockedTheme : Theme
 
 var allButtons = []
 
-export var id = ""
+@export var id = ""
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_id(id)
-	connect("pressed", self, "_pressed")
+	connect("pressed",Callable(self,"_pressed"))
 	_findByClass(get_tree().root, allButtons)
 
 
@@ -54,7 +54,7 @@ func _refresh():
 		var cost = techtree.get_entry_cost(id)
 		if cost > 0 && !is_unlocked:
 			$Cost.visible = true
-			$Cost.text = String(cost) + "$"
+			$Cost.text = str(cost) + "$"
 		else:
 			$Cost.visible = false
 	else:

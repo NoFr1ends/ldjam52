@@ -1,4 +1,4 @@
-extends Spatial
+extends Node3D
 
 
 # Declare member variables here. Examples:
@@ -11,7 +11,7 @@ var time = 0.2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	connect("restart", Bookkeeping, "restart")
+	connect("restart",Callable(Bookkeeping,"restart"))
 	Bookkeeping.restart()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,6 +20,8 @@ func _process(delta):
 	#thanksoburti
 	if time > 1:
 		time -= 1
+	
+	print(time)
 
 
 func win():

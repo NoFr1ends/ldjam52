@@ -1,7 +1,7 @@
 extends AudioStreamPlayer
 
 
-export (Array, AudioStream) var musicList
+@export var musicList: Array[AudioStream]
 
 var listPos = 0
 

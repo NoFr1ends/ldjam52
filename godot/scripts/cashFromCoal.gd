@@ -4,10 +4,10 @@ extends Button
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-export (int) var coal_amount = 500 
-export (int) var coal_cost = 100 
-export var regularTheme : Theme
-export var unlockedTheme : Theme
+@export var coal_amount = 500 
+@export var coal_cost = 100 
+@export var regularTheme : Theme
+@export var unlockedTheme : Theme
 
 
 # Called when the node enters the scene tree for the first time.

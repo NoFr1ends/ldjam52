@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/grind.wav-a6da1b4b102ff63a3f46f6823690b3a5.sample"
+type="AudioStreamWAV"
+uid="uid://de86iby81g1kg"
+path="res://.godot/imported/grind.wav-a6da1b4b102ff63a3f46f6823690b3a5.sample"
 
 [deps]
 
 source_file="res://sound/grind.wav"
-dest_files=[ "res://.import/grind.wav-a6da1b4b102ff63a3f46f6823690b3a5.sample" ]
+dest_files=["res://.godot/imported/grind.wav-a6da1b4b102ff63a3f46f6823690b3a5.sample"]
 
 [params]
 

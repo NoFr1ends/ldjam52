@@ -1,9 +1,9 @@
 extends Node
 
-onready var techTree = get_node("/root/Main/Control/TechTree")
+@onready var techTree = get_node("/root/Main/Control/TechTree")
 
-onready var coal_counter = get_node("/root/Main/Coal")
-onready var money_counter = get_node("/root/Main/Money")
+@onready var coal_counter = get_node("/root/Main/Coal")
+@onready var money_counter = get_node("/root/Main/Money")
 
 var current_coins = 0
 var current_coal = 0.0

@@ -1,8 +1,8 @@
 extends CheckButton
 
 
-onready var drivingSound = get_node("/root/Main/DrivingSound")
-onready var backgroundMusic = get_node("/root/Main/BackgroundMusic")
+@onready var drivingSound = get_node("/root/Main/DrivingSound")
+@onready var backgroundMusic = get_node("/root/Main/BackgroundMusic")
 
 
 # Called when the node enters the scene tree for the first time.

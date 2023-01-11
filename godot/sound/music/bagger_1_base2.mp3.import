@@ -2,14 +2,18 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/bagger_1_base2.mp3-a8c33dba322a01c460ca9d3d08fbc999.mp3str"
+uid="uid://q7licddrdjng"
+path="res://.godot/imported/bagger_1_base2.mp3-a8c33dba322a01c460ca9d3d08fbc999.mp3str"
 
 [deps]
 
 source_file="res://sound/music/bagger_1_base2.mp3"
-dest_files=[ "res://.import/bagger_1_base2.mp3-a8c33dba322a01c460ca9d3d08fbc999.mp3str" ]
+dest_files=["res://.godot/imported/bagger_1_base2.mp3-a8c33dba322a01c460ca9d3d08fbc999.mp3str"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

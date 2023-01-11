@@ -1,354 +1,339 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=56 format=3 uid="uid://r2hk4bif2uth"]
 
-[ext_resource path="res://meshes/bagger.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scripts/excavator.gd" type="Script" id=2]
-[ext_resource path="res://scripts/camera.gd" type="Script" id=3]
-[ext_resource path="res://Dorf2.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scripts/obstacleSpawner.gd" type="Script" id=5]
-[ext_resource path="res://Dorf3.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Forest2.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Ground.tscn" type="PackedScene" id=8]
-[ext_resource path="res://nodes/Ground.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scripts/groundCollection.gd" type="Script" id=10]
-[ext_resource path="res://nodes/WorldEnvironment.tscn" type="PackedScene" id=11]
-[ext_resource path="res://scripts/uICollectables.gd" type="Script" id=12]
-[ext_resource path="res://Coal.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Coin.tscn" type="PackedScene" id=14]
-[ext_resource path="res://UI.tscn" type="PackedScene" id=15]
-[ext_resource path="res://sound/coins.wav" type="AudioStream" id=16]
-[ext_resource path="res://sound/coal.wav" type="AudioStream" id=17]
-[ext_resource path="res://sound/grind_short2.wav" type="AudioStream" id=18]
-[ext_resource path="res://scripts/backgroundMusic.gd" type="Script" id=19]
-[ext_resource path="res://sound/music/bagger_1_base.mp3" type="AudioStream" id=20]
-[ext_resource path="res://sound/music/bagger_1_base2.mp3" type="AudioStream" id=21]
-[ext_resource path="res://sound/music/bagger_1_base3.mp3" type="AudioStream" id=22]
-[ext_resource path="res://sound/music/bagger_1_rising.mp3" type="AudioStream" id=23]
-[ext_resource path="res://sound/music/bagger_1_space_epic.mp3" type="AudioStream" id=24]
-[ext_resource path="res://sound/music/bagger_1_space.mp3" type="AudioStream" id=25]
-[ext_resource path="res://scripts/soundOnOffButton.gd" type="Script" id=26]
-[ext_resource path="res://ui/font/jaapokki_regular_24.tres" type="DynamicFont" id=27]
-[ext_resource path="res://scripts/cameraManager.gd" type="Script" id=28]
-[ext_resource path="res://scripts/cameraShake.gd" type="Script" id=29]
-[ext_resource path="res://scripts/typeList.gd" type="Script" id=30]
-[ext_resource path="res://Dorf1.tscn" type="PackedScene" id=31]
-[ext_resource path="res://Forest1.tscn" type="PackedScene" id=32]
-[ext_resource path="res://WindFarm1.tscn" type="PackedScene" id=33]
-[ext_resource path="res://Forest3.tscn" type="PackedScene" id=34]
-[ext_resource path="res://WindFarm2.tscn" type="PackedScene" id=35]
-[ext_resource path="res://scripts/main.gd" type="Script" id=36]
-[ext_resource path="res://ui/font/Jaapokki-Regular_Font.otf" type="DynamicFontData" id=37]
-[ext_resource path="res://CoalRocks.tscn" type="PackedScene" id=38]
-[ext_resource path="res://nodes/WorldEnvironment.tres" type="Environment" id=39]
-[ext_resource path="res://scripts/scenerySpawner.gd" type="Script" id=40]
-[ext_resource path="res://MountainRange.tscn" type="PackedScene" id=41]
-[ext_resource path="res://ui/theme.tres" type="Theme" id=42]
-[ext_resource path="res://ui/OverlayStyle.tres" type="StyleBox" id=43]
-[ext_resource path="res://ui/textures/m_key.png" type="Texture" id=44]
-[ext_resource path="res://ui/textures/f_key.png" type="Texture" id=45]
-[ext_resource path="res://ui/textures/p_key.png" type="Texture" id=46]
-[ext_resource path="res://ui/textures/space_key.png" type="Texture" id=47]
-[ext_resource path="res://ui/textures/tab_key.png" type="Texture" id=48]
-[ext_resource path="res://ui/textures/help_key.png" type="Texture" id=49]
-[ext_resource path="res://SolarPanels2.tscn" type="PackedScene" id=50]
-[ext_resource path="res://SolarPanels1.tscn" type="PackedScene" id=51]
-[ext_resource path="res://ui/textures/shift_key.png" type="Texture" id=52]
-[ext_resource path="res://Sun.gd" type="Script" id=53]
+[ext_resource type="PackedScene" uid="uid://ccgatsxw8rvvy" path="res://meshes/bagger.tscn" id="1"]
+[ext_resource type="Script" path="res://scripts/excavator.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="3"]
+[ext_resource type="PackedScene" path="res://Dorf2.tscn" id="4"]
+[ext_resource type="Script" path="res://scripts/obstacleSpawner.gd" id="5"]
+[ext_resource type="PackedScene" path="res://Dorf3.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://Forest2.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://Ground.tscn" id="8"]
+[ext_resource type="Script" path="res://scripts/groundCollection.gd" id="10"]
+[ext_resource type="Script" path="res://scripts/uICollectables.gd" id="12"]
+[ext_resource type="PackedScene" path="res://Coal.tscn" id="13"]
+[ext_resource type="PackedScene" path="res://Coin.tscn" id="14"]
+[ext_resource type="PackedScene" path="res://UI.tscn" id="15"]
+[ext_resource type="AudioStream" uid="uid://huhmh63ijvpa" path="res://sound/coins.wav" id="16"]
+[ext_resource type="AudioStream" uid="uid://v2fve3bwd5ju" path="res://sound/coal.wav" id="17"]
+[ext_resource type="Script" path="res://scripts/trail.gd" id="17_6ua16"]
+[ext_resource type="AudioStream" uid="uid://dpn3rqxkowpwq" path="res://sound/grind_short2.wav" id="18"]
+[ext_resource type="Material" uid="uid://baolaqbfbspvw" path="res://materials/trail_mat.tres" id="18_nj7y6"]
+[ext_resource type="Script" path="res://scripts/backgroundMusic.gd" id="19"]
+[ext_resource type="AudioStream" uid="uid://do1066iy10cq5" path="res://sound/music/bagger_1_base.mp3" id="20"]
+[ext_resource type="AudioStream" uid="uid://q7licddrdjng" path="res://sound/music/bagger_1_base2.mp3" id="21"]
+[ext_resource type="AudioStream" uid="uid://b6uvr5rdmxtwq" path="res://sound/music/bagger_1_base3.mp3" id="22"]
+[ext_resource type="AudioStream" uid="uid://b3ugt2upunm2g" path="res://sound/music/bagger_1_rising.mp3" id="23"]
+[ext_resource type="AudioStream" uid="uid://i41mxdcurimc" path="res://sound/music/bagger_1_space_epic.mp3" id="24"]
+[ext_resource type="AudioStream" uid="uid://b4p5irm8skkjb" path="res://sound/music/bagger_1_space.mp3" id="25"]
+[ext_resource type="Script" path="res://scripts/soundOnOffButton.gd" id="26"]
+[ext_resource type="Script" path="res://scripts/cameraManager.gd" id="28"]
+[ext_resource type="Script" path="res://scripts/cameraShake.gd" id="29"]
+[ext_resource type="Script" path="res://scripts/typeList.gd" id="30"]
+[ext_resource type="PackedScene" path="res://Dorf1.tscn" id="31"]
+[ext_resource type="PackedScene" path="res://Forest1.tscn" id="32"]
+[ext_resource type="PackedScene" path="res://WindFarm1.tscn" id="33"]
+[ext_resource type="PackedScene" path="res://Forest3.tscn" id="34"]
+[ext_resource type="PackedScene" path="res://WindFarm2.tscn" id="35"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="36"]
+[ext_resource type="PackedScene" path="res://CoalRocks.tscn" id="38"]
+[ext_resource type="Environment" uid="uid://c752v56q5ay1o" path="res://nodes/WorldEnvironment.tres" id="39"]
+[ext_resource type="Script" path="res://scripts/scenerySpawner.gd" id="40"]
+[ext_resource type="PackedScene" path="res://MountainRange.tscn" id="41"]
+[ext_resource type="Theme" uid="uid://dm28wudonmjfd" path="res://ui/theme.tres" id="42"]
+[ext_resource type="Texture2D" uid="uid://qx5y01p0rg32" path="res://ui/textures/m_key.png" id="44"]
+[ext_resource type="Texture2D" uid="uid://dh3yc8uhokqqt" path="res://ui/textures/f_key.png" id="45"]
+[ext_resource type="Texture2D" uid="uid://lnn8e5qksg22" path="res://ui/textures/p_key.png" id="46"]
+[ext_resource type="Texture2D" uid="uid://cdx2esqwayf53" path="res://ui/textures/space_key.png" id="47"]
+[ext_resource type="Texture2D" uid="uid://7riaid3qs425" path="res://ui/textures/tab_key.png" id="48"]
+[ext_resource type="Texture2D" uid="uid://cbu6443cvck6w" path="res://ui/textures/help_key.png" id="49"]
+[ext_resource type="PackedScene" path="res://SolarPanels2.tscn" id="50"]
+[ext_resource type="PackedScene" path="res://SolarPanels1.tscn" id="51"]
+[ext_resource type="Texture2D" uid="uid://cq7koh6brt3o5" path="res://ui/textures/shift_key.png" id="52"]
+[ext_resource type="Script" path="res://Sun.gd" id="53"]
 
-[sub_resource type="SphereMesh" id=20]
+[sub_resource type="SphereMesh" id="20"]
 
-[sub_resource type="SpatialMaterial" id=21]
-albedo_color = Color( 0.921569, 0, 1, 1 )
+[sub_resource type="BoxMesh" id="15"]
 
-[sub_resource type="CubeMesh" id=15]
+[sub_resource type="SphereMesh" id="22"]
 
-[sub_resource type="SpatialMaterial" id=16]
-albedo_color = Color( 1, 0.235294, 0.235294, 1 )
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_02ied"]
 
-[sub_resource type="SphereMesh" id=22]
+[sub_resource type="BoxShape3D" id="19"]
+size = Vector3(2000, 2, 20000)
 
-[sub_resource type="SpatialMaterial" id=23]
-albedo_color = Color( 0, 1, 0.905882, 1 )
-
-[sub_resource type="BoxShape" id=19]
-extents = Vector3( 1000, 1, 10000 )
-
-[sub_resource type="DynamicFont" id=25]
-size = 96
-font_data = ExtResource( 37 )
-
-[node name="Main" type="Spatial"]
-script = ExtResource( 36 )
-__meta__ = {
-"_edit_vertical_guides_": [ 76.0, 288.0 ]
-}
+[node name="Main" type="Node3D"]
+script = ExtResource("36")
 
 [node name="CoinSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 16 )
+stream = ExtResource("16")
 volume_db = -13.983
 
 [node name="CoalSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 17 )
+stream = ExtResource("17")
 volume_db = -14.857
 
 [node name="DrivingSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 18 )
+stream = ExtResource("18")
 volume_db = -34.958
 pitch_scale = 2.04
 autoplay = true
 
-[node name="Player" type="Spatial" parent="."]
-script = ExtResource( 2 )
+[node name="Player" type="Node3D" parent="."]
+script = ExtResource("2")
 speed = 20.0
 rot_speed = 1.0
 angle_range_ctrl = 1.2
 coal_consumption = 1.7
 coal_start_stock = 3000
 
-[node name="bagger" parent="Player" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.61675 )
+[node name="bagger" parent="Player" instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.61675)
 
-[node name="Camera" type="Camera" parent="Player"]
-transform = Transform( 1, 0, 0, 0, 0.856439, 0.516249, 0, -0.516249, 0.856439, 0, 15.967, 26.696 )
-environment = ExtResource( 39 )
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 0.856439, 0.516249, 0, -0.516249, 0.856439, 0, 15.967, 26.696)
+environment = ExtResource("39")
 current = true
 far = 511.6
-script = ExtResource( 3 )
+script = ExtResource("3")
 
-[node name="MeshInstance" type="MeshInstance" parent="Player/Camera"]
-transform = Transform( 1, 0, 0, 0, 0.856438, -0.516249, 0, 0.516249, 0.856438, 25.0297, 14.4727, -22.447 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.856438, -0.516249, 0, 0.516249, 0.856438, 25.0297, 14.4727, -22.447)
 visible = false
-mesh = SubResource( 20 )
+mesh = SubResource("20")
 skeleton = NodePath("../../..")
-material/0 = SubResource( 21 )
 
-[node name="UICollectables" type="Spatial" parent="Player/Camera"]
-transform = Transform( 1, 0, 0, 0, 0.856439, -0.516249, 0, 0.516249, 0.856439, 0, 0.107021, -31.1064 )
-script = ExtResource( 12 )
-coinScene = ExtResource( 14 )
-coalScene = ExtResource( 13 )
+[node name="UICollectables" type="Node3D" parent="Player/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.856439, -0.516249, 0, 0.516249, 0.856439, 0, 0.107021, -31.1064)
+script = ExtResource("12")
+coinScene = ExtResource("14")
+coalScene = ExtResource("13")
 duration = 1.4
 
-[node name="UiMoveToCountersTween" type="Tween" parent="Player/Camera/UICollectables"]
+[node name="SideViewCamera" type="Camera3D" parent="Player"]
+transform = Transform3D(0.575034, 0, 0.81813, 0, 1, 0, -0.81813, 0, 0.575034, 21.4933, 4.69412, 0)
+script = ExtResource("29")
 
-[node name="SideViewCamera" type="Camera" parent="Player"]
-transform = Transform( 0.575034, 0, 0.81813, 0, 1, 0, -0.81813, 0, 0.575034, 21.4933, 4.69412, 0 )
-script = ExtResource( 29 )
-
-[node name="ObstacleSpawner" type="Spatial" parent="Player"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -139.136 )
-script = ExtResource( 5 )
+[node name="ObstacleSpawner" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -139.136)
+script = ExtResource("5")
 spawn_rate_min = 1.0
 spawn_rate_max = 2.0
 x_variation_range = 25.0
 z_variation_range = 1.0
 
-[node name="MeshInstance" type="MeshInstance" parent="Player/ObstacleSpawner"]
-transform = Transform( -7.42591e-07, -1, 0, 16.9885, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/ObstacleSpawner"]
+transform = Transform3D(-7.42591e-07, -1, 0, 16.9885, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 visible = false
-mesh = SubResource( 15 )
-material/0 = SubResource( 16 )
+mesh = SubResource("15")
 
-[node name="MeshInstance" type="MeshInstance" parent="Player"]
-transform = Transform( 6.7832, 0, 0, 0, 6.7832, 0, 0, 0, 6.7832, 0.369696, 2.04428, 6.68018 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(6.7832, 0, 0, 0, 6.7832, 0, 0, 0, 6.7832, 0.369696, 2.04428, 6.68018)
 visible = false
-mesh = SubResource( 22 )
-material/0 = SubResource( 23 )
+mesh = SubResource("22")
 
-[node name="BackwardsCam" type="Camera" parent="Player"]
-transform = Transform( -1, 2.55862e-08, -8.35948e-08, -2.54797e-08, 0.829399, 0.558658, 8.36273e-08, 0.558658, -0.829399, 0.199449, 16.1851, -35.0855 )
+[node name="BackwardsCam" type="Camera3D" parent="Player"]
+transform = Transform3D(-1, 2.55862e-08, -8.35948e-08, -2.54797e-08, 0.829399, 0.558658, 8.36273e-08, 0.558658, -0.829399, 0.199449, 16.1851, -35.0855)
 
-[node name="RunnerLogic" type="Spatial" parent="."]
+[node name="RunnerLogic" type="Node3D" parent="."]
 
-[node name="ObstacleContainer" type="Spatial" parent="RunnerLogic"]
+[node name="ObstacleContainer" type="Node3D" parent="RunnerLogic"]
 
-[node name="GroundCollection" type="Spatial" parent="RunnerLogic"]
-script = ExtResource( 10 )
-ground = ExtResource( 8 )
+[node name="GroundCollection" type="Node3D" parent="RunnerLogic"]
+script = ExtResource("10")
+ground = ExtResource("8")
 
-[node name="Ground" parent="RunnerLogic/GroundCollection" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11 )
-width = 1.0
+[node name="Ground" type="MeshInstance3D" parent="RunnerLogic/GroundCollection"]
+mesh = SubResource("ImmediateMesh_02ied")
+script = ExtResource("17_6ua16")
 groundSize = 1194
+depth = 0.473
 minVertexDistance = 2.0
-positions = [ Vector3( 0, 0, 60 ), Vector3( 0, 0, 0 ) ]
+positions = [Vector3(2.08165e-12, 2.08165e-12, 60), Vector3(0, 0, 0)]
+baggerTranformPath = NodePath("")
+material = ExtResource("18_nj7y6")
 
-[node name="StaticBody" type="StaticBody" parent="RunnerLogic/GroundCollection"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RunnerLogic/GroundCollection"]
 
-[node name="CollisionShape" type="CollisionShape" parent="RunnerLogic/GroundCollection/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 19 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RunnerLogic/GroundCollection/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+shape = SubResource("19")
 
-[node name="SunMoon" type="Spatial" parent="."]
-transform = Transform( 0.24397, 0, -0.969783, 0, 1, 0, 0.969783, 0, 0.24397, -13.292, 8.96145, -9.27802 )
-script = ExtResource( 53 )
+[node name="SunMoon" type="Node3D" parent="."]
+transform = Transform3D(0.24397, 0, -0.969783, 0, 1, 0, 0.969783, 0, 0.24397, -13.292, 8.96145, -9.27802)
+script = ExtResource("53")
 
-[node name="Moon" type="DirectionalLight" parent="SunMoon"]
-transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0 )
-light_color = Color( 0.188235, 0.341176, 0.427451, 1 )
+[node name="Moon" type="DirectionalLight3D" parent="SunMoon"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0)
+light_color = Color(0.188235, 0.341176, 0.427451, 1)
 light_energy = 0.4
 shadow_enabled = true
 
-[node name="Sun" type="DirectionalLight" parent="SunMoon"]
-transform = Transform( 1, 1.49012e-08, -2.98023e-08, 0, 1, 0, 0, -1.49012e-08, 1, 0, 0, 0 )
+[node name="Sun" type="DirectionalLight3D" parent="SunMoon"]
+transform = Transform3D(1, 1.49012e-08, -2.98023e-08, 0, 1, 0, 0, -1.49012e-08, 1, 0, 0, 0)
 shadow_enabled = true
 
-[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, -49 )
-
-[node name="WorldEnvironment" parent="." instance=ExtResource( 11 )]
-
 [node name="Coal" type="Label" parent="."]
-margin_left = 9.0
-margin_top = 15.0
-margin_right = 250.0
-margin_bottom = 52.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 27 )
+offset_left = 9.0
+offset_top = 15.0
+offset_right = 250.0
+offset_bottom = 52.0
 text = "coal supply: 0"
 
 [node name="Money" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -123.0
-margin_top = 19.0
-margin_right = -18.0
-margin_bottom = 56.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 27 )
+offset_left = -123.0
+offset_top = 19.0
+offset_right = -18.0
+offset_bottom = 56.0
+grow_horizontal = 0
 text = "0 $"
-align = 2
 
-[node name="Control" parent="." instance=ExtResource( 15 )]
+[node name="Control" parent="." instance=ExtResource("15")]
 visible = false
+layout_mode = 3
+anchors_preset = 15
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-pause_mode = 2
+process_mode = 2
 volume_db = -11.044
-script = ExtResource( 19 )
-musicList = [ ExtResource( 23 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 24 ) ]
+script = ExtResource("19")
+musicList = [ExtResource("23"), ExtResource("20"), ExtResource("21"), ExtResource("22"), ExtResource("25"), ExtResource("24")]
 
 [node name="SoundOnOffButton" type="CheckButton" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 13.0
-margin_top = -55.0
-margin_right = 89.0
-margin_bottom = -15.0
-custom_fonts/font = ExtResource( 27 )
-pressed = true
+offset_left = 13.0
+offset_top = -55.0
+offset_right = 89.0
+offset_bottom = -15.0
+grow_vertical = 0
 text = "sound"
-script = ExtResource( 26 )
+script = ExtResource("26")
 
-[node name="CameraManager" type="Spatial" parent="."]
-script = ExtResource( 28 )
+[node name="CameraManager" type="Node3D" parent="."]
+script = ExtResource("28")
 
 [node name="ObstacleList" type="Node" parent="."]
 
 [node name="Villages" type="Node" parent="ObstacleList"]
-script = ExtResource( 30 )
-scenes = [ ExtResource( 31 ), ExtResource( 4 ), ExtResource( 6 ) ]
+script = ExtResource("30")
+scenes = [ExtResource("31"), ExtResource("4"), ExtResource("6")]
 likelihood = 0.1
 
 [node name="Forests" type="Node" parent="ObstacleList"]
-script = ExtResource( 30 )
-scenes = [ ExtResource( 32 ), ExtResource( 7 ), ExtResource( 34 ) ]
+script = ExtResource("30")
+scenes = [ExtResource("32"), ExtResource("7"), ExtResource("34")]
 likelihood = 0.4
 
 [node name="WindFarms" type="Node" parent="ObstacleList"]
-script = ExtResource( 30 )
-scenes = [ ExtResource( 33 ), ExtResource( 35 ), ExtResource( 51 ), ExtResource( 50 ) ]
+script = ExtResource("30")
+scenes = [ExtResource("33"), ExtResource("35"), ExtResource("51"), ExtResource("50")]
 likelihood = 0.2
 
 [node name="CoalRock" type="Node" parent="ObstacleList"]
-script = ExtResource( 30 )
-scenes = [ ExtResource( 38 ) ]
+script = ExtResource("30")
+scenes = [ExtResource("38")]
 likelihood = 0.3
 
 [node name="PausedOverlay" type="Panel" parent="."]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/panel = ExtResource( 43 )
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PausedLabel" type="Label" parent="PausedOverlay"]
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 25 )
+grow_horizontal = 2
+grow_vertical = 2
 text = "Emergency Halt!
 Squirrel Detected!"
-align = 1
-valign = 1
 
 [node name="LostOverlay" type="Panel" parent="."]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/panel = ExtResource( 43 )
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PausedLabel" type="Label" parent="LostOverlay"]
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 25 )
+grow_horizontal = 2
+grow_vertical = 2
 text = "The activists have caught your excavator"
-align = 1
-valign = 1
-autowrap = true
 
 [node name="RestartGameButton" type="Button" parent="LostOverlay"]
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.526
 anchor_top = 0.837
 anchor_right = 0.526
 anchor_bottom = 0.837
-margin_left = -81.624
-margin_top = -31.2
-margin_right = 82.376
-margin_bottom = 65.8
-theme = ExtResource( 42 )
+offset_left = -81.624
+offset_top = -31.2
+offset_right = 82.376
+offset_bottom = 65.8
+theme = ExtResource("42")
 text = "Try again"
 
 [node name="WinningOverlay" type="Panel" parent="."]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/panel = ExtResource( 43 )
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PausedLabel" type="Label" parent="WinningOverlay"]
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 25 )
+grow_horizontal = 2
+grow_vertical = 2
 text = "YOU WON! Another great day for big coal!"
-align = 1
-valign = 1
-autowrap = true
 
 [node name="RestartGameButton" type="Button" parent="WinningOverlay"]
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.526
 anchor_top = 0.837
 anchor_right = 0.526
 anchor_bottom = 0.837
-margin_left = -160.624
-margin_top = -31.2
-margin_right = 162.376
-margin_bottom = 65.8
-theme = ExtResource( 42 )
+offset_left = -160.624
+offset_top = -31.2
+offset_right = 162.376
+offset_bottom = 65.8
+theme = ExtResource("42")
 text = "Restart for more profits"
 
-[node name="MountainManager" type="Spatial" parent="."]
-script = ExtResource( 40 )
-scenery = ExtResource( 41 )
+[node name="MountainManager" type="Node3D" parent="."]
+script = ExtResource("40")
+scenery = ExtResource("41")
 length = 600.0
 
 [node name="OpenTechTree" type="Button" parent="."]
-pause_mode = 2
+process_mode = 2
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -120.0
-margin_top = -102.0
-margin_right = -7.0
-margin_bottom = -5.0
-theme = ExtResource( 42 )
+offset_left = -120.0
+offset_top = -102.0
+offset_right = -7.0
+offset_bottom = -5.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("42")
 text = "Tech"
 
 [node name="ShowHelpButton" type="TextureButton" parent="."]
@@ -356,172 +341,194 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -192.0
-margin_top = -72.0
-margin_right = -126.0
-margin_bottom = -6.0
-texture_normal = ExtResource( 49 )
-texture_pressed = ExtResource( 49 )
-texture_hover = ExtResource( 49 )
-texture_disabled = ExtResource( 49 )
-texture_focused = ExtResource( 49 )
+offset_left = -192.0
+offset_top = -72.0
+offset_right = -126.0
+offset_bottom = -6.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("49")
+texture_pressed = ExtResource("49")
+texture_hover = ExtResource("49")
+texture_disabled = ExtResource("49")
+texture_focused = ExtResource("49")
 
 [node name="HelpPanel" type="Panel" parent="."]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/panel = ExtResource( 43 )
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MKey" type="TextureRect" parent="HelpPanel"]
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.062
 anchor_top = 0.562
 anchor_right = 0.062
 anchor_bottom = 0.562
-margin_left = 0.511993
-margin_top = -33.2
-margin_right = 66.512
-margin_bottom = 32.8
-texture = ExtResource( 44 )
+offset_left = 0.511993
+offset_top = -33.2
+offset_right = 66.512
+offset_bottom = 32.8
+texture = ExtResource("44")
 
 [node name="PKey" type="TextureRect" parent="HelpPanel"]
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.062
 anchor_top = 0.708
 anchor_right = 0.062
 anchor_bottom = 0.708
-margin_left = 0.511993
-margin_top = -32.8
-margin_right = 66.512
-margin_bottom = 33.2
-texture = ExtResource( 46 )
+offset_left = 0.511993
+offset_top = -32.8
+offset_right = 66.512
+offset_bottom = 33.2
+texture = ExtResource("46")
 
 [node name="SpaceKey" type="TextureRect" parent="HelpPanel"]
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.062
 anchor_top = 0.122
 anchor_right = 0.062
 anchor_bottom = 0.122
-margin_left = 0.511993
-margin_top = -33.2
-margin_right = 162.512
-margin_bottom = 32.8
-texture = ExtResource( 47 )
+offset_left = 0.511993
+offset_top = -33.2
+offset_right = 162.512
+offset_bottom = 32.8
+texture = ExtResource("47")
 
 [node name="TabKey" type="TextureRect" parent="HelpPanel"]
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.062
 anchor_top = 0.415
 anchor_right = 0.062
 anchor_bottom = 0.415
-margin_left = 0.511993
-margin_top = -33.0
-margin_right = 162.512
-margin_bottom = 33.0
-texture = ExtResource( 48 )
+offset_left = 0.511993
+offset_top = -33.0
+offset_right = 162.512
+offset_bottom = 33.0
+texture = ExtResource("48")
 
 [node name="FKey" type="TextureRect" parent="HelpPanel"]
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.062
 anchor_top = 0.855
 anchor_right = 0.062
 anchor_bottom = 0.855
-margin_left = 0.511997
-margin_top = -33.0
-margin_right = 66.512
-margin_bottom = 33.0
-texture = ExtResource( 45 )
+offset_left = 0.511997
+offset_top = -33.0
+offset_right = 66.512
+offset_bottom = 33.0
+texture = ExtResource("45")
 
 [node name="SpaceCaption" type="Label" parent="HelpPanel"]
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.281
 anchor_top = 0.124
 anchor_right = 0.281
 anchor_bottom = 0.124
-margin_left = 0.255951
-margin_top = -18.4
-margin_right = 611.256
-margin_bottom = 18.6
-custom_fonts/font = ExtResource( 27 )
+offset_left = 0.255951
+offset_top = -18.4
+offset_right = 611.256
+offset_bottom = 18.6
 text = "Switch between cameras. You want to try the side view!!"
 
 [node name="ShiftKey" type="TextureRect" parent="HelpPanel"]
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.062
 anchor_top = 0.268
 anchor_right = 0.062
 anchor_bottom = 0.268
-margin_left = 0.511993
-margin_top = -32.8
-margin_right = 162.512
-margin_bottom = 33.2
-texture = ExtResource( 52 )
+offset_left = 0.511993
+offset_top = -32.8
+offset_right = 162.512
+offset_bottom = 33.2
+texture = ExtResource("52")
 
 [node name="ShiftCaption" type="Label" parent="HelpPanel"]
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.281
 anchor_top = 0.271
 anchor_right = 0.281
 anchor_bottom = 0.271
-margin_left = 0.255951
-margin_top = -18.6
-margin_right = 611.256
-margin_bottom = 18.4
-custom_fonts/font = ExtResource( 27 )
+offset_left = 0.255951
+offset_top = -18.6
+offset_right = 611.256
+offset_bottom = 18.4
 text = "Activate Super Speed Mode 3000! (TM)"
 
 [node name="SpaceCaption2" type="Label" parent="HelpPanel"]
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.281
 anchor_top = 0.417
 anchor_right = 0.281
 anchor_bottom = 0.417
-margin_left = 0.255951
-margin_top = -18.2
-margin_right = 611.256
-margin_bottom = 18.8
-custom_fonts/font = ExtResource( 27 )
+offset_left = 0.255951
+offset_top = -18.2
+offset_right = 611.256
+offset_bottom = 18.8
 text = "Show Tech Tree Overlay"
 
 [node name="SpaceCaption3" type="Label" parent="HelpPanel"]
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.281
 anchor_top = 0.564
 anchor_right = 0.281
 anchor_bottom = 0.564
-margin_left = 0.255951
-margin_top = -18.4
-margin_right = 611.256
-margin_bottom = 18.6
-custom_fonts/font = ExtResource( 27 )
+offset_left = 0.255951
+offset_top = -18.4
+offset_right = 611.256
+offset_bottom = 18.6
 text = "Mute sound"
 
 [node name="SpaceCaption4" type="Label" parent="HelpPanel"]
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.281
 anchor_top = 0.711
 anchor_right = 0.281
 anchor_bottom = 0.711
-margin_left = 0.255951
-margin_top = -18.6
-margin_right = 611.256
-margin_bottom = 18.4
-custom_fonts/font = ExtResource( 27 )
+offset_left = 0.255951
+offset_top = -18.6
+offset_right = 611.256
+offset_bottom = 18.4
 text = "Pause game"
 
 [node name="SpaceCaption5" type="Label" parent="HelpPanel"]
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.281
 anchor_top = 0.857
 anchor_right = 0.281
 anchor_bottom = 0.857
-margin_left = 0.255981
-margin_top = -18.2
-margin_right = 611.256
-margin_bottom = 18.8
-custom_fonts/font = ExtResource( 27 )
-text = "Full screen on/off"
+offset_left = 0.255981
+offset_top = -18.2
+offset_right = 611.256
+offset_bottom = 18.8
+text = "Full screen checked/unchecked"
 
 [node name="CloseHelpButton" type="Button" parent="HelpPanel"]
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.852
 anchor_top = 0.8
 anchor_right = 0.967
 anchor_bottom = 0.962
-margin_left = -0.448059
-margin_right = -0.208069
-margin_bottom = -0.200073
-theme = ExtResource( 42 )
+offset_left = -0.448059
+offset_right = -0.208069
+offset_bottom = -0.200073
+theme = ExtResource("42")
 text = "Close"
 
-[connection signal="tween_completed" from="Player/Camera/UICollectables/UiMoveToCountersTween" to="Player/Camera/UICollectables" method="_on_UiMoveToCountersTween_tween_completed"]
 [connection signal="finished" from="BackgroundMusic" to="BackgroundMusic" method="_on_BackgroundMusic_finished"]
 [connection signal="toggled" from="SoundOnOffButton" to="SoundOnOffButton" method="_on_SoundOnOffButton_toggled"]
 [connection signal="pressed" from="LostOverlay/RestartGameButton" to="." method="_on_RestartGameButton_pressed"]
